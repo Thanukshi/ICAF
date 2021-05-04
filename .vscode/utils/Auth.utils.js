@@ -1,5 +1,6 @@
 const User = require('../models/User');
 
+
 const userRegister = async (userDetails, role, res) => {
 	//check username available
 	let UsernameNotTaken = await checkAvailabilityOfUserName(userDetails);
@@ -29,6 +30,9 @@ const userRegister = async (userDetails, role, res) => {
 			message: 'Phone Number is already taken',
 		});
 	}
+
+	// hashed password
+	const hashPassword = await bcrypt().hash();
 };
 
 const checkAvailabilityOfUserName = async (use_name) => {
