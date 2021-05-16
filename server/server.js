@@ -1,16 +1,18 @@
 const express = require('express');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
-require('dotenv').config({
-	path: './config/config.env',
-});
 const requestMessage = require('./messages/messages');
-const PORT = process.env.PORT;
 const cors = require('cors');
 const routes = require('./routes');
+const connect = require('./config/db');
 
 const app = express();
 app.use(bodyParser.json());
+
+require('dotenv').config({
+	path: './config/config.env',
+});
+const PORT = process.env.PORT;
 
 if (process.env.NODE_ENV === 'development') {
 	app.use(
@@ -19,6 +21,8 @@ if (process.env.NODE_ENV === 'development') {
 		})
 	);
 }
+
+connect();
 
 app.use(morgan('dev'));
 //Can get more information about request
