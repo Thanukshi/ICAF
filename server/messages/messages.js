@@ -1,4 +1,4 @@
-exports = {
+module.exports = {
 	Success: true,
 	NotSuccess: false,
 	BadCode: 400,
