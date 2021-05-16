@@ -31,6 +31,7 @@ exports.errorHandler = (e) => {
 			case 11000:
 			case 11001:
 				message = UniqueMessage(e);
+				message = e.message;
 				break;
 			default:
 				message = requestMessage.DBError;
