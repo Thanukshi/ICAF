@@ -7,6 +7,7 @@ require('dotenv').config({
 const requestMessage = require('./messages/messages');
 const PORT = process.env.PORT;
 const cors = require('cors');
+const routes = require('./routes');
 
 const app = express();
 
@@ -20,6 +21,8 @@ if (process.env.NODE_ENV === 'development') {
 
 app.use(morgan('dev'));
 //Can get more information about request
+
+app.use('/', routes);
 
 app.use((req, res, next) => {
 	res.status(400).json({
