@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 require('dotenv').config({
 	path: './config/config.env',
 });
+const requestMessage = require('./')
 const PORT = process.env.PORT;
 const cors = require('cors');
 
@@ -22,7 +23,8 @@ app.use(morgan('dev'));
 
 app.use((req, res, next) => {
 	res.status(400).json({
-
+		
+		success : 
 	});
 });
 
