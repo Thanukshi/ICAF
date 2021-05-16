@@ -42,7 +42,7 @@ userSchema
 		this.hashed_password = this.encryptPassword(password);
 	})
 	.get(function () {
-		return this._password;
+		return this.hashed_password;
 	});
 
 userSchema.methods = {
@@ -58,4 +58,10 @@ userSchema.methods = {
 			return '', e.message;
 		}
 	},
+
+	authenticate: function (plainPassword) {
+		return this.encryptPassword(plainPassword) === this.hashed_password;
+	},
 };
+
+module.exports = mongoose.model('User', userSchema);
