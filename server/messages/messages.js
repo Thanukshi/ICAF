@@ -4,5 +4,5 @@ exports = {
     BadCode : 400,
     SuccessCode : 200,
     InternalCode : 500,
-    
+    ErrorMessage : "Page Not Found",
 }
