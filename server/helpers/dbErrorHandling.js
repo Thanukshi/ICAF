@@ -1,47 +1,49 @@
 'use strict';
-const requestMessage = require('../messages/messages');
 
-const UniqueMessage = (error) => {
+/**
+ * Get unique error field name
+ */
+const uniqueMessage = (error) => {
 	let output;
 	try {
 		let fieldName = error.message.split('.$')[1];
-		field = field.split('dub key')[0];
+		field = field.split(' dup key')[0];
 		field = field.substring(0, field.lastIndexOf('_'));
-		req.flash('error', [
+		req.flash('errors', [
 			{
-				code: requestMessage.BadCode,
-				status: requestMessage.NotSuccess,
-				message: error.message,
-				message: 'An account with this ' + field + 'already exists',
+				msg: 'An account with this ' + field + ' already exists.',
 			},
 		]);
-
-		output = fieldName.charAt(0).toUpperCase() + field.slice(1) + 'already exists';
-	} catch (e) {
+		output = fieldName.charAt(0).toUpperCase() + fieldName.slice(1) + ' already exists';
+	} catch (ex) {
 		output = 'already exists';
 	}
 
 	return output;
 };
 
-exports.errorHandler = (e) => {
+/**
+ * Get the erroror message from error object
+ */
+exports.errorHandler = (error) => {
 	let message = '';
-	if (e.code) {
-		switch (e.code) {
+
+	if (error.code) {
+		switch (error.code) {
 			case 11000:
 			case 11001:
-				message = UniqueMessage(e);
-				message = e.message;
+				message = uniqueMessage(error);
 				break;
 			default:
-				message = requestMessage.DBError;
+				message = 'Something went wrong';
+				message = error.message;
 		}
 	} else {
-		for (let errorName in e.errors) {
-			if (e.errors[errorName].message) {
-                message += e.errors[errorName].message
-			}
+		for (let errorName in error.errors) {
+			if (error.errors[errorName].message) message = error.errors[errorName].message;
+			message = error.message;
 		}
 	}
-    return message;
+
+	return message;
 };

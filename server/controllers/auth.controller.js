@@ -7,12 +7,13 @@ const fetch = require('node-fetch');
 const { validationResult } = require('express-validator');
 const jwt = require('jsonwebtoken');
 const { errorHandler } = require('../helpers/dbErrorHandling');
-const sendMailer = require('@sendgrid/mail');
+const sgMail = require('@sendgrid/mail');
 
-sendMailer.setApiKey(process.env.MAIL_KEY);
+sgMail.setApiKey(process.env.MAIL_KEY);
 
 exports.registerController = (req, res, next) => {
-	const { email, name, password } = req.body;
+	const { name, email, password } = req.body;
+	console.log('name => ' + name + ', email => ' + email + ', Password =>' + password);
 	const errors = validationResult(req);
 
 	if (!errors.isEmpty()) {
@@ -49,7 +50,7 @@ exports.registerController = (req, res, next) => {
 
 		const emailData = {
 			from: process.env.EMAIL_FROM,
-			to: process.env.EMAIL_TO,
+			to: email,
 			subject: requestMessage.EmailSubject,
 			html: `
             <h1>Please Click to link to activate your account.. </h1>
@@ -60,7 +61,7 @@ exports.registerController = (req, res, next) => {
             `,
 		};
 
-		sendMailer
+		sgMail
 			.send(emailData)
 			.then((sent) => {
 				return res.status(200).json({
