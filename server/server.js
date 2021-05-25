@@ -3,43 +3,22 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
-
-const bodyParser = require('body-parser');
-const requestMessage = require('./messages/messages');
-const routes = require('./routes');
-const connect = require('./config/db');
+const fileUpload = require('express-fileupload');
 
 const app = express();
-app.use(bodyParser.json());
+app.use(express.json());
+app.use(cors());
+app.use(cookieParser());
+app.use(
+	fileUpload({
+		useTempFiles: true,
+	})
+);
 
-require('dotenv').config({
-	path: './config/config.env',
-});
-const PORT = process.env.PORT;
+//connect to the db
+const URI = process.env.MO
 
-if (process.env.NODE_ENV === 'development') {
-	app.use(
-		cors({
-			origin: process.env.CLIENT_URL,
-		})
-	);
-}
-
-connect();
-
-app.use(morgan('dev'));
-//Can get more information about request
-
-app.use('/', routes);
-
-app.use((req, res, next) => {
-	res.status(400).json({
-		code: requestMessage.SuccessCode,
-		success: requestMessage.Success,
-		message: requestMessage.ErrorMessage,
-	});
-});
-
+const PORT = process.env.PORT || 8000;
 app.listen(PORT, () => {
-	console.log(`Sever is started on ${PORT}`);
+	console.log('Server is running on port ', PORT);
 });
