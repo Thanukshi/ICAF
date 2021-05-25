@@ -1,8 +1,11 @@
+require('dotenv').config;
 const express = require('express');
-const morgan = require('morgan');
+const mongoose = require('mongoose');
+const cors = require('cors');
+const cookieParser = require('cookie-parser');
+
 const bodyParser = require('body-parser');
 const requestMessage = require('./messages/messages');
-const cors = require('cors');
 const routes = require('./routes');
 const connect = require('./config/db');
 
