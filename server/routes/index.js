@@ -1,5 +1,6 @@
 const routes = require('express').Router();
-const authRoute = require('./authRouter/auth.route');
+const userRoutes = require('../routes/userRoutes');
 
-routes.use('/auth-api', authRoute);
+routes.use('/user', userRoutes);
+
 module.exports = routes;

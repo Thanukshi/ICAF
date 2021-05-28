@@ -1,4 +1,5 @@
-require('dotenv').config;
+const dotenv = require("dotenv");
+dotenv.config();
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
@@ -16,9 +17,20 @@ app.use(
 );
 
 //connect to the db
-const URI = process.env.MO
+//const URI = "mongodb+srv://ICAF:ICAF1234@cluster0.j9eij.mongodb.net/ICAF?retryWrites=true&w=majority";
+const URI = process.env.MONGO_URL
+mongoose.connect(URI, {
+	useCreateIndex : true,
+	useFindAndModify : true,
+	useNewUrlParser : true,
+	useUnifiedTopology : true,
+		
+}, err => {
+	if(err) throw err;
+	console.log("Connected to the mongo")
+});
 
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT;
 app.listen(PORT, () => {
 	console.log('Server is running on port ', PORT);
 });
