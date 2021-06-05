@@ -4,12 +4,19 @@ module.exports = {
 	SuccessStatus: 'OK',
 	NotSuccess: false,
 	BadCode: 400,
+	BadStatus: 'Bad Request',
 	InternalCode: 500,
 	InternalStatus: 'Internal Server Error',
 	ErrorMessage: 'Page Not Found',
 	RegisterRouteMessage: 'Register Route',
 	DBError: 'Something went wrong',
-	AlreadyExistEmail: 'Email already exists',
+	AlreadyExistEmail: 'This Email already exists',
 	EmailSubject: 'Account activation...',
 	EmailSuccess: 'Email has been sent to',
+	ContentEmpty: 'Please fill in all fields',
+	ValidEmail: 'Email is invalid, Please enter a valid email',
+	PasswordValidate:
+		'Password has 8 characters, It must have one uppercase letter, lowercase letter, number and special character.',
+	ActiveAccount:
+		'Register success! Please activate your account to start. Your activation link will be sent to your email address',
 };

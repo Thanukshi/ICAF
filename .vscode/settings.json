@@ -3,5 +3,6 @@
         "icaf",
         "mongodb",
         "sendgrid"
-    ]
+    ],
+    "git.ignoreLimitWarning": true
 }
