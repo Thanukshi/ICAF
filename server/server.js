@@ -17,7 +17,7 @@ app.use(
   })
 );
 app.use("/", routes);
-
+app.use(express.static('public'));
 //connect to the db
 //const URI = "mongodb+srv://ICAF:ICAF1234@cluster0.j9eij.mongodb.net/ICAF?retryWrites=true&w=majority";
 const URI = process.env.MONGO_URL;

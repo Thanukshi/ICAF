@@ -22,4 +22,5 @@ module.exports = {
   EmailDoesNotExist:
     "This email doest not exist. Please create a your account first.",
   PasswordDoesNotMatch: "Password does not mach this ",
+  LoginMessage: "Please Login Now",
 };
