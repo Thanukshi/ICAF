@@ -6,9 +6,9 @@ const auth = (req, res, next) => {
     const token = req.header("Authorization");
     if (!token) {
       return res.status(400).json({
-        code: messages.InternalCode,
+        code: messages.BadCode,
         success: messages.NotSuccess,
-        status: messages.InternalStatus,
+        status: messages.BadStatus,
         message: messages.RouteError,
       });
     } else {

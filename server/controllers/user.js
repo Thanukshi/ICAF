@@ -179,7 +179,6 @@ const userControl = {
       });
     }
   },
-
   getAccessToken: (req, res) => {
     try {
       const rf_token = req.cookies.refreshtoken;
@@ -306,6 +305,25 @@ const userControl = {
         status: messages.SuccessStatus,
         data: user,
         message: "User details recieved",
+      });
+    } catch (err) {
+      return res.status(500).json({
+        code: messages.InternalCode,
+        success: messages.NotSuccess,
+        status: messages.InternalStatus,
+        message: err.message,
+      });
+    }
+  },
+  getAllUserDetails: async (req, res) => {
+    try {
+      const users = await User.find().select("-password");
+      return res.status(200).json({
+        code: messages.SuccessCode,
+        success: messages.Success,
+        status: messages.SuccessStatus,
+        data: users,
+        message: "Users list recieved",
       });
     } catch (err) {
       return res.status(500).json({
