@@ -1,106 +1,163 @@
-const User = require('../models/user.model');
-const messages = require('../messages/messages');
-const bcrypt = require('bcrypt');
-const webToken = require('jsonwebtoken');
+const User = require("../models/user.model");
+const messages = require("../messages/messages");
+const bcrypt = require("bcrypt");
+const webToken = require("jsonwebtoken");
+const sendEmail = require("./sendMail");
+
+const { google } = require("googleapis");
+const { OAuth2 } = google.auth;
+const fetch = require("node-fetch");
+
+const client = new OAuth2(process.env.MAILING_SERVICE_CLIENT_ID);
 
 const { CLIENT_URL } = process.env;
 const userControl = {
-	register: async (req, res) => {
-		try {
-			console.log('DATA => ', req.body);
-			const { user_name, user_email, password } = req.body;
+  register: async (req, res) => {
+    try {
+      const { user_name, user_email, password, role } = req.body;
 
-			if (!user_name || !user_email || !password) {
-				return res.status(400).json({
-					code: messages.BadCode,
-					success: messages.NotSuccess,
-					status: messages.BadStatus,
-					message: messages.ContentEmpty,
-				});
-			}
-			if (!validateEmail(user_email)) {
-				return res.status(400).json({
-					code: messages.BadCode,
-					success: messages.NotSuccess,
-					status: messages.BadStatus,
-					message: messages.ValidEmail,
-				});
-			}
+      if (!user_name || !user_email || !password || !role) {
+        return res.status(400).json({
+          code: messages.BadCode,
+          success: messages.NotSuccess,
+          status: messages.BadStatus,
+          message: messages.ContentEmpty,
+        });
+      }
+      if (!validateEmail(user_email)) {
+        return res.status(400).json({
+          code: messages.BadCode,
+          success: messages.NotSuccess,
+          status: messages.BadStatus,
+          message: messages.ValidEmail,
+        });
+      }
 
-			const user = await User.findOne({ user_email });
-			if (user) {
-				return res.status(400).json({
-					code: messages.BadCode,
-					success: messages.NotSuccess,
-					status: messages.BadStatus,
-					message: messages.AlreadyExistEmail,
-				});
-			}
+      const user = await User.findOne({ user_email });
+      if (user) {
+        return res.status(400).json({
+          code: messages.BadCode,
+          success: messages.NotSuccess,
+          status: messages.BadStatus,
+          message: messages.AlreadyExistEmail,
+        });
+      }
 
-			if (!validatePassword(password)) {
-				return res.status(400).json({
-					code: messages.BadCode,
-					success: messages.NotSuccess,
-					status: messages.BadStatus,
-					message: messages.PasswordValidate,
-				});
-			}
+      if (!validatePassword(password)) {
+        return res.status(400).json({
+          code: messages.BadCode,
+          success: messages.NotSuccess,
+          status: messages.BadStatus,
+          message: messages.PasswordValidate,
+        });
+      }
 
-			const passwordHash = await bcrypt.hash(password, 12);
-			console.log(passwordHash);
+      const passwordHash = await bcrypt.hash(password, 12);
+      console.log(passwordHash);
 
-			const newUser = {
-				user_name,
-				user_email,
-				password: passwordHash,
-			};
-			console.log('User Details : ', newUser);
+      const newUser = {
+        user_name,
+        user_email,
+        password: passwordHash,
+        role,
+      };
+      console.log("User Details : ", newUser);
 
-			const activate_token = createActivationToken(newUser);
-			console.log({ activate_token });
+      const activate_token = createActivationToken(newUser);
+      console.log({ activate_token });
 
-			const url = `${CLIENT_URL}/user/activate/${activate_token}`;
+      const url = `${CLIENT_URL}/user/activate/${activate_token}`;
+      sendEmail(user_email, url, "Verify your email address");
 
-			sendMail(user_email, url);
+      return res.status(200).json({
+        code: messages.SuccessCode,
+        success: messages.Success,
+        status: messages.SuccessStatus,
+        token: activate_token,
+        message: messages.ActiveAccount,
+      });
+    } catch (err) {
+      return res.status(500).json({
+        code: messages.InternalCode,
+        success: messages.NotSuccess,
+        status: messages.InternalStatus,
+        message: err.message,
+      });
+    }
+  },
+  activateEmail: async (req, res) => {
+    try {
+      const { activate_token } = req.body;
+      const user = webToken.verify(
+        activate_token,
+        process.env.ACTIVATION_TOKEN_SECRET
+      );
 
-			return res.status(200).json({
-				code: messages.SuccessCode,
-				success: messages.success,
-				status: messages.SuccessCode,
-				message: messages.ActiveAccount,
-			});
-		} catch (err) {
-			return res.status(500).json({
-				code: messages.InternalCode,
-				success: messages.NotSuccess,
-				status: messages.InternalStatus,
-				message: err.message,
-			});
-		}
-	},
+      const { user_name, user_email, password, role } = user;
+      const check = await User.findOne({ user_email });
+      if (check) {
+        return res.status(400).json({
+          code: messages.BadCode,
+          success: messages.NotSuccess,
+          status: messages.BadStatus,
+          message: messages.AlreadyExistEmail,
+        });
+      }
+      const newUser = new User({
+        user_name,
+        user_email,
+        password,
+        role,
+      });
+      await newUser.save();
+      return res.status(200).json({
+        code: messages.SuccessCode,
+        success: messages.Success,
+        status: messages.SuccessStatus,
+        data: user,
+        token: activate_token,
+        message: "Account has been activated successfully.",
+      });
+
+      console.log(user);
+    } catch (err) {
+      return res.status(500).json({
+        code: messages.InternalCode,
+        success: messages.NotSuccess,
+        status: messages.InternalStatus,
+        message: err.message,
+      });
+    }
+  },
 };
 
 function validateEmail(email) {
-	const re =
-		/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-	return re.test(email);
+  const re =
+    /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(email);
 }
 
 function validatePassword(password) {
-	var re = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
-	return re.test(password);
+  var re = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+  return re.test(password);
 }
 
 const createActivationToken = (payload) => {
-	return webToken.sign(payload, process.env.ACTIVATION_TOKEN_SECRET, { expiresIn: '10m' });
+  return webToken.sign(payload, process.env.ACTIVATION_TOKEN_SECRET, {
+    expiresIn: "10m",
+  });
 };
 
 const createAccessToken = (payload) => {
-	return webToken.sign(payload, process.env.ACCESS_TOKEN_SECRET, { expiresIn: '20m' });
+  return webToken.sign(payload, process.env.ACCESS_TOKEN_SECRET, {
+    expiresIn: "20m",
+  });
 };
 
 const createRefreshToken = (payload) => {
-	return webToken.sign(payload, process.env.REFRESH_TOKEN_SECRET, { expiresIn: '7d' });
+  return webToken.sign(payload, process.env.REFRESH_TOKEN_SECRET, {
+    expiresIn: "7d",
+  });
 };
 
 module.exports = userControl;
