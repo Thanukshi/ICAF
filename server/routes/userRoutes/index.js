@@ -5,7 +5,7 @@ const auth_middleware = require("../../middleware/auth");
 
 router.post("/register-user", userControl.register);
 
-router.post("/activate-emai", userControl.activateEmail);
+router.post("/activate-email", userControl.activateEmail);
 
 router.post("/login-user", userControl.login);
 
@@ -14,6 +14,8 @@ router.post("/refresh_token", userControl.getAccessToken);
 router.post("/forgot-password", userControl.forgotPassword);
 
 router.post("/reset-password", auth_middleware, userControl.resetPassword);
+
+router.get("/get-user-details", auth_middleware, userControl.getUserDetails);
 
 //router.post("/refresh_token", userCtrl.getAccessToken);
 

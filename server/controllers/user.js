@@ -153,12 +153,11 @@ const userControl = {
             message: messages.PasswordDoesNotMatch + user_email,
           });
         } else {
-          const refresh_token = createRefreshToken({ id: User._id });
+          const refresh_token = createRefreshToken({ id: user._id });
           res.cookie("refreshtoken", refresh_token, {
             httpOnly: true,
-            path: "/user/refresh_token",
+            path: "/users/refresh_token",
             maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
-            secure: false,
           });
 
           return res.status(200).json({
@@ -180,43 +179,43 @@ const userControl = {
       });
     }
   },
+
   getAccessToken: (req, res) => {
     try {
-      const rfToken = req.cookies.refreshtoken;
-
-      if (!rfToken) {
+      const rf_token = req.cookies.refreshtoken;
+      if (!rf_token) {
         return res.status(400).json({
           code: messages.BadCode,
           success: messages.NotSuccess,
           status: messages.BadStatus,
           message: messages.LoginMessage,
         });
-      } else {
-        webToken.verify(
-          rfToken,
-          process.env.REFRESH_TOKEN_SECRET,
-          (err, user) => {
-            if (err) {
-              return res.status(400).json({
-                code: messages.BadCode,
-                success: messages.NotSuccess,
-                status: messages.BadStatus,
-                message: err.message,
-              });
-            } else {
-              const access_token = createAccessToken({ id: user.id });
-              return res.status(200).json({
-                code: messages.SuccessCode,
-                success: messages.Success,
-                status: messages.SuccessStatus,
-                data: user,
-                token: access_token,
-                message: "Login successfully.",
-              });
-            }
-          }
-        );
       }
+
+      webToken.verify(
+        rf_token,
+        process.env.REFRESH_TOKEN_SECRET,
+        (err, user) => {
+          if (err) {
+            return res.status(400).json({
+              code: messages.BadCode,
+              success: messages.NotSuccess,
+              status: messages.BadStatus,
+              message: messages.LoginMessage,
+            });
+          }
+
+          const access_token = createAccessToken({ id: user.id });
+          return res.status(200).json({
+            code: messages.SuccessCode,
+            success: messages.Success,
+            status: messages.SuccessStatus,
+            data: user,
+            token: access_token,
+            message: "Login successfully.",
+          });
+        }
+      );
     } catch (err) {
       return res.status(500).json({
         code: messages.InternalCode,
@@ -299,6 +298,15 @@ const userControl = {
   },
   getUserDetails: async (req, res) => {
     try {
+      const user = await User.findById(req.user.id).select("-password");
+
+      return res.status(200).json({
+        code: messages.SuccessCode,
+        success: messages.Success,
+        status: messages.SuccessStatus,
+        data: user,
+        message: "User details recieved",
+      });
     } catch (err) {
       return res.status(500).json({
         code: messages.InternalCode,
