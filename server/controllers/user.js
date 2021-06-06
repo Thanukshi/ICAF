@@ -241,7 +241,7 @@ const userControl = {
         const access_token = createAccessToken({ id: user._id });
         const url = `${CLIENT_URL}/user/reset/${access_token}`;
 
-        sendEmail(user_email, url);
+        sendEmail(user_email, url, "Reset your password");
         return res.status(200).json({
           code: messages.SuccessCode,
           success: messages.Success,
