@@ -261,6 +261,53 @@ const userControl = {
       });
     }
   },
+  resetPassword: async (req, res) => {
+    try {
+      const { password } = req.body;
+
+      if (!validatePassword(password)) {
+        return res.status(400).json({
+          code: messages.BadCode,
+          success: messages.NotSuccess,
+          status: messages.BadStatus,
+          message: messages.PasswordValidate,
+        });
+      } else {
+        const passwordHash = await bcrypt.hash(password, 12);
+        console.log(req.user);
+        await User.findOneAndUpdate(
+          { _id: req.user.id },
+          {
+            password: passwordHash,
+          }
+        );
+        return res.status(200).json({
+          code: messages.SuccessCode,
+          success: messages.Success,
+          status: messages.SuccessStatus,
+          message: messages.ResetPassword,
+        });
+      }
+    } catch (err) {
+      return res.status(500).json({
+        code: messages.InternalCode,
+        success: messages.NotSuccess,
+        status: messages.InternalStatus,
+        message: err.message,
+      });
+    }
+  },
+  getUserDetails: async (req, res) => {
+    try {
+    } catch (err) {
+      return res.status(500).json({
+        code: messages.InternalCode,
+        success: messages.NotSuccess,
+        status: messages.InternalStatus,
+        message: err.message,
+      });
+    }
+  },
 };
 
 function validateEmail(email) {

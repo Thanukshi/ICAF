@@ -23,4 +23,6 @@ module.exports = {
     "This email doest not exist. Please create a your account first.",
   PasswordDoesNotMatch: "Password does not mach this ",
   LoginMessage: "Please Login Now",
+  RouteError: "Invalid Authentication to the visit this route",
+  ResetPassword: "Password is changes successfully.",
 };
