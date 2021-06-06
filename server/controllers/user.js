@@ -7,6 +7,7 @@ const sendEmail = require("./sendMail");
 const { google } = require("googleapis");
 const { OAuth2 } = google.auth;
 const fetch = require("node-fetch");
+const { findOne } = require("../models/user.model");
 
 const client = new OAuth2(process.env.MAILING_SERVICE_CLIENT_ID);
 
@@ -120,6 +121,56 @@ const userControl = {
       });
 
       console.log(user);
+    } catch (err) {
+      return res.status(500).json({
+        code: messages.InternalCode,
+        success: messages.NotSuccess,
+        status: messages.InternalStatus,
+        message: err.message,
+      });
+    }
+  },
+  login: async (req, res) => {
+    try {
+      const { user_email, password } = req.body;
+      const user = await User.findOne({ user_email });
+      if (!user) {
+        return res.status(400).json({
+          code: messages.BadCode,
+          success: messages.NotSuccess,
+          status: messages.BadStatus,
+          message: messages.EmailDoesNotExist,
+        });
+      } else {
+        const isMatchUserPassword = await bcrypt.compare(
+          password,
+          user.password
+        );
+        if (!isMatchUserPassword) {
+          return res.status(400).json({
+            code: messages.BadCode,
+            success: messages.NotSuccess,
+            status: messages.BadStatus,
+            message: messages.PasswordDoesNotMatch + user_email,
+          });
+        } else {
+          const refresh_token = createRefreshToken({ id: User._id });
+          res.cookie("refreshToken", refresh_token, {
+            httpOnly: true,
+            path: "/user/refresh_token",
+            maxAge: 7 * 24 * 60 * 60 * 1000,
+          });
+
+          return res.status(200).json({
+            code: messages.SuccessCode,
+            success: messages.Success,
+            status: messages.SuccessStatus,
+            data: user,
+            token: refresh_token,
+            message: "Login successfully.",
+          });
+        }
+      }
     } catch (err) {
       return res.status(500).json({
         code: messages.InternalCode,

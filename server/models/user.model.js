@@ -34,7 +34,9 @@ const userSchema = new mongoose.Schema(
         "https://res.cloudinary.com/icaf/image/upload/v1621947032/icaf_setup/user_x5zvlx.png",
     },
   },
-  { timestamp: true }
+  {
+    timestamps: true,
+  }
 );
 
 module.exports = mongoose.model("Users", userSchema);
