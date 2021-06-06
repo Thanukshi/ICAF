@@ -7,7 +7,6 @@ const sendEmail = require("./sendMail");
 const { google } = require("googleapis");
 const { OAuth2 } = google.auth;
 const fetch = require("node-fetch");
-const { findOne } = require("../models/user.model");
 
 const client = new OAuth2(process.env.MAILING_SERVICE_CLIENT_ID);
 
@@ -157,11 +156,11 @@ const userControl = {
           const refresh_token = createRefreshToken({ id: User._id });
           res.cookie("refreshtoken", refresh_token, {
             httpOnly: true,
-            path: "/users/refresh_token",
+            path: "/user/refresh_token",
             maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
             secure: false,
           });
-          console.log(refresh_token);
+
           return res.status(200).json({
             code: messages.SuccessCode,
             success: messages.Success,
@@ -184,7 +183,7 @@ const userControl = {
   getAccessToken: (req, res) => {
     try {
       const rfToken = req.cookies.refreshtoken;
-      console.log("rfToken = ", rfToken);
+
       if (!rfToken) {
         return res.status(400).json({
           code: messages.BadCode,
@@ -218,7 +217,49 @@ const userControl = {
           }
         );
       }
-    } catch (err) {}
+    } catch (err) {
+      return res.status(500).json({
+        code: messages.InternalCode,
+        success: messages.NotSuccess,
+        status: messages.InternalStatus,
+        message: err.message,
+      });
+    }
+  },
+  forgotPassword: async (req, res) => {
+    try {
+      const { user_email } = req.body;
+      const user = await User.findOne({ user_email });
+      if (!user) {
+        return res.status(400).json({
+          code: messages.BadCode,
+          success: messages.NotSuccess,
+          status: messages.BadStatus,
+          message: messages.EmailDoesNotExist,
+        });
+      } else {
+        const access_token = createAccessToken({ id: user._id });
+        const url = `${CLIENT_URL}/user/reset/${access_token}`;
+
+        sendEmail(user_email, url);
+        return res.status(200).json({
+          code: messages.SuccessCode,
+          success: messages.Success,
+          status: messages.SuccessStatus,
+          data: user,
+          token: access_token,
+          message:
+            "Re-send the password, please check your email to reset the password",
+        });
+      }
+    } catch (err) {
+      return res.status(500).json({
+        code: messages.InternalCode,
+        success: messages.NotSuccess,
+        status: messages.InternalStatus,
+        message: err.message,
+      });
+    }
   },
 };
 

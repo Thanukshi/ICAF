@@ -8,7 +8,9 @@ router.post("/activate-emai", userControl.activateEmail);
 
 router.post("/login-user", userControl.login);
 
-router.post("/access-token", userControl.getAccessToken);
+router.post("/refresh_token", userControl.getAccessToken);
+
+router.post("/forgot-password", userControl.forgotPassword);
 
 //router.post("/refresh_token", userCtrl.getAccessToken);
 
