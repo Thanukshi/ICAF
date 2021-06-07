@@ -18,7 +18,7 @@ const auth = (req, res, next) => {
             code: messages.InternalCode,
             success: messages.NotSuccess,
             status: messages.InternalStatus,
-            message: messages.RouteError + "Error :" + err.message,
+            message: messages.RouteError + "  Error :" + err.message,
           });
         } else {
           req.user = user;

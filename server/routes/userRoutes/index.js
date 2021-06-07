@@ -25,6 +25,12 @@ router.get(
   userControl.getAllUserDetails
 );
 
+router.get("/logout", userControl.logoutUser);
+
+router.patch("/update-user", auth_middleware, userControl.updateUser);
+
+router.delete("/delete-user/:id", auth_middleware, userControl.deleteUser);
+
 //router.post("/refresh_token", userCtrl.getAccessToken);
 
 module.exports = router;

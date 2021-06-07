@@ -7,6 +7,7 @@ const sendEmail = require("./sendMail");
 const { google } = require("googleapis");
 const { OAuth2 } = google.auth;
 const fetch = require("node-fetch");
+const { findById } = require("../models/user.model");
 
 const client = new OAuth2(process.env.MAILING_SERVICE_CLIENT_ID);
 
@@ -324,6 +325,70 @@ const userControl = {
         status: messages.SuccessStatus,
         data: users,
         message: "Users list recieved",
+      });
+    } catch (err) {
+      return res.status(500).json({
+        code: messages.InternalCode,
+        success: messages.NotSuccess,
+        status: messages.InternalStatus,
+        message: err.message,
+      });
+    }
+  },
+  logoutUser: async (req, res) => {
+    try {
+      res.clearCookie("refreshtoken", { path: "/users/refresh_token" });
+      return res.status(200).json({
+        code: messages.SuccessCode,
+        success: messages.Success,
+        status: messages.SuccessStatus,
+        message: messages.LogoutMessage,
+      });
+    } catch (err) {
+      return res.status(500).json({
+        code: messages.InternalCode,
+        success: messages.NotSuccess,
+        status: messages.InternalStatus,
+        message: err.message,
+      });
+    }
+  },
+  updateUser: async (req, res) => {
+    try {
+      const { user_name, avatar } = req.body;
+      await User.findOneAndUpdate(
+        { _id: req.user.id },
+        {
+          user_name,
+          avatar,
+        }
+      );
+      const user = await User.findById(req.user.id).select("-password");
+      return res.status(200).json({
+        code: messages.SuccessCode,
+        success: messages.Success,
+        status: messages.SuccessStatus,
+        data: user,
+        message: "Update successfully.",
+      });
+    } catch (err) {
+      return res.status(500).json({
+        code: messages.InternalCode,
+        success: messages.NotSuccess,
+        status: messages.InternalStatus,
+        message: err.message,
+      });
+    }
+  },
+  deleteUser: async (req, res) => {
+    try {
+      const user = await User.findByIdAndDelete(req.params.id);
+      return res.status(200).json({
+        code: messages.SuccessCode,
+        success: messages.Success,
+        status: messages.SuccessStatus,
+        data: user,
+        message: "Delete successfully.",
       });
     } catch (err) {
       return res.status(500).json({

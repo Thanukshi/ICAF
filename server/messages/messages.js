@@ -25,4 +25,9 @@ module.exports = {
   LoginMessage: "Please Login Now",
   RouteError: "Invalid Authentication to the visit this route",
   ResetPassword: "Password is changes successfully.",
+  LogoutMessage: "Log out successfuly",
+  ImageUpload: "No files were uploaded.",
+  ImageSize: "File size is too large.",
+  FileFormat:
+    "File format is incorrect. Please upload file with correct format(.jpeg, .png, .jpg) ",
 };
