@@ -1,11 +1,11 @@
+const cloudinary = require("cloudinary");
+const fs = require("fs");
+
 const uploadImageController = {
-  uploadAvatar : async (req, res) => {
+  uploadAvatar: async (req, res) => {
     try {
-      
-    } catch (err) {
-      
-    }
-  }
+    } catch (err) {}
+  },
 };
 
 module.exports = uploadImageController;
