@@ -1,0 +1,27 @@
+var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+_parcelHelpers.defineInteropFlag(exports);
+var _React = require('React');
+var _ReactDefault = _parcelHelpers.interopDefault(_React);
+var _jsxFileName = "E:\\SLIIT\\3rd Year\\1st Semester\\AF\\Group Project\\ICAF\\ICAF\\client\\src\\App.jsx";
+class App extends _ReactDefault.default.Component {
+  render() {
+    return (
+      /*#__PURE__*/_ReactDefault.default.createElement("div", {
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 6,
+          columnNumber: 13
+        }
+      }, /*#__PURE__*/_ReactDefault.default.createElement("h1", {
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 7,
+          columnNumber: 17
+        }
+      }, "Hello"))
+    );
+  }
+}
+exports.default = App;
