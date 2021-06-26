@@ -1,0 +1,75 @@
+var helpers = require("../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+try {
+  var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+  _parcelHelpers.defineInteropFlag(exports);
+  var _react = require("react");
+  var _reactDefault = _parcelHelpers.interopDefault(_react);
+  var _MenuList = require("./MenuList");
+  var _jsxFileName = "E:\\SLIIT\\3rd Year\\1st Semester\\AF\\Group Project\\ICAF\\ICAF\\client\\src\\Component\\Navbar\\Navbar.jsx";
+  const Navbar = () => {
+    const menuList = _MenuList.MenuList.map(({url, title}, index) => {
+      return (
+        /*#__PURE__*/_reactDefault.default.createElement("li", {
+          key: index,
+          __self: undefined,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 7,
+            columnNumber: 7
+          }
+        }, title)
+      );
+    });
+    return (
+      /*#__PURE__*/_reactDefault.default.createElement("div", {
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 15,
+          columnNumber: 5
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("nav", {
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 16,
+          columnNumber: 7
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("div", {
+        className: "logo",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 17,
+          columnNumber: 9
+        }
+      }, "ICAF ", /*#__PURE__*/_reactDefault.default.createElement("font", {
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 18,
+          columnNumber: 16
+        }
+      }, "Lab")), /*#__PURE__*/_reactDefault.default.createElement("ul", {
+        className: "menu-list",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 20,
+          columnNumber: 9
+        }
+      }, _MenuList.MenuList)))
+    );
+  };
+  _c = Navbar;
+  exports.default = Navbar;
+  var _c;
+  $RefreshReg$(_c, "Navbar");
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

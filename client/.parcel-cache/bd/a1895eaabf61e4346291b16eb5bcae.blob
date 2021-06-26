@@ -1,0 +1,178 @@
+var helpers = require("../../../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+try {
+  var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+  _parcelHelpers.defineInteropFlag(exports);
+  var _react = require("react");
+  var _reactDefault = _parcelHelpers.interopDefault(_react);
+  var _jsxFileName = "E:\\SLIIT\\3rd Year\\1st Semester\\AF\\Group Project\\ICAF\\ICAF\\client\\src\\Component\\Navbar\\NavbarItem\\Home\\Home.jsx";
+  const Home = () => {
+    return (
+      /*#__PURE__*/_reactDefault.default.createElement("div", {
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 5,
+          columnNumber: 5
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("div", {
+        id: "demo",
+        class: "carousel slide",
+        "data-ride": "carousel",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 50,
+          columnNumber: 7
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("ul", {
+        class: "carousel-indicators",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 51,
+          columnNumber: 9
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("li", {
+        "data-target": "#demo",
+        "data-slide-to": "0",
+        class: "active",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 52,
+          columnNumber: 11
+        }
+      }), /*#__PURE__*/_reactDefault.default.createElement("li", {
+        "data-target": "#demo",
+        "data-slide-to": "1",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 53,
+          columnNumber: 11
+        }
+      }), /*#__PURE__*/_reactDefault.default.createElement("li", {
+        "data-target": "#demo",
+        "data-slide-to": "2",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 54,
+          columnNumber: 11
+        }
+      })), /*#__PURE__*/_reactDefault.default.createElement("div", {
+        class: "carousel-inner",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 57,
+          columnNumber: 9
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("div", {
+        class: "carousel-item active",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 58,
+          columnNumber: 11
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("img", {
+        src: moon,
+        alt: "Los Angeles",
+        width: "500",
+        height: "500",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 59,
+          columnNumber: 13
+        }
+      })), /*#__PURE__*/_reactDefault.default.createElement("div", {
+        class: "carousel-item",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 61,
+          columnNumber: 11
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("img", {
+        src: pond,
+        alt: "Chicago",
+        width: "500",
+        height: "500",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 62,
+          columnNumber: 13
+        }
+      })), /*#__PURE__*/_reactDefault.default.createElement("div", {
+        class: "carousel-item",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 64,
+          columnNumber: 11
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("img", {
+        src: tree,
+        alt: "New York",
+        width: "500",
+        height: "500",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 65,
+          columnNumber: 13
+        }
+      }))), /*#__PURE__*/_reactDefault.default.createElement("a", {
+        class: "carousel-control-prev",
+        href: "#demo",
+        "data-slide": "prev",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 69,
+          columnNumber: 9
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("span", {
+        class: "carousel-control-prev-icon",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 70,
+          columnNumber: 11
+        }
+      })), /*#__PURE__*/_reactDefault.default.createElement("a", {
+        class: "carousel-control-next",
+        href: "#demo",
+        "data-slide": "next",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 72,
+          columnNumber: 9
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("span", {
+        class: "carousel-control-next-icon",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 73,
+          columnNumber: 11
+        }
+      }))))
+    );
+  };
+  _c = Home;
+  exports.default = Home;
+  var _c;
+  $RefreshReg$(_c, "Home");
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

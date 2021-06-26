@@ -1,0 +1,18 @@
+var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+_parcelHelpers.defineInteropFlag(exports);
+_parcelHelpers.export(exports, "MenuList", function () {
+  return MenuList;
+});
+const MenuList = [{
+  title: "Home",
+  url: "/"
+}, {
+  title: "About",
+  url: "/about"
+}, {
+  title: "Conferance",
+  url: "/conferance"
+}, {
+  title: "Content",
+  url: "/content"
+}];

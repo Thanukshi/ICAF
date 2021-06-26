@@ -1,0 +1,211 @@
+var helpers = require("../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+try {
+  var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+  _parcelHelpers.defineInteropFlag(exports);
+  var _react = require("react");
+  var _reactDefault = _parcelHelpers.interopDefault(_react);
+  var _reactRouterDom = require("react-router-dom");
+  var _MenuList = require("./MenuList");
+  require("../css/open-iconic-bootstrap.min.css");
+  require("../css/animate.css");
+  require("../css/owl.theme.default.min.css");
+  require("../css/magnific-popup.css");
+  require("../css/aos.css");
+  require("../css/ionicons.min.css");
+  require("../css/bootstrap-datepicker.css");
+  require("../css/jquery.timepicker.css");
+  require("../css/flaticon.css");
+  require("../css/icomoon.css");
+  require("../css/style.css");
+  require("../css/dropdown.css");
+  var _jsxFileName = "E:\\SLIIT\\3rd Year\\1st Semester\\AF\\Group Project\\ICAF\\ICAF\\client\\src\\Component\\Navbar\\Navbar.jsx", _s = $RefreshSig$();
+  // import "../css/calender.css";
+  const Navbar = () => {
+    _s();
+    const [clicked, setClicked] = _react.useState(false);
+    const menuList = _MenuList.MenuList.map(({url, title}, index) => {
+      return (
+        /*#__PURE__*/_reactDefault.default.createElement("li", {
+          key: index,
+          __self: undefined,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 23,
+            columnNumber: 7
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.NavLink, {
+          exact: true,
+          to: url,
+          activeClassName: "active",
+          __self: undefined,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 24,
+            columnNumber: 9
+          }
+        }, title))
+      );
+    });
+    const handleClick = () => {
+      setClicked(!clicked);
+    };
+    return (
+      /*#__PURE__*/
+      // <nav>
+      // <div className="logo">
+      // ICAF<font> Manager</font>
+      // </div>
+      // <div className="menu-icon" onClick={handleClick}>
+      // <i className={clicked ? "fa fa-times" : "fa fa-bars"}></i>
+      // </div>
+      // <ul className={clicked ? "menu-list" : "menu-list close"}>{menuList}</ul>
+      // </nav>
+      _reactDefault.default.createElement("nav", {
+        className: "navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light",
+        id: "ftco-navbar",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 46,
+          columnNumber: 5
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("div", {
+        className: "container",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 50,
+          columnNumber: 7
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("a", {
+        className: "navbar-brand",
+        href: "index.jsp",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 51,
+          columnNumber: 9
+        }
+      }, "ICAF MANAGER"), /*#__PURE__*/_reactDefault.default.createElement("button", {
+        className: "navbar-toggler",
+        type: "button",
+        "data-toggle": "collapse",
+        "data-target": "#ftco-nav",
+        "aria-controls": "ftco-nav",
+        "aria-expanded": "false",
+        "aria-label": "Toggle navigation",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 54,
+          columnNumber: 9
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("span", {
+        className: "oi oi-menu",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 63,
+          columnNumber: 11
+        }
+      }), " Menu"), /*#__PURE__*/_reactDefault.default.createElement("div", {
+        className: "collapse navbar-collapse",
+        id: "ftco-nav",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 66,
+          columnNumber: 9
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("ul", {
+        className: "navbar-nav ml-auto",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 67,
+          columnNumber: 11
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("li", {
+        className: "nav-item active",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 68,
+          columnNumber: 13
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("a", {
+        href: "index.jsp",
+        className: "nav-link",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 69,
+          columnNumber: 15
+        }
+      }, "Home")), /*#__PURE__*/_reactDefault.default.createElement("li", {
+        className: "nav-item",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 73,
+          columnNumber: 13
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("a", {
+        href: "about.jsp",
+        class: "nav-link",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 74,
+          columnNumber: 15
+        }
+      }, "About")), /*#__PURE__*/_reactDefault.default.createElement("li", {
+        className: "nav-item",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 79,
+          columnNumber: 13
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("a", {
+        href: "contact.jsp",
+        class: "nav-link",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 80,
+          columnNumber: 15
+        }
+      }, "Contact")), /*#__PURE__*/_reactDefault.default.createElement("li", {
+        className: "nav-item",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 85,
+          columnNumber: 13
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("a", {
+        href: "Login.jsp",
+        class: "nav-link",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 86,
+          columnNumber: 15
+        }
+      }, "Login"))))))
+    );
+  };
+  _s(Navbar, "NL05b5J4z4O/U6wEzhVGl+YEdv8=");
+  _c = Navbar;
+  exports.default = Navbar;
+  var _c;
+  $RefreshReg$(_c, "Navbar");
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

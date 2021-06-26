@@ -1,0 +1,102 @@
+var helpers = require("../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+try {
+  var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+  _parcelHelpers.defineInteropFlag(exports);
+  var _react = require("react");
+  var _reactDefault = _parcelHelpers.interopDefault(_react);
+  var _reactRouterDom = require("react-router-dom");
+  var _MenuList = require("./MenuList");
+  var _jsxFileName = "E:\\SLIIT\\3rd Year\\1st Semester\\AF\\Group Project\\ICAF\\ICAF\\client\\src\\Component\\Navbar\\Navbar.jsx", _s = $RefreshSig$();
+  const Navbar = () => {
+    _s();
+    const [clicked, setClicked] = _react.useState(false);
+    const menuList = _MenuList.MenuList.map(({url, title}, index) => {
+      return (
+        /*#__PURE__*/_reactDefault.default.createElement("li", {
+          key: index,
+          __self: undefined,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 9,
+            columnNumber: 7
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.NavLink, {
+          exact: true,
+          to: url,
+          activeClassName: "active",
+          __self: undefined,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 10,
+            columnNumber: 9
+          }
+        }, title))
+      );
+    });
+    const handleClick = () => {
+      setClicked(!clicked);
+    };
+    return (
+      /*#__PURE__*/_reactDefault.default.createElement("nav", {
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 22,
+          columnNumber: 5
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("div", {
+        className: "logo",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 23,
+          columnNumber: 7
+        }
+      }, "VPN", /*#__PURE__*/_reactDefault.default.createElement("font", {
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 24,
+          columnNumber: 12
+        }
+      }, "Lab")), /*#__PURE__*/_reactDefault.default.createElement("div", {
+        className: "menu-icon",
+        onClick: handleClick,
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 26,
+          columnNumber: 7
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("i", {
+        className: clicked ? "fas fa-times" : "fas fa-bars",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 27,
+          columnNumber: 9
+        }
+      })), /*#__PURE__*/_reactDefault.default.createElement("ul", {
+        className: clicked ? "menu-list" : "menu-list close",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 29,
+          columnNumber: 7
+        }
+      }, menuList))
+    );
+  };
+  _s(Navbar, "NL05b5J4z4O/U6wEzhVGl+YEdv8=");
+  _c = Navbar;
+  exports.default = Navbar;
+  var _c;
+  $RefreshReg$(_c, "Navbar");
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

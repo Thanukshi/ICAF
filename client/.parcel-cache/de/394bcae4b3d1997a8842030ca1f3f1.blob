@@ -1,0 +1,100 @@
+var helpers = require("../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+try {
+  var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+  _parcelHelpers.defineInteropFlag(exports);
+  var _react = require("react");
+  var _reactDefault = _parcelHelpers.interopDefault(_react);
+  var _reactRouterDom = require("react-router-dom");
+  var _ComponentNavbarNavbar = require("./Component/Navbar/Navbar");
+  var _ComponentNavbarNavbarDefault = _parcelHelpers.interopDefault(_ComponentNavbarNavbar);
+  var _ComponentNavbarNavbarItemHomeHome = require("./Component/Navbar/NavbarItem/Home/Home");
+  var _ComponentNavbarNavbarItemHomeHomeDefault = _parcelHelpers.interopDefault(_ComponentNavbarNavbarItemHomeHome);
+  var _ComponentNavbarNavbarItemAboutAbout = require("./Component/Navbar/NavbarItem/About/About");
+  var _ComponentNavbarNavbarItemAboutAboutDefault = _parcelHelpers.interopDefault(_ComponentNavbarNavbarItemAboutAbout);
+  var _ComponentNavbarNavbarItemConferenceConferance = require("./Component/Navbar/NavbarItem/Conference/Conferance");
+  var _ComponentNavbarNavbarItemConferenceConferanceDefault = _parcelHelpers.interopDefault(_ComponentNavbarNavbarItemConferenceConferance);
+  var _ComponentNavbarNavbarItemContactContact = require("./Component/Navbar/NavbarItem/Contact/Contact");
+  var _ComponentNavbarNavbarItemContactContactDefault = _parcelHelpers.interopDefault(_ComponentNavbarNavbarItemContactContact);
+  require("./App.css");
+  var _jsxFileName = "E:\\SLIIT\\3rd Year\\1st Semester\\AF\\Group Project\\ICAF\\ICAF\\client\\src\\App.jsx";
+  class App extends _reactDefault.default.Component {
+    render() {
+      return (
+        /*#__PURE__*/_reactDefault.default.createElement("div", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 13,
+            columnNumber: 7
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.BrowserRouter, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 14,
+            columnNumber: 9
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_ComponentNavbarNavbarDefault.default, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 15,
+            columnNumber: 11
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Switch, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 16,
+            columnNumber: 11
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Route, {
+          path: "/",
+          component: _ComponentNavbarNavbarItemHomeHomeDefault.default,
+          exact: true,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 17,
+            columnNumber: 13
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Route, {
+          path: "/about",
+          component: _ComponentNavbarNavbarItemAboutAboutDefault.default,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 18,
+            columnNumber: 13
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Route, {
+          path: "/conferance",
+          component: _ComponentNavbarNavbarItemConferenceConferanceDefault.default,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 19,
+            columnNumber: 13
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Route, {
+          path: "/content",
+          component: _ComponentNavbarNavbarItemContactContactDefault.default,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 20,
+            columnNumber: 13
+          }
+        }))))
+      );
+    }
+  }
+  exports.default = App;
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

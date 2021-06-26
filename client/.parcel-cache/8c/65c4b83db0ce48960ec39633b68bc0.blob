@@ -1,0 +1,48 @@
+	/*
+  	Flaticon icon font: Flaticon
+  	Creation date: 06/10/2018 08:32
+  	*/
+
+
+@font-face {
+  font-family: "Flaticon";
+  src: url("dee52579249bef282b0337e76a6f4588");
+  src: url("c45569e46ae966c83cd9e11750e175b5") format("embedded-opentype"),
+       url("9df81da9bd4e63d28220b77f709c08af") format("woff"),
+       url("4dadf5cae34cfb9b0f547135b2c8036a") format("truetype"),
+       url("a522b08189348e277d0d0dbc6e91ea0f") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("a522b08189348e277d0d0dbc6e91ea0f") format("svg");
+  }
+}
+
+
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
+  font-family: Flaticon;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+.flaticon-meeting:before { content: "\f100"; }
+
+
+.flaticon-tray:before { content: "\f101"; }
+
+
+.flaticon-cake:before { content: "\f102"; }

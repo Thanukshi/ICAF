@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICAF</title>
+    <link rel="stylesheet" href="a34456134d1f1fc4d87b814e3b1eb1b9" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="f5f81b2deb730e5642496e0210812e75">  </head>
+  
+  <body>
+    <div id="root"></div>
+    <script src="ba52405b23f1ffb73d1c04c33e81fe6d"></script>
+    <script src="89f15e5c470e6172ad9ac58d59acf88e" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="27ce75174c65c0bba342f7708de91064" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="bb146b812cfbfe9dafa1ddb8418b5d61" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- <img class="d-block w-100" src="../src/Images/image1.jpg" alt="Third slide"> -->
+
+  </body>
+</html>

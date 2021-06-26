@@ -1,0 +1,282 @@
+var helpers = require("../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+try {
+  var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+  _parcelHelpers.defineInteropFlag(exports);
+  var _react = require('react');
+  var _reactDefault = _parcelHelpers.interopDefault(_react);
+  require('./Navbar.css');
+  var _reactRouterDom = require('react-router-dom');
+  var _jquery = require('jquery');
+  var _jqueryDefault = _parcelHelpers.interopDefault(_jquery);
+  var _jsxFileName = "E:\\SLIIT\\3rd Year\\1st Semester\\AF\\Group Project\\ICAF\\ICAF\\client\\src\\Component\\Navbar\\Navbar.jsx", _s = $RefreshSig$();
+  const Navbar = () => {
+    _s();
+    function animation() {
+      var tabsNewAnim = _jqueryDefault.default('#navbarSupportedContent');
+      var activeItemNewAnim = tabsNewAnim.find('.active');
+      var activeWidthNewAnimHeight = activeItemNewAnim.innerHeight();
+      var activeWidthNewAnimWidth = activeItemNewAnim.innerWidth();
+      var itemPosNewAnimTop = activeItemNewAnim.position();
+      var itemPosNewAnimLeft = activeItemNewAnim.position();
+      _jqueryDefault.default(".hori-selector").css({
+        "top": itemPosNewAnimTop.top + "px",
+        "left": itemPosNewAnimLeft.left + "px",
+        "height": activeWidthNewAnimHeight + "px",
+        "width": activeWidthNewAnimWidth + "px"
+      });
+      _jqueryDefault.default("#navbarSupportedContent").on("click", "li", function (e) {
+        _jqueryDefault.default('#navbarSupportedContent ul li').removeClass("active");
+        _jqueryDefault.default(this).addClass('active');
+        var activeWidthNewAnimHeight = _jqueryDefault.default(this).innerHeight();
+        var activeWidthNewAnimWidth = _jqueryDefault.default(this).innerWidth();
+        var itemPosNewAnimTop = _jqueryDefault.default(this).position();
+        var itemPosNewAnimLeft = _jqueryDefault.default(this).position();
+        _jqueryDefault.default(".hori-selector").css({
+          "top": itemPosNewAnimTop.top + "px",
+          "left": itemPosNewAnimLeft.left + "px",
+          "height": activeWidthNewAnimHeight + "px",
+          "width": activeWidthNewAnimWidth + "px"
+        });
+      });
+    }
+    _react.useEffect(() => {
+      animation();
+      _jqueryDefault.default(window).on('resize', function () {
+        setTimeout(function () {
+          animation();
+        }, 500);
+      });
+    }, []);
+    return (
+      /*#__PURE__*/_reactDefault.default.createElement("nav", {
+        className: "navbar navbar-expand-lg navbar-mainbg",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 47,
+          columnNumber: 3
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.NavLink, {
+        className: "navbar-brand navbar-logo",
+        to: "/",
+        exact: true,
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 49,
+          columnNumber: 7
+        }
+      }, "ICAF MANAGER"), /*#__PURE__*/_reactDefault.default.createElement("button", {
+        className: "navbar-toggler",
+        onClick: function () {
+          setTimeout(function () {
+            animation();
+          });
+        },
+        type: "button",
+        "data-toggle": "collapse",
+        "data-target": "#navbarSupportedContent",
+        "aria-controls": "navbarSupportedContent",
+        "aria-expanded": "false",
+        "aria-label": "Toggle navigation",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 54,
+          columnNumber: 7
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("i", {
+        className: "fas fa-bars text-white",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 60,
+          columnNumber: 9
+        }
+      })), /*#__PURE__*/_reactDefault.default.createElement("div", {
+        className: "collapse navbar-collapse",
+        id: "navbarSupportedContent",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 63,
+          columnNumber: 7
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("ul", {
+        className: "navbar-nav ml-auto",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 65,
+          columnNumber: 9
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("div", {
+        className: "hori-selector",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 67,
+          columnNumber: 13
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("div", {
+        className: "left",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 68,
+          columnNumber: 15
+        }
+      }), /*#__PURE__*/_reactDefault.default.createElement("div", {
+        className: "right",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 69,
+          columnNumber: 15
+        }
+      })), /*#__PURE__*/_reactDefault.default.createElement("li", {
+        className: "nav-item active",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 72,
+          columnNumber: 13
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.NavLink, {
+        className: "nav-link",
+        to: "/",
+        exact: true,
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 73,
+          columnNumber: 15
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("i", {
+        className: "fas fa-tachometer-alt",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 74,
+          columnNumber: 17
+        }
+      }), "Home")), /*#__PURE__*/_reactDefault.default.createElement("li", {
+        className: "nav-item",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 80,
+          columnNumber: 13
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.NavLink, {
+        className: "nav-link",
+        to: "/about",
+        exact: true,
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 81,
+          columnNumber: 15
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("i", {
+        className: "far fa-address-book",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 82,
+          columnNumber: 17
+        }
+      }), "About")), /*#__PURE__*/_reactDefault.default.createElement("li", {
+        className: "nav-item",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 88,
+          columnNumber: 13
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.NavLink, {
+        className: "nav-link",
+        to: "/conferance",
+        exact: true,
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 89,
+          columnNumber: 15
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("i", {
+        className: "far fa-clone",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 90,
+          columnNumber: 17
+        }
+      }), "Conferance")), /*#__PURE__*/_reactDefault.default.createElement("li", {
+        className: "nav-item",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 95,
+          columnNumber: 13
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.NavLink, {
+        className: "nav-link",
+        to: "/content",
+        exact: true,
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 96,
+          columnNumber: 15
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("i", {
+        className: "far fa-chart-bar",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 97,
+          columnNumber: 17
+        }
+      }), "Testimonial")), /*#__PURE__*/_reactDefault.default.createElement("li", {
+        className: "nav-item",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 102,
+          columnNumber: 13
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.NavLink, {
+        className: "nav-link",
+        to: "/contact",
+        exact: true,
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 103,
+          columnNumber: 15
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("i", {
+        className: "far fa-copy",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 104,
+          columnNumber: 17
+        }
+      }), "Contact Us")))))
+    );
+  };
+  _s(Navbar, "OD7bBpZva5O2jO+Puf00hKivP7c=");
+  _c = Navbar;
+  exports.default = Navbar;
+  var _c;
+  $RefreshReg$(_c, "Navbar");
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
