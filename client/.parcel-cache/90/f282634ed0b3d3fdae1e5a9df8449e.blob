@@ -1,0 +1,8 @@
+.content {
+  background-image: url("fb7d02e9d7aab770dde67b4333ff0ad1");
+  height: 100vh;
+  width: 100vw;
+  background-position: 0% 9%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}

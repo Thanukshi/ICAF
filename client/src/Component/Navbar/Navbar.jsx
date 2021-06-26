@@ -62,7 +62,7 @@ const Navbar = () => {
         aria-expanded="false"
         aria-label="Toggle navigation"
       >
-        <i class="fas fa-bars text-white"></i>
+        <i class="fa fa-bars text-white"></i>
         {/* <i className="fas fa-bars text-white"></i> */}
       </button>
 
