@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import "./Navbar.css";
 import { NavLink } from "react-router-dom";
 import $ from "jquery";
+import logo from "../../Images/logo.png";
 
 const Navbar = () => {
   function animation() {
@@ -45,7 +46,8 @@ const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-mainbg">
       <NavLink className="navbar-brand navbar-logo" to="/" exact>
-        ICAF MANAGER
+        <img classname="logo" src={logo} style={{width:"100px", height:"100px"}} />
+        ICAF
       </NavLink>
 
       <button
@@ -62,8 +64,7 @@ const Navbar = () => {
         aria-expanded="false"
         aria-label="Toggle navigation"
       >
-        <i class="fa fa-bars text-white"></i>
-        {/* <i className="fas fa-bars text-white"></i> */}
+        <i className="fa fa-bars text-white"></i>
       </button>
 
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
@@ -86,18 +87,18 @@ const Navbar = () => {
           </li>
 
           <li className="nav-item">
-            <NavLink className="nav-link" to="/conferance" exact>
-              <i className="fa fa-clone"></i>Conferance
+            <NavLink className="nav-link" to="/service" exact>
+              <i className="fa fa-clone"></i>Services
             </NavLink>
           </li>
           <li className="nav-item">
-            <NavLink className="nav-link" to="/con" exact>
-              <i className="fa fa-phone-square"></i>Contact us
+            <NavLink className="nav-link" to="/testimonial" exact>
+              <i className="fa fa-chart-bar"></i>Login
             </NavLink>
           </li>
           <li className="nav-item">
-            <NavLink className="nav-link" to="/" exact>
-              <i className="fa fa-sign-in"></i>Login
+            <NavLink className="nav-link" to="/contact" exact>
+              <i className="fa fa-envelope-o"></i>Contact Us
             </NavLink>
           </li>
         </ul>

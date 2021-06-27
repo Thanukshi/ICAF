@@ -1,0 +1,25 @@
+/* .mt-5{
+    background-color: #813AFE;
+    
+} */
+.btn-primary {
+    color: #fff;
+    background-color: #813AFE !important;
+    border-color: #813AFE !important;
+}
+.icon-img{
+    width: 250px;
+    height: 250px;
+    margin-bottom: 2rem;
+    margin-left: px;
+}
+.reset{
+    color: black;
+}
+
+.w-100{
+    width:600px;
+    height: 600px;
+    margin-left: 100px;
+    margin-right: 50px;
+}

@@ -1,7 +1,7 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto");
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   background: #fff; /* fallback for old browsers */
 }
 * {
@@ -52,12 +52,12 @@ i {
   transition: all 0.7s;
 }
 #navbarSupportedContent a:not(:only-child):after {
-  content: "\f105";
+  content: '\f105';
   position: absolute;
   right: 20px;
   top: 10px;
   font-size: 14px;
-  font-family: "Font Awesome 5 Free";
+  font-family: 'Font Awesome 5 Free';
   display: inline-block;
   padding-right: 3px;
   vertical-align: middle;
@@ -86,7 +86,7 @@ i {
   position: absolute;
   width: 25px;
   height: 25px;
-  background-color: #f50c0c;
+  background-color: #fff;
   bottom: 10px;
 }
 .hori-selector .right {
@@ -97,7 +97,7 @@ i {
 }
 .hori-selector .right:before,
 .hori-selector .left:before {
-  content: "";
+  content: '';
   position: absolute;
   width: 50px;
   height: 50px;
@@ -143,3 +143,5 @@ i {
     left: -25px;
   }
 }
+
+
