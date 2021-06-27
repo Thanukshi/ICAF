@@ -7,9 +7,9 @@ import "./Login.css";
 const Login = () => {
   return (
     <>
-      <Container className="mt-5">
+      <Container className="mt-3">
         <Row>
-          <Col lg={4} md={6} sm={12} className="text-center mt-5 p-3">
+          <Col lg={4} md={6} sm={12} className="text-center mt-2 p-3">
             <img className="icon-img" src={logo} alt="icon" />
             <Form>
               <Form.Group controlId="formBasicEmail">
@@ -26,18 +26,18 @@ const Login = () => {
 
               <div className="text-left mt-3">
                 <a href="#">
-                  <small className="reset">Password Reset</small>
-                </a>{" "}
-                II
-                <a href="#">
-                  <small className="reset ml-2">Quick Recover</small>
+                  <small className="reset">Fogort Password</small>
                 </a>
               </div>
             </Form>
+            <br/>
+            <Button variant="primary btn-block" type="submit">
+              Register
+            </Button>
           </Col>
 
           <Col lg={8} md={6} sm={12}>
-            <img className="w-100" src={uiImg} alt="" />
+            <img className="back" src={uiImg} alt="" />
           </Col>
         </Row>
       </Container>

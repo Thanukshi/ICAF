@@ -86,7 +86,7 @@ i {
   position: absolute;
   width: 25px;
   height: 25px;
-  background-color: #fff;
+  background-color: rgb(250, 11, 11);
   bottom: 10px;
 }
 .hori-selector .right {

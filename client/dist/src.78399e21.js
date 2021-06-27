@@ -47549,7 +47549,7 @@ var Navbar = function Navbar() {
     className: "nav-item"
   }, /*#__PURE__*/_react.default.createElement(_reactRouterDom.NavLink, {
     className: "nav-link",
-    to: "/testimonial",
+    to: "/login",
     exact: true
   }, /*#__PURE__*/_react.default.createElement("i", {
     className: "fa fa-chart-bar"
@@ -67624,12 +67624,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var Login = function Login() {
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_reactBootstrap.Container, {
-    className: "mt-5"
+    className: "mt-3"
   }, /*#__PURE__*/_react.default.createElement(_reactBootstrap.Row, null, /*#__PURE__*/_react.default.createElement(_reactBootstrap.Col, {
     lg: 4,
     md: 6,
     sm: 12,
-    className: "text-center mt-5 p-3"
+    className: "text-center mt-2 p-3"
   }, /*#__PURE__*/_react.default.createElement("img", {
     className: "icon-img",
     src: _logo.default,
@@ -67653,16 +67653,15 @@ var Login = function Login() {
     href: "#"
   }, /*#__PURE__*/_react.default.createElement("small", {
     className: "reset"
-  }, "Password Reset")), " ", "II", /*#__PURE__*/_react.default.createElement("a", {
-    href: "#"
-  }, /*#__PURE__*/_react.default.createElement("small", {
-    className: "reset ml-2"
-  }, "Quick Recover"))))), /*#__PURE__*/_react.default.createElement(_reactBootstrap.Col, {
+  }, "Fogort Password")))), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement(_reactBootstrap.Button, {
+    variant: "primary btn-block",
+    type: "submit"
+  }, "Register")), /*#__PURE__*/_react.default.createElement(_reactBootstrap.Col, {
     lg: 8,
     md: 6,
     sm: 12
   }, /*#__PURE__*/_react.default.createElement("img", {
-    className: "w-100",
+    className: "back",
     src: _image.default,
     alt: ""
   })))));
@@ -67815,7 +67814,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49542" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52245" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

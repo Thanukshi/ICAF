@@ -1,8 +1,14 @@
-/* .mt-5{
-    background-color: #813AFE;
+.mt-3{
+    background-color: #0f0f0f;
     
-} */
+}
+#formBasicEmail, #formBasicPassword{
+    margin-left: 20px;
+    width: 450px;
+}
 .btn-primary {
+    margin-left: 20px;
+    width: 450px;
     color: #fff;
     background-color: #813AFE !important;
     border-color: #813AFE !important;
@@ -10,16 +16,18 @@
 .icon-img{
     width: 250px;
     height: 250px;
-    margin-bottom: 2rem;
-    margin-left: px;
+    margin-bottom: 0.5rem;
+    margin-left: 125px;
 }
 .reset{
-    color: black;
+    margin-left: 20px;
+    color: white;
 }
 
-.w-100{
-    width:600px;
-    height: 600px;
-    margin-left: 100px;
-    margin-right: 50px;
+.back{
+    width:550px;
+    height: 550px;
+    margin-right: 30px;
+    margin-top: 50px;
+    margin-left: 150px;
 }
