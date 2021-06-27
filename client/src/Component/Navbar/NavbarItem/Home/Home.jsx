@@ -2,15 +2,15 @@ import React from "react";
 import "../../../css/Style.css";
 import "../../../css/bootstrap.min.css";
 import "../../../js/bootstrap.min";
-//import image from "../../../../Images/menu-4-256.png"
+import Corasoule from "../../../Corasoule/Corasoule"
+//import image from "../../../../Images/image1.jpg"
 //import image1 from "../../../../Images/menu-4-256.png";
 
 const Home = () => {
   return (
     <div>
-      <div className="content"></div>
-
-      <div className="container text-center mt-5 ">
+        <Corasoule/>
+       <div className="container text-center mt-5 ">
         <h1>Our Features</h1>
         <p className="pt-2">Some Features</p>
       </div>
@@ -87,7 +87,6 @@ const Home = () => {
         sr.reveal('.container-fluid',{duration:1000}  )
       </script> */}
     </div>
-    
   );
 };
 

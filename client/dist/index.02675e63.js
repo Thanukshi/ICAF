@@ -38555,7 +38555,7 @@ try {
   require("../../../css/bootstrap.min.css");
   require("../../../js/bootstrap.min");
   var _jsxFileName = "E:\\SLIIT\\3rd Year\\1st Semester\\AF\\Group Project\\ICAF\\ICAF\\client\\src\\Component\\Navbar\\NavbarItem\\Home\\Home.jsx";
-  // import image from "../../../../Images/menu-4-256.png"
+  // import image from "../../../../Images/image1.jpg"
   // import image1 from "../../../../Images/menu-4-256.png";
   const Home = () => {
     return (
@@ -38567,46 +38567,53 @@ try {
           columnNumber: 5
         }
       }, /*#__PURE__*/_reactDefault.default.createElement("div", {
-        className: "content",
+        id: "demo",
+        class: "carousel slide",
+        "data-ride": "carousel",
         __self: undefined,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 11,
           columnNumber: 7
         }
-      }), /*#__PURE__*/_reactDefault.default.createElement("div", {
-        className: "container text-center mt-5 ",
+      }, /*#__PURE__*/_reactDefault.default.createElement("ul", {
+        class: "carousel-indicators",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 12,
+          columnNumber: 9
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("li", {
+        "data-target": "#demo",
+        "data-slide-to": "0",
+        class: "active",
         __self: undefined,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 13,
-          columnNumber: 7
+          columnNumber: 11
         }
-      }, /*#__PURE__*/_reactDefault.default.createElement("h1", {
+      }), /*#__PURE__*/_reactDefault.default.createElement("li", {
+        "data-target": "#demo",
+        "data-slide-to": "1",
         __self: undefined,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 14,
-          columnNumber: 9
+          columnNumber: 11
         }
-      }, "Our Features"), /*#__PURE__*/_reactDefault.default.createElement("p", {
-        className: "pt-2",
+      }), /*#__PURE__*/_reactDefault.default.createElement("li", {
+        "data-target": "#demo",
+        "data-slide-to": "2",
         __self: undefined,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 15,
-          columnNumber: 9
+          columnNumber: 11
         }
-      }, "Some Features")), /*#__PURE__*/_reactDefault.default.createElement("div", {
-        className: "container text-center pt-4",
-        __self: undefined,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 17,
-          columnNumber: 7
-        }
-      }, /*#__PURE__*/_reactDefault.default.createElement("div", {
-        className: "row",
+      })), /*#__PURE__*/_reactDefault.default.createElement("div", {
+        class: "carousel-inner",
         __self: undefined,
         __source: {
           fileName: _jsxFileName,
@@ -38614,11 +38621,143 @@ try {
           columnNumber: 9
         }
       }, /*#__PURE__*/_reactDefault.default.createElement("div", {
-        className: "col-4",
+        class: "carousel-item active",
         __self: undefined,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 19,
+          columnNumber: 11
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("img", {
+        src: image,
+        alt: "Los Angeles",
+        width: "500",
+        height: "500",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 20,
+          columnNumber: 13
+        }
+      })), /*#__PURE__*/_reactDefault.default.createElement("div", {
+        class: "carousel-item",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 22,
+          columnNumber: 11
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("img", {
+        src: image,
+        alt: "Chicago",
+        width: "500",
+        height: "500",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 23,
+          columnNumber: 13
+        }
+      })), /*#__PURE__*/_reactDefault.default.createElement("div", {
+        class: "carousel-item",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 25,
+          columnNumber: 11
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("img", {
+        src: image,
+        alt: "New York",
+        width: "500",
+        height: "500",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 26,
+          columnNumber: 13
+        }
+      }))), /*#__PURE__*/_reactDefault.default.createElement("a", {
+        class: "carousel-control-prev",
+        href: "#demo",
+        "data-slide": "prev",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 30,
+          columnNumber: 9
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("span", {
+        class: "carousel-control-prev-icon",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 31,
+          columnNumber: 11
+        }
+      })), /*#__PURE__*/_reactDefault.default.createElement("a", {
+        class: "carousel-control-next",
+        href: "#demo",
+        "data-slide": "next",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 33,
+          columnNumber: 9
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("span", {
+        class: "carousel-control-next-icon",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 34,
+          columnNumber: 11
+        }
+      }))), /*#__PURE__*/_reactDefault.default.createElement("div", {
+        className: "container text-center mt-5 ",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 38,
+          columnNumber: 7
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("h1", {
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 39,
+          columnNumber: 9
+        }
+      }, "Our Features"), /*#__PURE__*/_reactDefault.default.createElement("p", {
+        className: "pt-2",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 40,
+          columnNumber: 9
+        }
+      }, "Some Features")), /*#__PURE__*/_reactDefault.default.createElement("div", {
+        className: "container text-center pt-4",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 42,
+          columnNumber: 7
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("div", {
+        className: "row",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 43,
+          columnNumber: 9
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("div", {
+        className: "col-4",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 44,
           columnNumber: 11
         }
       }, /*#__PURE__*/_reactDefault.default.createElement("div", {
@@ -38629,7 +38768,7 @@ try {
         __self: undefined,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 20,
+          lineNumber: 45,
           columnNumber: 13
         }
       }, /*#__PURE__*/_reactDefault.default.createElement("i", {
@@ -38638,7 +38777,7 @@ try {
         __self: undefined,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 21,
+          lineNumber: 46,
           columnNumber: 15
         }
       }))), /*#__PURE__*/_reactDefault.default.createElement("div", {
@@ -38646,7 +38785,7 @@ try {
         __self: undefined,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 25,
+          lineNumber: 50,
           columnNumber: 11
         }
       }, /*#__PURE__*/_reactDefault.default.createElement("div", {
@@ -38657,7 +38796,7 @@ try {
         __self: undefined,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 26,
+          lineNumber: 51,
           columnNumber: 13
         }
       }, /*#__PURE__*/_reactDefault.default.createElement("i", {
@@ -38666,7 +38805,7 @@ try {
         __self: undefined,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 27,
+          lineNumber: 52,
           columnNumber: 15
         }
       }))), /*#__PURE__*/_reactDefault.default.createElement("div", {
@@ -38674,7 +38813,7 @@ try {
         __self: undefined,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 31,
+          lineNumber: 56,
           columnNumber: 11
         }
       }, /*#__PURE__*/_reactDefault.default.createElement("div", {
@@ -38685,7 +38824,7 @@ try {
         __self: undefined,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 32,
+          lineNumber: 57,
           columnNumber: 13
         }
       }, /*#__PURE__*/_reactDefault.default.createElement("i", {
@@ -38694,7 +38833,7 @@ try {
         __self: undefined,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 33,
+          lineNumber: 58,
           columnNumber: 15
         }
       }))))), /*#__PURE__*/_reactDefault.default.createElement("div", {
@@ -38702,7 +38841,7 @@ try {
         __self: undefined,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 38,
+          lineNumber: 63,
           columnNumber: 7
         }
       }, /*#__PURE__*/_reactDefault.default.createElement("div", {
@@ -38710,7 +38849,7 @@ try {
         __self: undefined,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 39,
+          lineNumber: 64,
           columnNumber: 9
         }
       }, /*#__PURE__*/_reactDefault.default.createElement("div", {
@@ -38718,14 +38857,14 @@ try {
         __self: undefined,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 40,
+          lineNumber: 65,
           columnNumber: 11
         }
       }, /*#__PURE__*/_reactDefault.default.createElement("p", {
         __self: undefined,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 41,
+          lineNumber: 66,
           columnNumber: 13
         }
       }, "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.")), /*#__PURE__*/_reactDefault.default.createElement("div", {
@@ -38733,14 +38872,14 @@ try {
         __self: undefined,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 54,
+          lineNumber: 79,
           columnNumber: 11
         }
       }, /*#__PURE__*/_reactDefault.default.createElement("p", {
         __self: undefined,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 55,
+          lineNumber: 80,
           columnNumber: 13
         }
       }, "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.")), /*#__PURE__*/_reactDefault.default.createElement("div", {
@@ -38748,14 +38887,14 @@ try {
         __self: undefined,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 68,
+          lineNumber: 93,
           columnNumber: 11
         }
       }, /*#__PURE__*/_reactDefault.default.createElement("p", {
         __self: undefined,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 69,
+          lineNumber: 94,
           columnNumber: 13
         }
       }, "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.")))))
