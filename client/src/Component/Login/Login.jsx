@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import axios from "axios";
+
 import logo from "../../Images/logo.png";
 import uiImg from "../../Images/login.png";
 import "./Login.css";
@@ -17,48 +19,69 @@ const Login = () => {
 
   const { user_email, password, err, success } = user;
 
-  const handlechangeInput = (e) => {
+  const handleChangeInput = (e) => {
     const { name, value } = e.target;
     setUser({ ...user, [name]: value, err: "", success: "" });
   };
+
+  const handleSubmit = async = (e) => {
+    e.preventDefault();
+    try {
+      const res =  axios.post("http://localhost:8000/users/login-user", {
+        user_email,
+        password,
+      });
+      console.log(res);
+    } catch (err) {
+      err.response.data.msg &&
+        setUser({
+          ...user,
+          [name]: value,
+          err: err.response.data.msg,
+          success: "",
+        });
+    }
+  }
+
   return (
     <div className="background">
-      <Container>
-        <Row className="mt-0">
+      <div className="container mt-0">
+        <div className="row">
           <Col lg={4} md={6} sm={12} className="text-center mt-2 p-3">
             <h2 className="title">Login Here...</h2>
             <img className="icon-img" src={logo} alt="icon" />
-            <Form>
-              <Form.Group controlId="formBasicEmail">
-                <Form.Control
+            <form onSubmit={handleSubmit}>
+              <div>
+                <input
+                  className="formBasicEmail"
                   type="email"
                   placeholder="Enter email"
                   name="user_email"
                   value={user_email}
-                  onChange={handlechangeInput}
+                  onChange={handleChangeInput}
                 />
-              </Form.Group>
-
-              <Form.Group controlId="formBasicPassword">
-                <Form.Control
+              </div>
+              <div>
+                <input
+                  className="formBasicPassword"
                   type="password"
-                  placeholder="Password"
+                  placeholder="Enter password"
                   name="password"
                   value={password}
-                  onChange={handlechangeInput}
+                  onChange={handleChangeInput}
                 />
-              </Form.Group>
+              </div>
 
               <Button variant="primary btn-block" type="submit">
                 Login
               </Button>
-
               <div className="text-left mt-3">
-                <a href="/forgot_password">
-                  <small className="reset">Forgot Password</small>
+                <a href="#">
+                  <small className="reset">Fogort Password</small>
                 </a>
               </div>
-            </Form>
+            </form>
+
             <br />
             <Link to="/register">
               <Button variant="primary btn-block" type="submit">
@@ -70,8 +93,8 @@ const Login = () => {
           <Col lg={8} md={6} sm={12}>
             <img className="back" src={uiImg} alt="" />
           </Col>
-        </Row>
-      </Container>
+        </div>
+      </div>
     </div>
   );
 };

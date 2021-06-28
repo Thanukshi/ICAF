@@ -16,38 +16,48 @@ const options = [
 const Register = () => {
   return (
     <div className="background">
-      <Container >
-        <Row className="mt-0">
+      <div className="container mt-0">
+        <div className="row">
           <Col lg={4} md={6} sm={12} className="text-center mt-2 p-3">
             <h2 className="title">Register Here...</h2>
             <img className="icon-img" src={logo} alt="icon" />
-            <Form>
-              <Form.Group controlId="formBasicEmail">
-                <Form.Control type="text" placeholder="Enter username" />
-              </Form.Group>
 
-              <Form.Group controlId="formBasicEmail">
-                <Form.Control type="email" placeholder="Enter email" />
-              </Form.Group>
+            <form>
+              <div>
+                <input
+                  className="formBasicEmail"
+                  type="text"
+                  placeholder="Enter username"
+                />
+              </div>
+              <div>
+                <input
+                  className="formBasicEmail"
+                  type="email"
+                  placeholder="Enter email"
+                />
+              </div>
+              <div>
+                <input
+                  className="formBasicPassword"
+                  type="password"
+                  placeholder="Enter password"
+                />
+              </div>
 
-              <Form.Group controlId="formBasicPassword">
-                <Form.Control type="password" placeholder="Password" />
-              </Form.Group>
-
-              <Form.Group controlId="formBasicOption">
+              <div>
                 <Select className="formBasicOption" options={options} />
-              </Form.Group>
+              </div>
 
               <Button variant="primary btn-block" type="submit">
                 Register
               </Button>
+            </form>
 
-              <div className="text-left mt-3">
-                {/* <a href="#"> */}
-                <small className="reset">OR</small>
-                {/* </a> */}
-              </div>
-            </Form>
+            <div className="text-left mt-3">
+              <small className="reset">OR</small>
+            </div>
+
             <br />
             <Link to="/login" exact>
               <Button variant="primary btn-block" type="submit">
@@ -59,8 +69,8 @@ const Register = () => {
           <Col lg={8} md={6} sm={12}>
             <img className="back" src={uiImg} alt="" />
           </Col>
-        </Row>
-      </Container>
+        </div>
+      </div>
     </div>
   );
 };
