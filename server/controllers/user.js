@@ -133,6 +133,16 @@ const userControl = {
   login: async (req, res) => {
     try {
       const { user_email, password } = req.body;
+
+      if (!user_email || !password) {
+        return res.status(200).json({
+          code: messages.BadCode,
+          success: messages.NotSuccess,
+          status: messages.BadStatus,
+          message: messages.ContentEmpty,
+        });
+      }
+
       const user = await User.findOne({ user_email });
       if (!user) {
         return res.status(400).json({
@@ -147,7 +157,7 @@ const userControl = {
           user.password
         );
         if (!isMatchUserPassword) {
-          return res.status(400).json({
+          return res.status(200).json({
             code: messages.BadCode,
             success: messages.NotSuccess,
             status: messages.BadStatus,

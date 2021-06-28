@@ -16,8 +16,10 @@ import Conferance from "./Component/Navbar/NavbarItem/Conference/Conferance";
 //import Contact from "./Component/Navbar/NavbarItem/Contact/Contact";
 import Contact from "./Component/Navbar/NavbarItem/Contact/Contact";
 import Login from "./Component/Login/Login";
-import Register from "./Component/Register/Register"
+import Register from "./Component/Register/Register";
 import "./App.css";
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   const override = css`
@@ -50,6 +52,7 @@ function App() {
         />
       ) : (
         <>
+          
           <Router>
             <Navbar />
             <Switch>
@@ -63,6 +66,7 @@ function App() {
           </Router>
         </>
       )}
+      <ToastContainer/>
     </div>
   );
 }

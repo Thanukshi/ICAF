@@ -1,6 +1,13 @@
-import React from 'react'
-import { render } from 'react-dom'
-import App from './App'
+import React from "react";
+import { render } from "react-dom";
+import App from "./App";
+import DataProvider from "./redux/store";
 
-render(<App />, document.getElementById('root'));
-
+render(
+  <React.StrictMode>
+    <DataProvider>
+      <App />
+    </DataProvider>
+  </React.StrictMode>,
+  document.getElementById("root")
+);

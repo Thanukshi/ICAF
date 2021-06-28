@@ -46,7 +46,7 @@ const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-mainbg">
       <NavLink className="navbar-brand navbar-logo" to="/" exact>
-        <img classname="logo" src={logo} style={{width:"100px", height:"100px"}} />
+        <img className="logo" src={logo} style={{width:"100px", height:"100px"}} />
         ICAF
       </NavLink>
 
