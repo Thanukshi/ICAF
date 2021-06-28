@@ -16,6 +16,7 @@ import Conferance from "./Component/Navbar/NavbarItem/Conference/Conferance";
 //import Contact from "./Component/Navbar/NavbarItem/Contact/Contact";
 import Contact from "./Component/Navbar/NavbarItem/Contact/Contact";
 import Login from "./Component/Login/Login";
+import Register from "./Component/Register/Register"
 import "./App.css";
 
 function App() {
@@ -57,6 +58,7 @@ function App() {
               <Route path="/conferance" component={Conferance} />
               <Route path="/login" component={Login} />
               <Route path="/contact" component={Contact} />
+              <Route path="/register" component={Register} />
             </Switch>
           </Router>
         </>

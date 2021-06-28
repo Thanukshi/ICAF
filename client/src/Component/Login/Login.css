@@ -1,10 +1,14 @@
-.mt-3{
-    background-color: #0f0f0f;
-    
+.background{
+    background-color: lightblue;
 }
+/* .mt-0{
+    background-color: #000;
+    
+} */
 #formBasicEmail, #formBasicPassword{
     margin-left: 20px;
     width: 450px;
+    border: 2px solid #000;
 }
 .btn-primary {
     margin-left: 20px;
@@ -30,4 +34,9 @@
     margin-right: 30px;
     margin-top: 50px;
     margin-left: 150px;
+}
+
+.title{
+    color: #fff;
+    font-weight: 600;
 }

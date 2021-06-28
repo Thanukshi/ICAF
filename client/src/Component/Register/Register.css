@@ -1,0 +1,45 @@
+.background{
+    background-color: white;
+}
+
+#formBasicEmail, #formBasicPassword{
+    margin-left: 20px;
+    width: 450px;
+}
+
+.formBasicOption{
+    margin-left: 20px;
+    width: 450px;
+}
+
+.btn-primary {
+    margin-left: 20px;
+    width: 450px;
+    color: #fff;
+    background-color: #813AFE !important;
+    border-color: #813AFE !important;
+}
+.icon-img{
+    width: 250px;
+    height: 250px;
+    margin-bottom: 0.5rem;
+    margin-left: 125px;
+}
+.reset{
+    margin-left: 20px;
+    color: black;
+}
+
+.back{
+    width:550px;
+    height: 600px;
+    margin-right: 30px;
+    margin-top: 80px;
+    margin-left: 150px;
+}
+
+.title{
+    color: #000;
+    font-weight: 600;
+}
+
