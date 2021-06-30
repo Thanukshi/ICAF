@@ -7,10 +7,6 @@ import "../../../css/dashboard.css";
 import { authDetail } from "../../common/config";
 import profileIcon from "../../../Images/user.png";
 
-const initialState = {
-  user: [],
-};
-
 class Editor extends Component {
   constructor(props) {
     super(props);
@@ -32,8 +28,23 @@ class Editor extends Component {
       .catch((err) => {
         console.log(err);
       });
-
-      axios.get(``)
+    console.log("new", this.state._id);
+    axios
+      .get(
+        `http://localhost:8000/editor/get/all-conferance-details/${this.state._id}`,
+        {
+          headers: {
+            Authorization: localStorage.getItem("token"),
+          },
+        }
+      )
+      .then((res) => {
+        this.setState(res);
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }
 
   render() {

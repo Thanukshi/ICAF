@@ -73632,7 +73632,7 @@ var Login = function Login() {
         } else {
           console.log(res.data.message);
 
-          if (res.data.message == "Password does not mach this thanukshi1234@gmail.com") {
+          if (res.data.message == "Password does not mach this ") {
             _reactToastify.toast.error(res.data.message);
           }
 
@@ -80433,10 +80433,6 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-var initialState = {
-  user: []
-};
-
 var Editor = /*#__PURE__*/function (_Component) {
   _inherits(Editor, _Component);
 
@@ -80471,7 +80467,19 @@ var Editor = /*#__PURE__*/function (_Component) {
         console.log(err);
       });
 
-      _axios.default.get("");
+      console.log("new", this.state._id);
+
+      _axios.default.get("http://localhost:8000/editor/get/all-conferance-details/".concat(this.state._id), {
+        headers: {
+          Authorization: localStorage.getItem("token")
+        }
+      }).then(function (res) {
+        _this2.setState(res);
+
+        console.log(res);
+      }).catch(function (err) {
+        console.log(err);
+      });
     }
   }, {
     key: "render",
@@ -80656,7 +80664,12 @@ var EditorConferance = /*#__PURE__*/function (_Component) {
         headers: {
           Authorization: localStorage.getItem("token")
         }
-      }).then(function (res) {
+      }, /*#__PURE__*/_react.default.createElement(Link, {
+        to: {
+          pathname: "/attendee-dash",
+          data: data
+        }
+      })).then(function (res) {
         console.log(res);
 
         if (res.data.code == 200) {

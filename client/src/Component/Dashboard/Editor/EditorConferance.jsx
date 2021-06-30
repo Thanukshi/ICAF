@@ -22,6 +22,7 @@ class EditorConferance extends Component {
     this.state = initialState;
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
+    
   }
 
   state = {};
@@ -67,7 +68,13 @@ class EditorConferance extends Component {
           headers: {
             Authorization: localStorage.getItem("token"),
           },
-        }
+        },
+        <Link
+          to={{
+            pathname: "/attendee-dash",
+            data: data,
+          }}
+        ></Link>
       )
       .then((res) => {
         console.log(res);

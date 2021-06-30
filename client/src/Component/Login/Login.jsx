@@ -119,7 +119,7 @@ const Login = () => {
 
             if (
               res.data.message ==
-              "Password does not mach this thanukshi1234@gmail.com"
+              "Password does not mach this "
             ) {
               toast.error(res.data.message);
             }
