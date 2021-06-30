@@ -103,6 +103,55 @@ const editorsControls = {
       });
     }
   },
+
+  updateConferance: async (req, res) => {
+    try {
+      const { title, conductorName, place, date } = req.body;
+      await Editor.findOneAndUpdate(
+        { _id: req.editor.id },
+        {
+          title,
+          conductorName,
+          place,
+          date,
+        }
+      );
+      const editor = await User.findById(req.editor.id);
+      return res.status(200).json({
+        code: messages.SuccessCode,
+        success: messages.Success,
+        status: messages.SuccessStatus,
+        data: editor,
+        message: "Update successfully.",
+      });
+    } catch (err) {
+      return res.status(500).json({
+        code: messages.InternalCode,
+        success: messages.NotSuccess,
+        status: messages.InternalStatus,
+        message: err.message,
+      });
+    }
+  },
+  deleteConferance: async (req, res) => {
+    try {
+      const conferance = await Editor.findByIdAndDelete(req.params.id);
+      return res.status(200).json({
+        code: messages.SuccessCode,
+        success: messages.Success,
+        status: messages.SuccessStatus,
+        data: conferance,
+        message: "Delete successfully.",
+      });
+    } catch (err) {
+      return res.status(500).json({
+        code: messages.InternalCode,
+        success: messages.NotSuccess,
+        status: messages.InternalStatus,
+        message: err.message,
+      });
+    }
+  },
 };
 
 module.exports = editorsControls;

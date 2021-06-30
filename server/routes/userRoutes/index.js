@@ -31,6 +31,11 @@ router.patch("/update-user", auth_middleware, userControl.updateUser);
 
 router.delete("/delete-user/:id", auth_middleware, userControl.deleteUser);
 
-//router.post("/refresh_token", userCtrl.getAccessToken);
+router.delete(
+  "/delete-user/:id",
+  auth_middleware,
+  auth_admin_middleware,
+  userControl.deleteUser
+);
 
 module.exports = router;

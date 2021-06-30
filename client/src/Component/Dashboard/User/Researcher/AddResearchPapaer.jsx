@@ -43,14 +43,14 @@ class AddResearchPapaer extends Component {
             <h2></h2>
           </div>
           <ul className="sidebar-nav">
-            <li>
+            <li className="active">
               <a href="/research-dash">
-                <i className="fa fa-home"></i>Home
+                <i className="fa fa-plus"></i>Reseach Papers
               </a>
             </li>
-            <li className="active">
-              <a href="/research-dash-paper">
-                <i className="fa fa-plus"></i>Reseach Papers
+            <li>
+              <a href="/research-dash-details">
+                <i className="fa fa-home"></i>Home
               </a>
             </li>
             <li>

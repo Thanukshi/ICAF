@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
 
-import "../../../css/dashboard.css"
+import "../../../css/dashboard.css";
 import { authDetail } from "../../common/config";
 import profileIcon from "../../../Images/user.png";
 
@@ -43,14 +43,14 @@ class Editor extends Component {
             <h4>{this.state.role}</h4>
           </div>
           <ul className="sidebar-nav mt-5">
-            <li className="active">
-              <a href="/editor-dash">
-                <i className="fa fa-home"></i>Home
-              </a>
-            </li>
             <li>
               <a href="/editor-dash-conferance">
                 <i className="fa fa-plus"></i>Arrange Conferance
+              </a>
+            </li>
+            <li className="active">
+              <a href="/editor-dash">
+                <i className="fa fa-home"></i>Home
               </a>
             </li>
             <li>

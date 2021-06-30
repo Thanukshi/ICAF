@@ -55,15 +55,15 @@ const presenterControls = {
     }
   },
 
-  getAllconferanceDetails: async (req, res) => {
+  getAllWorkshopDetails: async (req, res) => {
     try {
-      const conferance = await Editor.find();
+      const workshop = await Presenter.find();
       return res.status(200).json({
         code: messages.SuccessCode,
         success: messages.Success,
         status: messages.SuccessStatus,
-        data: conferance,
-        message: "Conferance list recieved",
+        data: workshop,
+        message: "Workshop list recieved",
       });
     } catch (err) {
       return res.status(500).json({
@@ -74,19 +74,38 @@ const presenterControls = {
       });
     }
   },
-  getConferanceDetailsByEditor: async (req, res) => {
+  getAllWorkshopDetailsByEditor: async (req, res) => {
     try {
       if (req.params && req.params.id) {
-        const conferance = await Editor.find({ editor_id: req.params.id });
+        const workshop = await Editor.find({ presenter_id: req.params.id });
 
         return res.status(200).json({
           code: messages.SuccessCode,
           success: messages.Success,
           status: messages.SuccessStatus,
-          data: conferance,
-          message: "Conferance list recieved",
+          data: workshop,
+          message: "Workshop list recieved",
         });
       }
+    } catch (err) {
+      return res.status(500).json({
+        code: messages.InternalCode,
+        success: messages.NotSuccess,
+        status: messages.InternalStatus,
+        message: err.message,
+      });
+    }
+  },
+  deleteWorkshopByAdmin: async (req, res) => {
+    try {
+      const workshop = await Presenter.findByIdAndDelete(req.params.id);
+      return res.status(200).json({
+        code: messages.SuccessCode,
+        success: messages.Success,
+        status: messages.SuccessStatus,
+        data: workshop,
+        message: "Delete successfully.",
+      });
     } catch (err) {
       return res.status(500).json({
         code: messages.InternalCode,

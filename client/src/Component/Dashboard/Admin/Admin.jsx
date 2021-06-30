@@ -15,8 +15,7 @@ class Admin extends Component {
   constructor(props) {
     super(props);
   }
-
-  // state = {};
+  state = {};
 
   componentDidMount() {
     let user = {};
@@ -27,6 +26,7 @@ class Admin extends Component {
         },
       })
       .then((res) => {
+        this.setState(res.data.data);
         console.log(res.data.data);
       })
       .catch((err) => {
@@ -40,7 +40,8 @@ class Admin extends Component {
       <div id="wrapper">
         <aside id="sidebar-wrapper">
           <div className="sidebar-brand">
-            <h2></h2>
+            <h2>{this.state.user_name}</h2>
+            <h4>{this.state.role}</h4>
           </div>
           <ul className="sidebar-nav">
             <li className="active">

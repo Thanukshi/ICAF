@@ -89,14 +89,14 @@ function App() {
               <Route path="/contact" component={Contact} exact />
               <Route path="/register" component={Register} exact />
               <Route path="/other-register" component={OtherRegisters} exact />
-              <Route path="/research-dash" component={Researcher} exact />
-              <Route path="/research-dash-paper" component={AddResearchPapaer} exact />
+              <Route path="/research-dash-details" component={Researcher} exact />
+              <Route path="/research-dash" component={AddResearchPapaer} exact />
               <Route path="/research-dash-profile" component={ResearcherProfile} exact />
               <Route path="/workshop-dash" component={WorkShopPresenterDetails} exact />
               <Route path="/workshop-dash-details" component={WorkShopPresenter} exact />
               <Route path="/attendee-dash" component={Attendee} exact />
-              <Route path="/editor-dash" component={Editor} exact />
-              <Route path="/editor-dash-conferance" component={EditorConferance} exact />
+              <Route path="/editor-dash-details" component={Editor} exact />
+              <Route path="/editor-dash" component={EditorConferance} exact />
               <Route path="/editor-dash-profile" component={EditorProfile} exact />
              
 

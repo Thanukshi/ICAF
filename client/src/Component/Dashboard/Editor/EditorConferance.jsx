@@ -98,14 +98,14 @@ class EditorConferance extends Component {
             <h4>{this.state.role}</h4>
           </div>
           <ul className="sidebar-nav mt-5">
-            <li>
-              <a href="/editor-dash">
-                <i className="fa fa-home"></i>Home
-              </a>
-            </li>
             <li className="active">
               <a href="/editor-dash-conferance">
                 <i className="fa fa-plus"></i>Arrange Conferance
+              </a>
+            </li>
+            <li>
+              <a href="/editor-dash">
+                <i className="fa fa-home"></i>Home
               </a>
             </li>
             <li>
