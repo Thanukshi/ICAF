@@ -49,13 +49,65 @@ const Login = () => {
             const { role } = res.data.data;
 
             if (role == "Researcher") {
-              let i = JSON.stringify(res.data.token)
+              let i = JSON.stringify(res.data.token);
               let result = i.slice(1, -1);
 
               localStorage.setItem("user", JSON.stringify(res.data.data));
               localStorage.setItem("token", result);
-              console.log("tok", result)
+              console.log("tok", result);
               history.push("/research-dash");
+              toast.success(
+                res.data.data.user_name + " is logged as " + res.data.data.role
+              );
+            }
+
+            if (role == "Workshop Presenter") {
+              let i = JSON.stringify(res.data.token);
+              let result = i.slice(1, -1);
+
+              localStorage.setItem("user", JSON.stringify(res.data.data));
+              localStorage.setItem("token", result);
+              console.log("tok", result);
+              history.push("/workshop-dash");
+              toast.success(
+                res.data.data.user_name + " is logged as " + res.data.data.role
+              );
+            }
+
+            if (role == "Attendee") {
+              let i = JSON.stringify(res.data.token);
+              let result = i.slice(1, -1);
+
+              localStorage.setItem("user", JSON.stringify(res.data.data));
+              localStorage.setItem("token", result);
+              console.log("tok", result);
+              history.push("/attendee-dash");
+              toast.success(
+                res.data.data.user_name + " is logged as " + res.data.data.role
+              );
+            }
+
+            if (role == "Editor") {
+              let i = JSON.stringify(res.data.token);
+              let result = i.slice(1, -1);
+
+              localStorage.setItem("user", JSON.stringify(res.data.data));
+              localStorage.setItem("token", result);
+              console.log("tok", result);
+              history.push("/editor-dash");
+              toast.success(
+                res.data.data.user_name + " is logged as " + res.data.data.role
+              );
+            }
+
+            if (role == "Reviewer") {
+              let i = JSON.stringify(res.data.token);
+              let result = i.slice(1, -1);
+
+              localStorage.setItem("user", JSON.stringify(res.data.data));
+              localStorage.setItem("token", result);
+              console.log("tok", result);
+              history.push("/reviewer-dash");
               toast.success(
                 res.data.data.user_name + " is logged as " + res.data.data.role
               );

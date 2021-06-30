@@ -6,6 +6,8 @@ const auth_admin_middleware = require("../../middleware/auth.admin");
 
 router.post("/register-user", userControl.register);
 
+router.post("/other-register-user", userControl.otherUserRegister);
+
 router.post("/activate-email", userControl.activateEmail);
 
 router.post("/login-user", userControl.login);

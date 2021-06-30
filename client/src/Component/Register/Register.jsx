@@ -76,7 +76,7 @@ const Register = () => {
         .catch((err) => {
           console.log(err);
         });
-    } catch (err) { 
+    } catch (err) {
       err.response.data.msg &&
         setUser({
           ...user,
@@ -92,7 +92,7 @@ const Register = () => {
       <div className="container mt-0">
         <div className="row">
           <Col lg={4} md={6} sm={12} className="text-center mt-2 p-3">
-            <h2 className="title">Register Here...</h2>
+            <h2 className="title">Register Here... (Users)</h2>
             <img className="icon-img" src={logo} alt="icon" />
 
             <form onSubmit={handleSubmit}>
@@ -148,9 +148,8 @@ const Register = () => {
                   <option value="Select" disabled>
                     Select
                   </option>
-                  <option value="Workshop Presenter">Workshop Presenter</option>
-                  <option value="Researcher">Researcher</option>
-                  <option value="Attendee">Attendee</option>
+                  <option value="1">Workshop Presenter</option>
+                  <option value="2">Researcher</option>
                 </select>
               </div>
 
@@ -160,6 +159,11 @@ const Register = () => {
             </form>
 
             <div className="text-left mt-3">
+              <a href="/other-register">
+                <small className="reset">Other Registers</small>
+              </a>
+
+              <br />
               <small className="reset">OR</small>
             </div>
 

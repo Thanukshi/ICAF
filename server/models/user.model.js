@@ -22,7 +22,7 @@ const userSchema = new mongoose.Schema(
     role: {
       type: String,
       trim: true,
-      required: [true, "Please enter your role!"],
+      default : "User"
     },
     user_role: {
       type: Number,

@@ -20,6 +20,13 @@ import Login from "./Component/Login/Login";
 import Register from "./Component/Register/Register";
 import Researcher from "./Component/Dashboard/User/Researcher/Researcher";
 import ActivationEmail from "./Component/Register/ActivationEmail";
+import AddResearchPapaer from "./Component/Dashboard/User/Researcher/AddResearchPapaer";
+import ResearcherProfile from "./Component/Dashboard/User/Researcher/ResearcherProfile";
+import WorkShopPresenter from "./Component/Dashboard/User/Workshop/WorkShopPresenter";
+import Attendee from "./Component/Dashboard/User/Attendee/Attendee";
+import OtherRegisters from "./Component/Register/OtherRegisters";
+import Editor from "./Component/Dashboard/Editor/Editor";
+
 import { authDetail } from "./Component/common/config";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -77,7 +84,15 @@ function App() {
               <Route path="/login" component={Login} exact />
               <Route path="/contact" component={Contact} exact />
               <Route path="/register" component={Register} exact />
+              <Route path="/other-register" component={OtherRegisters} exact />
               <Route path="/research-dash" component={Researcher} exact />
+              <Route path="/research-dash-paper" component={AddResearchPapaer} exact />
+              <Route path="/research-dash-profile" component={ResearcherProfile} exact />
+              <Route path="/workshop-dash" component={WorkShopPresenter} exact />
+              <Route path="/attendee-dash" component={Attendee} exact />
+              <Route path="/editor-dash" component={Editor} exact />
+
+              
               <Route
                 path="/user/activate/:activate_token"
                 component={ActivationEmail}

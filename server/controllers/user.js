@@ -86,6 +86,81 @@ const userControl = {
       });
     }
   },
+
+  otherUserRegister: async (req, res) => {
+    try {
+      const { user_name, user_email, password, user_role } = req.body;
+
+      if (!user_name || !user_email || !password || !user_role) {
+        return res.status(200).json({
+          code: messages.BadCode,
+          success: messages.NotSuccess,
+          status: messages.BadStatus,
+          message: messages.ContentEmpty,
+        });
+      }
+      if (!validateEmail(user_email)) {
+        return res.status(200).json({
+          code: messages.BadCode,
+          success: messages.NotSuccess,
+          status: messages.BadStatus,
+          message: messages.ValidEmail,
+        });
+      }
+
+      const user = await User.findOne({ user_email });
+      if (user) {
+        return res.status(200).json({
+          code: messages.BadCode,
+          success: messages.NotSuccess,
+          status: messages.BadStatus,
+          message: messages.AlreadyExistEmail,
+        });
+      }
+
+      if (!validatePassword(password)) {
+        return res.status(200).json({
+          code: messages.BadCode,
+          success: messages.NotSuccess,
+          status: messages.BadStatus,
+          message: messages.PasswordValidate,
+        });
+      }
+
+      const passwordHash = await bcrypt.hash(password, 12);
+      console.log(passwordHash);
+
+      const newUser = {
+        user_name,
+        user_email,
+        password: passwordHash,
+        user_role,
+      };
+      console.log("User Details : ", newUser);
+
+      const activate_token = createActivationToken(newUser);
+      console.log({ activate_token });
+
+      const url = `${CLIENT_URL}/user/activate/${activate_token}`;
+      sendEmail(user_email, url, "Verify your email address");
+
+      return res.status(200).json({
+        code: messages.SuccessCode,
+        success: messages.Success,
+        status: messages.SuccessStatus,
+        token: activate_token,
+        message: messages.ActiveAccount,
+      });
+    } catch (err) {
+      return res.status(500).json({
+        code: messages.InternalCode,
+        success: messages.NotSuccess,
+        status: messages.InternalStatus,
+        message: err.message,
+      });
+    }
+  },
+
   activateEmail: async (req, res) => {
     try {
       const { activate_token } = req.body;
@@ -201,7 +276,6 @@ const userControl = {
     //       message: messages.LoginMessage,
     //     });
     //   }
-
     //   webToken.verify(
     //     rf_token,
     //     process.env.REFRESH_TOKEN_SECRET,
@@ -214,7 +288,6 @@ const userControl = {
     //           message: messages.LoginMessage,
     //         });
     //       }
-
     //       const access_token = createAccessToken({ id: user.id });
     //       return res.status(200).json({
     //         code: messages.SuccessCode,

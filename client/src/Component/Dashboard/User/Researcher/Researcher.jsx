@@ -7,56 +7,55 @@ import "../../../../css/dashboard.css";
 import { authDetail } from "../../../common/config";
 import profileIcon from "../../../../Images/user.png";
 
+const initialState = {
+  user: [],
+};
+
 class Researcher extends Component {
   constructor(props) {
     super(props);
   }
 
+  // state = {};
+
   componentDidMount() {
-    const config = {
-      Headers: {
-        Authorization: localStorage.getItem("token"),
-      },
-    };
-
-  
-
-    // axios.interceptors.request.use(
-    //   config => {
-    //     config.headers.authorization = 
-    //   }
-    // )
-
+    let user = {};
     axios
-      .get("http://localhost:8000/users/get-user-details", config)
+      .get("http://localhost:8000/users/get-user-details", {
+        headers: {
+          Authorization: localStorage.getItem("token"),
+        },
+      })
       .then((res) => {
-        console.log(res);
+        user: res.data.data;
       })
       .catch((err) => {
         console.log(err);
       });
+    return user;
   }
+
   render() {
     return (
       <div id="wrapper">
         <aside id="sidebar-wrapper">
           <div className="sidebar-brand">
-            <h2>Researcher</h2>
+            <h2></h2>
           </div>
           <ul className="sidebar-nav">
             <li className="active">
-              <a href="#">
+              <a href="/research-dash">
                 <i className="fa fa-home"></i>Home
               </a>
             </li>
             <li>
-              <a href="#">
-                <i className="fa fa-plug"></i>Plugins
+              <a href="/research-dash-paper">
+                <i className="fa fa-plus"></i>Reseach Papers
               </a>
             </li>
             <li>
-              <a href="#">
-                <i className="fa fa-user"></i>Users
+              <a href="/research-dash-profile">
+                <i className="fa fa-user"></i>Profile
               </a>
             </li>
           </ul>
