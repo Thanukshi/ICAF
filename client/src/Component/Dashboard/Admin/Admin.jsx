@@ -3,15 +3,15 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
 
-import "../../../../css/dashboard.css";
-import { authDetail } from "../../../common/config";
-import profileIcon from "../../../../Images/user.png";
+import "../../../css/dashboard.css";
+import { authDetail } from "../../common/config";
+import profileIcon from "../../../Images/user.png";
 
 const initialState = {
   user: [],
 };
 
-class Admin extends Component {
+class AdminDash extends Component {
   constructor(props) {
     super(props);
   }
@@ -43,7 +43,7 @@ class Admin extends Component {
             <h2>{this.state.user_name}</h2>
             <h4>{this.state.role}</h4>
           </div>
-          <ul className="sidebar-nav">
+          <ul className="sidebar-nav mt-5">
             <li className="active">
               <a href="/research-dash">
                 <i className="fa fa-home"></i>Home
@@ -90,4 +90,4 @@ class Admin extends Component {
   }
 }
 
-export default Admin;
+export default AdminDash;

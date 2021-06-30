@@ -47,6 +47,7 @@ const Login = () => {
           console.log(res);
           if (res.data.code == 200) {
             const { role } = res.data.data;
+            const { user_role } = res.data.data;
 
             if (role == "Researcher") {
               let i = JSON.stringify(res.data.token);
@@ -100,18 +101,19 @@ const Login = () => {
               );
             }
 
-            if (role == "Reviewer") {
+            if (user_role == 1) {
               let i = JSON.stringify(res.data.token);
               let result = i.slice(1, -1);
 
               localStorage.setItem("user", JSON.stringify(res.data.data));
               localStorage.setItem("token", result);
               console.log("tok", result);
-              history.push("/reviewer-dash");
+              history.push("/admin-dash");
               toast.success(
                 res.data.data.user_name + " is logged as " + res.data.data.role
               );
             }
+
             localStorage.setItem("firstLogin", true);
             dispatch(dispatchLogin());
           } else {
@@ -119,7 +121,7 @@ const Login = () => {
 
             if (
               res.data.message ==
-              "Password does not mach this "
+              "Password does not mach this thanukshi1234@gmail.com"
             ) {
               toast.error(res.data.message);
             }
