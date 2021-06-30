@@ -11,7 +11,7 @@ const Home = () => {
   return (
     <div>
       <div class="container-fluid"  >
-
+        <img className="back" src={image} alt="" />
         <div class="row">
 
           <div class="col-sm-8">

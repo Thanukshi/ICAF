@@ -56972,7 +56972,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var Home = function Home() {
   return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", {
     class: "container-fluid"
-  }, /*#__PURE__*/_react.default.createElement("div", {
+  }, /*#__PURE__*/_react.default.createElement("img", {
+    className: "back",
+    src: _home.default,
+    alt: ""
+  }), /*#__PURE__*/_react.default.createElement("div", {
     class: "row"
   }, /*#__PURE__*/_react.default.createElement("div", {
     class: "col-sm-8"
