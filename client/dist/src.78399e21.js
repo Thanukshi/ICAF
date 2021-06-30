@@ -56969,16 +56969,10 @@ var _menu = _interopRequireDefault(require("../../../../Images/menu-4-256.png"))
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 var Home = function Home() {
-  var _React$createElement;
-
-  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", (_React$createElement = {
+  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", {
     class: "container-fluid"
-  }, _defineProperty(_React$createElement, "class", "bg-image"), _defineProperty(_React$createElement, "style", {
-    backgroundImage: _home.default
-  }), _React$createElement), /*#__PURE__*/_react.default.createElement("div", {
+  }, /*#__PURE__*/_react.default.createElement("div", {
     class: "row"
   }, /*#__PURE__*/_react.default.createElement("div", {
     class: "col-sm-8"
@@ -80624,7 +80618,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58064" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62286" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

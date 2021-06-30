@@ -6,10 +6,11 @@ import Corasoule from "../../../Corasoule/Corasoule";
 import image from "../../../../Images/home.jpg";
 import image1 from "../../../../Images/menu-4-256.png";
 
+
 const Home = () => {
   return (
     <div>
-      <div class="container-fluid" class="bg-image" style={{ backgroundImage: image }}>
+      <div class="container-fluid"  >
 
         <div class="row">
 
