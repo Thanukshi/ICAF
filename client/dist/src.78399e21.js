@@ -56941,7 +56941,9 @@ var Corasoule = function Corasoule() {
 
 var _default = Corasoule;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","../../Images/image1.jpg":"Images/image1.jpg","../../Images/image2.jpg":"Images/image2.jpg"}],"Images/menu-4-256.png":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","../../Images/image1.jpg":"Images/image1.jpg","../../Images/image2.jpg":"Images/image2.jpg"}],"Images/home.jpg":[function(require,module,exports) {
+module.exports = "/home.9369fdba.jpg";
+},{}],"Images/menu-4-256.png":[function(require,module,exports) {
 module.exports = "/menu-4-256.f07b20ad.png";
 },{}],"Component/Navbar/NavbarItem/Home/Home.jsx":[function(require,module,exports) {
 "use strict";
@@ -56961,19 +56963,41 @@ require("../../../js/bootstrap.min");
 
 var _Corasoule = _interopRequireDefault(require("../../../Corasoule/Corasoule"));
 
-var _image = _interopRequireDefault(require("../../../../Images/image2.jpg"));
+var _home = _interopRequireDefault(require("../../../../Images/home.jpg"));
 
 var _menu = _interopRequireDefault(require("../../../../Images/menu-4-256.png"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 var Home = function Home() {
-  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_Corasoule.default, null));
+  var _React$createElement;
+
+  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", (_React$createElement = {
+    class: "container-fluid"
+  }, _defineProperty(_React$createElement, "class", "bg-image"), _defineProperty(_React$createElement, "style", {
+    backgroundImage: _home.default
+  }), _React$createElement), /*#__PURE__*/_react.default.createElement("div", {
+    class: "row"
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    class: "col-sm-8"
+  }, /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
+    style: {
+      backgroundColor: "lightblue"
+    }
+  }, /*#__PURE__*/_react.default.createElement("p", null, "This text is important."), /*#__PURE__*/_react.default.createElement("p", null, "This text is important."), /*#__PURE__*/_react.default.createElement("p", null, "This text is important."), /*#__PURE__*/_react.default.createElement("p", null, "This text is important."), /*#__PURE__*/_react.default.createElement("p", null, "This text is important."), /*#__PURE__*/_react.default.createElement("p", null, "This text is important."), /*#__PURE__*/_react.default.createElement("p", null, "This text is important."), /*#__PURE__*/_react.default.createElement("p", null, "This text is important."), /*#__PURE__*/_react.default.createElement("p", null, "This text is important."), /*#__PURE__*/_react.default.createElement("p", null, "This text is important."))), /*#__PURE__*/_react.default.createElement("div", {
+    class: "col-sm-4"
+  }, /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
+    style: {
+      backgroundColor: "lightblue"
+    }
+  }, /*#__PURE__*/_react.default.createElement("p", null, "This text is important."), /*#__PURE__*/_react.default.createElement("p", null, "This text is important."), /*#__PURE__*/_react.default.createElement("p", null, "This text is important."), /*#__PURE__*/_react.default.createElement("p", null, "This text is important."), /*#__PURE__*/_react.default.createElement("p", null, "This text is important."), /*#__PURE__*/_react.default.createElement("p", null, "This text is important."), /*#__PURE__*/_react.default.createElement("p", null, "This text is important."), /*#__PURE__*/_react.default.createElement("p", null, "This text is important."), /*#__PURE__*/_react.default.createElement("p", null, "This text is important."), /*#__PURE__*/_react.default.createElement("p", null, "This text is important."))))));
 };
 
 var _default = Home;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","../../../css/Style.css":"Component/css/Style.css","../../../css/bootstrap.min.css":"Component/css/bootstrap.min.css","../../../js/bootstrap.min":"Component/js/bootstrap.min.js","../../../Corasoule/Corasoule":"Component/Corasoule/Corasoule.jsx","../../../../Images/image2.jpg":"Images/image2.jpg","../../../../Images/menu-4-256.png":"Images/menu-4-256.png"}],"Component/Navbar/NavbarItem/About/About.jsx":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","../../../css/Style.css":"Component/css/Style.css","../../../css/bootstrap.min.css":"Component/css/bootstrap.min.css","../../../js/bootstrap.min":"Component/js/bootstrap.min.js","../../../Corasoule/Corasoule":"Component/Corasoule/Corasoule.jsx","../../../../Images/home.jpg":"Images/home.jpg","../../../../Images/menu-4-256.png":"Images/menu-4-256.png"}],"Component/Navbar/NavbarItem/About/About.jsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -79332,20 +79356,20 @@ Object.defineProperty(exports, "__esModule", {
 exports.authDetail = authDetail;
 
 function authDetail() {
-  //let user = JSON.parse(localStorage.getItem("user"));
-  var token = JSON.parse(localStorage.getItem("token")); // if (user) {
-  //   return user;
-  // }
+  var user = JSON.parse(localStorage.getItem("user")); //let token = JSON.parse(localStorage.getItem("token"));
 
-  if (token) {
-    return token;
-  } else {
-    return {
-      role: "",
-      password: "",
-      email: ""
-    };
-  }
+  if (user) {
+    return user;
+  } // if (token) {
+  //   return token;
+  // }
+  else {
+      return {
+        role: "",
+        password: "",
+        email: ""
+      };
+    }
 }
 },{}],"Images/user.png":[function(require,module,exports) {
 module.exports = "/user.0c9490a3.png";
@@ -80600,7 +80624,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59245" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58064" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -80777,4 +80801,4 @@ function hmrAcceptRun(bundle, id) {
   }
 }
 },{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","index.jsx"], null)
-//# sourceMappingURL=/src.78399e21.js.map            
+//# sourceMappingURL=/src.78399e21.js.map
