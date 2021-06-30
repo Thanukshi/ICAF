@@ -26,6 +26,10 @@ import WorkShopPresenter from "./Component/Dashboard/User/Workshop/WorkShopPrese
 import Attendee from "./Component/Dashboard/User/Attendee/Attendee";
 import OtherRegisters from "./Component/Register/OtherRegisters";
 import Editor from "./Component/Dashboard/Editor/Editor";
+import EditorConferance from "./Component/Dashboard/Editor/EditorConferance";
+import EditorProfile from "./Component/Dashboard/Editor/EditorProfile";
+import WorkShopPresenterDetails from "./Component/Dashboard/User/Workshop/WorkShopPresenterDetails";
+
 
 import { authDetail } from "./Component/common/config";
 import { useDispatch, useSelector } from "react-redux";
@@ -88,9 +92,13 @@ function App() {
               <Route path="/research-dash" component={Researcher} exact />
               <Route path="/research-dash-paper" component={AddResearchPapaer} exact />
               <Route path="/research-dash-profile" component={ResearcherProfile} exact />
-              <Route path="/workshop-dash" component={WorkShopPresenter} exact />
+              <Route path="/workshop-dash" component={WorkShopPresenterDetails} exact />
+              <Route path="/workshop-dash-details" component={WorkShopPresenter} exact />
               <Route path="/attendee-dash" component={Attendee} exact />
               <Route path="/editor-dash" component={Editor} exact />
+              <Route path="/editor-dash-conferance" component={EditorConferance} exact />
+              <Route path="/editor-dash-profile" component={EditorProfile} exact />
+             
 
               
               <Route

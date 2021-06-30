@@ -16,10 +16,9 @@ class Researcher extends Component {
     super(props);
   }
 
-  // state = {};
+  state = {};
 
   componentDidMount() {
-    let user = {};
     axios
       .get("http://localhost:8000/users/get-user-details", {
         headers: {
@@ -27,12 +26,12 @@ class Researcher extends Component {
         },
       })
       .then((res) => {
-        user: res.data.data;
+        this.setState(res.data.data);
+        console.log(res.data.data);
       })
       .catch((err) => {
         console.log(err);
       });
-    return user;
   }
 
   render() {
@@ -40,9 +39,10 @@ class Researcher extends Component {
       <div id="wrapper">
         <aside id="sidebar-wrapper">
           <div className="sidebar-brand">
-            <h2></h2>
+            <h2>{this.state.user_name}</h2>
+            <h4>{this.state.role}</h4>
           </div>
-          <ul className="sidebar-nav">
+          <ul className="sidebar-nav mt-5">
             <li className="active">
               <a href="/research-dash">
                 <i className="fa fa-home"></i>Home
@@ -69,7 +69,7 @@ class Researcher extends Component {
                 <i className="fa fa-bars"></i>
               </a> */}
                 <div>
-                  <img className="profile-img" src={profileIcon} alt="" />
+                  <img className="profile-img" src={this.state.avatar} alt="" />
                 </div>
               </div>
             </div>

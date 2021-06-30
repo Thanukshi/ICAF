@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
 
-import "../../../css/dashboard.css";
+import "../../../css/dashboard.css"
 import { authDetail } from "../../common/config";
 import profileIcon from "../../../Images/user.png";
 
@@ -16,10 +16,9 @@ class Editor extends Component {
     super(props);
   }
 
-  // state = {};
+  state = {};
 
   componentDidMount() {
-    let user = {};
     axios
       .get("http://localhost:8000/users/get-user-details", {
         headers: {
@@ -27,12 +26,12 @@ class Editor extends Component {
         },
       })
       .then((res) => {
-        user: res.data.data;
+        this.setState(res.data.data);
+        console.log(res.data.data);
       })
       .catch((err) => {
         console.log(err);
       });
-    return user;
   }
 
   render() {
@@ -40,21 +39,22 @@ class Editor extends Component {
       <div id="wrapper">
         <aside id="sidebar-wrapper">
           <div className="sidebar-brand">
-            <h2></h2>
+            <h2>{this.state.user_name}</h2>
+            <h4>{this.state.role}</h4>
           </div>
-          <ul className="sidebar-nav">
+          <ul className="sidebar-nav mt-5">
             <li className="active">
-              <a href="/research-dash">
+              <a href="/editor-dash">
                 <i className="fa fa-home"></i>Home
               </a>
             </li>
             <li>
-              <a href="/research-dash-paper">
-                <i className="fa fa-plus"></i>Reseach Papers
+              <a href="/editor-dash-conferance">
+                <i className="fa fa-plus"></i>Arrange Conferance
               </a>
             </li>
             <li>
-              <a href="/research-dash-profile">
+              <a href="/editor-dash-profile">
                 <i className="fa fa-user"></i>Profile
               </a>
             </li>

@@ -47,6 +47,18 @@ a:focus {
   font-weight: 600;
   font-size: 24px;
   color: #fff;
+  margin-bottom: 15px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.sidebar-brand h4 {
+  margin: 0;
+  font-weight: 600;
+  font-size: 20px;
+  color: #fff;
+  margin-bottom: 20px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
 .sidebar-nav {
@@ -60,7 +72,9 @@ a:focus {
 .sidebar-nav > li {
   text-indent: 10px;
   line-height: 42px;
+  margin-bottom: 25px;
 }
+
 .sidebar-nav > li a {
   display: block;
   text-decoration: none;
@@ -147,7 +161,7 @@ a:focus {
     margin-left: 95%;
   }
 
-  .profile-img{
+  .profile-img {
     width: 50px;
     height: 50px;
   }
@@ -246,4 +260,12 @@ a:focus {
     position: relative;
     margin-right: 250px;
   }
+}
+
+#content-wrapper {
+  background-color: #021725;
+  color: white;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  margin-top: 20px;
+  height: 500px;
 }
