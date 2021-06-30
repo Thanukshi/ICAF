@@ -7,19 +7,21 @@ import {
   Redirect,
   Switch,
 } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import axios from "axios";
 
 import Navbar from "./Component/Navbar/Navbar";
-import Corasoule from "./Component/Corasoule/Corasoule";
 import Home from "./Component/Navbar/NavbarItem/Home/Home";
 import About from "./Component/Navbar/NavbarItem/About/About";
 import Conferance from "./Component/Navbar/NavbarItem/Conference/Conferance";
-//import Contact from "./Component/Navbar/NavbarItem/Contact/Contact";
 import Contact from "./Component/Navbar/NavbarItem/Contact/Contact";
 import Login from "./Component/Login/Login";
 import Register from "./Component/Register/Register";
-import "./App.css";
-import { ToastContainer } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
+import Researcher from "./Component/Dashboard/User/Researcher/Researcher";
+import ActivationEmail from "./Component/Register/ActivationEmail";
+import { authDetail } from "./Component/common/config";
+import { useDispatch, useSelector } from "react-redux";
 
 function App() {
   const override = css`
@@ -40,6 +42,20 @@ function App() {
   //   }, 5000);
   // }, []);
 
+  const {
+    avatar,
+    createdAt,
+    password,
+    role,
+    updatedAt,
+    user_email,
+    user_name,
+    user_role,
+    _id,
+    token,
+  } = authDetail();
+  //console.log("user token : ", token);
+
   return (
     <div>
       {loading ? (
@@ -52,21 +68,37 @@ function App() {
         />
       ) : (
         <>
-          
           <Router>
             <Navbar />
             <Switch>
               <Route path="/" component={Home} exact />
-              <Route path="/about" component={About} />
-              <Route path="/conferance" component={Conferance} />
-              <Route path="/login" component={Login} />
-              <Route path="/contact" component={Contact} />
-              <Route path="/register" component={Register} />
+              <Route path="/about" component={About} exact />
+              <Route path="/conferance" component={Conferance} exact />
+              <Route path="/login" component={Login} exact />
+              <Route path="/contact" component={Contact} exact />
+              <Route path="/register" component={Register} exact />
+              <Route path="/research-dash" component={Researcher} exact />
+              <Route
+                path="/user/activate/:activate_token"
+                component={ActivationEmail}
+                exact
+              />
             </Switch>
           </Router>
         </>
       )}
-      <ToastContainer/>
+
+      <ToastContainer
+        position="bottom-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
     </div>
   );
 }

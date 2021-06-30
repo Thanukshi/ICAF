@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import axios from "axios";
-
 import logo from "../../Images/logo.png";
 import uiImg from "../../Images/login.png";
-import "./Login.css";
+import "../../css/Login.css";
 import { toast } from "react-toastify";
+import { dispatchLogin } from "../../redux/action/authAction";
+import { useDispatch } from "react-redux";
 
 const initialState = {
   user_email: "",
@@ -18,6 +18,8 @@ const initialState = {
 
 const Login = () => {
   const [user, setUser] = useState(initialState);
+  const dispatch = useDispatch();
+
   const history = useHistory();
   const { user_email, password, err, success } = user;
 
@@ -36,10 +38,6 @@ const Login = () => {
     }
 
     try {
-      // const res =  axios.post("http://localhost:8000/users/login-user", {
-      //   user_email,
-      //   password,
-      // });
       axios
         .post("http://localhost:8000/users/login-user", {
           user_email,
@@ -51,12 +49,19 @@ const Login = () => {
             const { role } = res.data.data;
 
             if (role == "Researcher") {
-              history.push("/about");
+              let i = JSON.stringify(res.data.token)
+              let result = i.slice(1, -1);
+
+              localStorage.setItem("user", JSON.stringify(res.data.data));
+              localStorage.setItem("token", result);
+              console.log("tok", result)
+              history.push("/research-dash");
               toast.success(
-                res.data.data.user_name + "is logged as " + res.data.data.role
+                res.data.data.user_name + " is logged as " + res.data.data.role
               );
             }
             localStorage.setItem("firstLogin", true);
+            dispatch(dispatchLogin());
           } else {
             console.log(res.data.message);
 

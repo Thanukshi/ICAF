@@ -1,13 +1,12 @@
 import React from "react";
-import { render } from "react-dom";
+//import { render } from "react-dom";
+import ReactDOM from "react-dom";
 import App from "./App";
 import DataProvider from "./redux/store";
 
-render(
-  <React.StrictMode>
+ReactDOM.render(
     <DataProvider>
       <App />
-    </DataProvider>
-  </React.StrictMode>,
+    </DataProvider>,
   document.getElementById("root")
 );

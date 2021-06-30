@@ -10,7 +10,7 @@ router.post("/activate-email", userControl.activateEmail);
 
 router.post("/login-user", userControl.login);
 
-router.post("/refresh_token", userControl.getAccessToken);
+//  router.post("/refresh_token", userControl.getAccessToken);
 
 router.post("/forgot-password", userControl.forgotPassword);
 

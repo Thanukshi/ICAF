@@ -2,10 +2,11 @@ import React from "react";
 import image1 from "../../Images/image1.jpg";
 import image2 from "../../Images/image2.jpg";
 
-// import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-// import { Carousel } from 'react-responsive-carousel';
-
 const Corasoule = () => {
+  $(".carousel").carousel({
+    interval: 1000,
+  });
+
   return (
     <div>
       <div
@@ -39,7 +40,10 @@ const Corasoule = () => {
           role="button"
           data-slide="prev"
         >
-          <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span
+            className="carousel-control-prev-icon"
+            aria-hidden="true"
+          ></span>
           <span className="sr-only">Previous</span>
         </a>
         <a
@@ -48,7 +52,10 @@ const Corasoule = () => {
           role="button"
           data-slide="next"
         >
-          <span className="carousel-control-next-icon" aria-hidden="true"></span>
+          <span
+            className="carousel-control-next-icon"
+            aria-hidden="true"
+          ></span>
           <span className="sr-only">Next</span>
         </a>
       </div>

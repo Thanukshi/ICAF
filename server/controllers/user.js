@@ -18,7 +18,7 @@ const userControl = {
       const { user_name, user_email, password, role } = req.body;
 
       if (!user_name || !user_email || !password || !role) {
-        return res.status(400).json({
+        return res.status(200).json({
           code: messages.BadCode,
           success: messages.NotSuccess,
           status: messages.BadStatus,
@@ -26,7 +26,7 @@ const userControl = {
         });
       }
       if (!validateEmail(user_email)) {
-        return res.status(400).json({
+        return res.status(200).json({
           code: messages.BadCode,
           success: messages.NotSuccess,
           status: messages.BadStatus,
@@ -36,7 +36,7 @@ const userControl = {
 
       const user = await User.findOne({ user_email });
       if (user) {
-        return res.status(400).json({
+        return res.status(200).json({
           code: messages.BadCode,
           success: messages.NotSuccess,
           status: messages.BadStatus,
@@ -45,7 +45,7 @@ const userControl = {
       }
 
       if (!validatePassword(password)) {
-        return res.status(400).json({
+        return res.status(200).json({
           code: messages.BadCode,
           success: messages.NotSuccess,
           status: messages.BadStatus,
@@ -164,7 +164,7 @@ const userControl = {
             message: messages.PasswordDoesNotMatch + user_email,
           });
         } else {
-          const refresh_token = createRefreshToken({ id: user._id });
+          const refresh_token = createAccessToken({ id: user._id });
           res.cookie("refreshtoken", refresh_token, {
             httpOnly: true,
             path: "/users/refresh_token",
@@ -191,49 +191,49 @@ const userControl = {
     }
   },
   getAccessToken: (req, res) => {
-    try {
-      const rf_token = req.cookies.refreshtoken;
-      if (!rf_token) {
-        return res.status(400).json({
-          code: messages.BadCode,
-          success: messages.NotSuccess,
-          status: messages.BadStatus,
-          message: messages.LoginMessage,
-        });
-      }
+    // try {
+    //   const rf_token = req.cookies.refreshtoken;
+    //   if (!rf_token) {
+    //     return res.status(400).json({
+    //       code: messages.BadCode,
+    //       success: messages.NotSuccess,
+    //       status: messages.BadStatus,
+    //       message: messages.LoginMessage,
+    //     });
+    //   }
 
-      webToken.verify(
-        rf_token,
-        process.env.REFRESH_TOKEN_SECRET,
-        (err, user) => {
-          if (err) {
-            return res.status(400).json({
-              code: messages.BadCode,
-              success: messages.NotSuccess,
-              status: messages.BadStatus,
-              message: messages.LoginMessage,
-            });
-          }
+    //   webToken.verify(
+    //     rf_token,
+    //     process.env.REFRESH_TOKEN_SECRET,
+    //     (err, user) => {
+    //       if (err) {
+    //         return res.status(400).json({
+    //           code: messages.BadCode,
+    //           success: messages.NotSuccess,
+    //           status: messages.BadStatus,
+    //           message: messages.LoginMessage,
+    //         });
+    //       }
 
-          const access_token = createAccessToken({ id: user.id });
-          return res.status(200).json({
-            code: messages.SuccessCode,
-            success: messages.Success,
-            status: messages.SuccessStatus,
-            data: user,
-            token: access_token,
-            message: "Login successfully.",
-          });
-        }
-      );
-    } catch (err) {
-      return res.status(500).json({
-        code: messages.InternalCode,
-        success: messages.NotSuccess,
-        status: messages.InternalStatus,
-        message: err.message,
-      });
-    }
+    //       const access_token = createAccessToken({ id: user.id });
+    //       return res.status(200).json({
+    //         code: messages.SuccessCode,
+    //         success: messages.Success,
+    //         status: messages.SuccessStatus,
+    //         data: user,
+    //         token: access_token,
+    //         message: "Login successfully.",
+    //       });
+    //     }
+    //   );
+    // } catch (err) {
+    //   return res.status(500).json({
+    //     code: messages.InternalCode,
+    //     success: messages.NotSuccess,
+    //     status: messages.InternalStatus,
+    //     message: err.message,
+    //   });
+    // }
   },
   forgotPassword: async (req, res) => {
     try {
