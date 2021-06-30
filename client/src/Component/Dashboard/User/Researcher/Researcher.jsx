@@ -7,56 +7,55 @@ import "../../../../css/dashboard.css";
 import { authDetail } from "../../../common/config";
 import profileIcon from "../../../../Images/user.png";
 
+const initialState = {
+  user: [],
+};
+
 class Researcher extends Component {
   constructor(props) {
     super(props);
   }
 
+  state = {};
+
   componentDidMount() {
-    const config = {
-      Headers: {
-        Authorization: localStorage.getItem("token"),
-      },
-    };
-
-  
-
-    // axios.interceptors.request.use(
-    //   config => {
-    //     config.headers.authorization = 
-    //   }
-    // )
-
     axios
-      .get("http://localhost:8000/users/get-user-details", config)
+      .get("http://localhost:8000/users/get-user-details", {
+        headers: {
+          Authorization: localStorage.getItem("token"),
+        },
+      })
       .then((res) => {
-        console.log(res);
+        this.setState(res.data.data);
+        console.log(res.data.data);
       })
       .catch((err) => {
         console.log(err);
       });
   }
+
   render() {
     return (
       <div id="wrapper">
         <aside id="sidebar-wrapper">
           <div className="sidebar-brand">
-            <h2>Researcher</h2>
+            <h2>{this.state.user_name}</h2>
+            <h4>{this.state.role}</h4>
           </div>
-          <ul className="sidebar-nav">
+          <ul className="sidebar-nav mt-5">
             <li className="active">
-              <a href="#">
+              <a href="/research-dash">
                 <i className="fa fa-home"></i>Home
               </a>
             </li>
             <li>
-              <a href="#">
-                <i className="fa fa-plug"></i>Plugins
+              <a href="/research-dash-paper">
+                <i className="fa fa-plus"></i>Reseach Papers
               </a>
             </li>
             <li>
-              <a href="#">
-                <i className="fa fa-user"></i>Users
+              <a href="/research-dash-profile">
+                <i className="fa fa-user"></i>Profile
               </a>
             </li>
           </ul>
@@ -70,7 +69,7 @@ class Researcher extends Component {
                 <i className="fa fa-bars"></i>
               </a> */}
                 <div>
-                  <img className="profile-img" src={profileIcon} alt="" />
+                  <img className="profile-img" src={this.state.avatar} alt="" />
                 </div>
               </div>
             </div>
