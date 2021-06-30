@@ -79065,13 +79065,6 @@ var reloadCSS = require('_css_loader');
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
 },{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"Component/Register/validation/validation.jsx":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.isMatch = exports.isPassword = exports.isEmail = exports.isEmpty = void 0;
-
 var isEmpty = function isEmpty(value) {
   if (!value) {
     return true;
@@ -79080,21 +79073,15 @@ var isEmpty = function isEmpty(value) {
   }
 };
 
-exports.isEmpty = isEmpty;
-
 var isEmail = function isEmail(user_email) {
   var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   return re.test(user_email);
 };
 
-exports.isEmail = isEmail;
-
 var isPassword = function isPassword(password) {
   var re = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
   return re.test(password);
 };
-
-exports.isPassword = isPassword;
 
 var isMatch = function isMatch(password, cf_password) {
   if (password === cf_password) {
@@ -79104,7 +79091,10 @@ var isMatch = function isMatch(password, cf_password) {
   }
 };
 
-exports.isMatch = isMatch;
+module.exports = isEmpty;
+module.exports = isEmail;
+module.exports = isPassword;
+module.exports = isMatch;
 },{}],"Component/Register/Register.jsx":[function(require,module,exports) {
 "use strict";
 

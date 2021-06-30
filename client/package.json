@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/preset-env": "^7.14.7",
     "jest": "^27.0.6",
     "parcel": "^2.0.0-beta.2",
     "parcel-bundler": "^1.12.5"
