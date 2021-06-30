@@ -32,6 +32,8 @@ class Editor extends Component {
       .catch((err) => {
         console.log(err);
       });
+
+      axios.get(``)
   }
 
   render() {
@@ -44,13 +46,13 @@ class Editor extends Component {
           </div>
           <ul className="sidebar-nav mt-5">
             <li>
-              <a href="/editor-dash-conferance">
+              <a href="/editor-dash">
                 <i className="fa fa-plus"></i>Arrange Conferance
               </a>
             </li>
             <li className="active">
-              <a href="/editor-dash">
-                <i className="fa fa-home"></i>Home
+              <a href="/editor-dash-details">
+                <i className="fa fa-list"></i>Check Conferance
               </a>
             </li>
             <li>

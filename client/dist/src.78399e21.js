@@ -80470,6 +80470,8 @@ var Editor = /*#__PURE__*/function (_Component) {
       }).catch(function (err) {
         console.log(err);
       });
+
+      _axios.default.get("");
     }
   }, {
     key: "render",
@@ -80483,16 +80485,16 @@ var Editor = /*#__PURE__*/function (_Component) {
       }, /*#__PURE__*/_react.default.createElement("h2", null, this.state.user_name), /*#__PURE__*/_react.default.createElement("h4", null, this.state.role)), /*#__PURE__*/_react.default.createElement("ul", {
         className: "sidebar-nav mt-5"
       }, /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("a", {
-        href: "/editor-dash-conferance"
+        href: "/editor-dash"
       }, /*#__PURE__*/_react.default.createElement("i", {
         className: "fa fa-plus"
       }), "Arrange Conferance")), /*#__PURE__*/_react.default.createElement("li", {
         className: "active"
       }, /*#__PURE__*/_react.default.createElement("a", {
-        href: "/editor-dash"
+        href: "/editor-dash-details"
       }, /*#__PURE__*/_react.default.createElement("i", {
-        className: "fa fa-home"
-      }), "Home")), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("a", {
+        className: "fa fa-list"
+      }), "Check Conferance")), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("a", {
         href: "/editor-dash-profile"
       }, /*#__PURE__*/_react.default.createElement("i", {
         className: "fa fa-user"
@@ -80686,10 +80688,10 @@ var EditorConferance = /*#__PURE__*/function (_Component) {
       }, /*#__PURE__*/_react.default.createElement("i", {
         className: "fa fa-plus"
       }), "Arrange Conferance")), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("a", {
-        href: "/editor-dash"
+        href: "/editor-dash-details"
       }, /*#__PURE__*/_react.default.createElement("i", {
-        className: "fa fa-home"
-      }), "Home")), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("a", {
+        className: "fa fa-list"
+      }), "Check Conferance")), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("a", {
         href: "/editor-dash-profile"
       }, /*#__PURE__*/_react.default.createElement("i", {
         className: "fa fa-user"
@@ -81160,12 +81162,12 @@ function App() {
     component: _Attendee.default,
     exact: true
   }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
-    path: "/editor-dash-details",
-    component: _Editor.default,
-    exact: true
-  }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
     path: "/editor-dash",
     component: _EditorConferance.default,
+    exact: true
+  }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+    path: "/editor-dash-details",
+    component: _Editor.default,
     exact: true
   }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
     path: "/editor-dash-profile",
@@ -82105,7 +82107,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57834" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63148" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

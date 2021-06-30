@@ -104,8 +104,8 @@ class EditorConferance extends Component {
               </a>
             </li>
             <li>
-              <a href="/editor-dash">
-                <i className="fa fa-home"></i>Home
+              <a href="/editor-dash-details">
+                <i className="fa fa-list"></i>Check Conferance
               </a>
             </li>
             <li>
