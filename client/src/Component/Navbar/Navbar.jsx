@@ -46,7 +46,7 @@ const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-mainbg">
       <NavLink className="navbar-brand navbar-logo" to="/" exact>
-        <img className="logo" src={logo} style={{width:"100px", height:"100px"}} />
+        <img className="logo" src={logo} style={{ width: "100px", height: "100px" }} />
         ICAF
       </NavLink>
 
@@ -87,8 +87,8 @@ const Navbar = () => {
           </li>
 
           <li className="nav-item">
-            <NavLink className="nav-link" to="/service" exact>
-              <i className="fa fa-clone"></i>Services
+            <NavLink className="nav-link" to="/Conference" exact>
+              <i className="fa fa-clone"></i>Conference
             </NavLink>
           </li>
           <li className="nav-item">

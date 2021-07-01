@@ -52513,11 +52513,11 @@ var Navbar = function Navbar() {
     className: "nav-item"
   }, /*#__PURE__*/_react.default.createElement(_reactRouterDom.NavLink, {
     className: "nav-link",
-    to: "/service",
+    to: "/Conference",
     exact: true
   }, /*#__PURE__*/_react.default.createElement("i", {
     className: "fa fa-clone"
-  }), "Services")), /*#__PURE__*/_react.default.createElement("li", {
+  }), "Conference")), /*#__PURE__*/_react.default.createElement("li", {
     className: "nav-item"
   }, /*#__PURE__*/_react.default.createElement(_reactRouterDom.NavLink, {
     className: "nav-link",
@@ -56941,10 +56941,15 @@ var Corasoule = function Corasoule() {
 
 var _default = Corasoule;
 exports.default = _default;
+<<<<<<< HEAD
 },{"react":"../node_modules/react/index.js","../../Images/image1.jpg":"Images/image1.jpg","../../Images/image2.jpg":"Images/image2.jpg"}],"Images/background.jpg":[function(require,module,exports) {
 module.exports = "/background.8513044a.jpg";
 },{}],"Images/background2.jpg":[function(require,module,exports) {
 module.exports = "/background2.b9a6e9e3.jpg";
+=======
+},{"react":"../node_modules/react/index.js","../../Images/image1.jpg":"Images/image1.jpg","../../Images/image2.jpg":"Images/image2.jpg"}],"Images/home.jpg":[function(require,module,exports) {
+module.exports = "/home.9369fdba.jpg";
+>>>>>>> 522e283401e830ca51b4d75cdc1ee34c92a45837
 },{}],"Images/menu-4-256.png":[function(require,module,exports) {
 module.exports = "/menu-4-256.f07b20ad.png";
 },{}],"Component/Navbar/NavbarItem/Home/Home.jsx":[function(require,module,exports) {
@@ -56965,9 +56970,13 @@ require("../../../js/bootstrap.min");
 
 var _Corasoule = _interopRequireDefault(require("../../../Corasoule/Corasoule"));
 
+<<<<<<< HEAD
 var _background = _interopRequireDefault(require("../../../../Images/background.jpg"));
 
 var _background2 = _interopRequireDefault(require("../../../../Images/background2.jpg"));
+=======
+var _home = _interopRequireDefault(require("../../../../Images/home.jpg"));
+>>>>>>> 522e283401e830ca51b4d75cdc1ee34c92a45837
 
 var _menu = _interopRequireDefault(require("../../../../Images/menu-4-256.png"));
 
@@ -56975,6 +56984,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var Home = function Home() {
   return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", {
+<<<<<<< HEAD
     className: "table"
   }, /*#__PURE__*/_react.default.createElement("div", {
     className: ".container-fluid"
@@ -57005,11 +57015,37 @@ var Home = function Home() {
     src: _background2.default,
     alt: ""
   }))))));
+=======
+    class: "container-fluid"
+  }, /*#__PURE__*/_react.default.createElement("img", {
+    className: "back",
+    src: _home.default,
+    alt: ""
+  }), /*#__PURE__*/_react.default.createElement("div", {
+    class: "row"
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    class: "col-sm-8"
+  }, /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
+    style: {
+      backgroundColor: "lightblue"
+    }
+  }, /*#__PURE__*/_react.default.createElement("p", null, "This text is important."), /*#__PURE__*/_react.default.createElement("p", null, "This text is important."), /*#__PURE__*/_react.default.createElement("p", null, "This text is important."), /*#__PURE__*/_react.default.createElement("p", null, "This text is important."), /*#__PURE__*/_react.default.createElement("p", null, "This text is important."), /*#__PURE__*/_react.default.createElement("p", null, "This text is important."), /*#__PURE__*/_react.default.createElement("p", null, "This text is important."), /*#__PURE__*/_react.default.createElement("p", null, "This text is important."), /*#__PURE__*/_react.default.createElement("p", null, "This text is important."), /*#__PURE__*/_react.default.createElement("p", null, "This text is important."))), /*#__PURE__*/_react.default.createElement("div", {
+    class: "col-sm-4"
+  }, /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
+    style: {
+      backgroundColor: "lightblue"
+    }
+  }, /*#__PURE__*/_react.default.createElement("p", null, "This text is important."), /*#__PURE__*/_react.default.createElement("p", null, "This text is important."), /*#__PURE__*/_react.default.createElement("p", null, "This text is important."), /*#__PURE__*/_react.default.createElement("p", null, "This text is important."), /*#__PURE__*/_react.default.createElement("p", null, "This text is important."), /*#__PURE__*/_react.default.createElement("p", null, "This text is important."), /*#__PURE__*/_react.default.createElement("p", null, "This text is important."), /*#__PURE__*/_react.default.createElement("p", null, "This text is important."), /*#__PURE__*/_react.default.createElement("p", null, "This text is important."), /*#__PURE__*/_react.default.createElement("p", null, "This text is important."))))));
+>>>>>>> 522e283401e830ca51b4d75cdc1ee34c92a45837
 };
 
 var _default = Home;
 exports.default = _default;
+<<<<<<< HEAD
 },{"react":"../node_modules/react/index.js","../../../../css/Home.css":"css/Home.css","../../../css/bootstrap.min.css":"Component/css/bootstrap.min.css","../../../js/bootstrap.min":"Component/js/bootstrap.min.js","../../../Corasoule/Corasoule":"Component/Corasoule/Corasoule.jsx","../../../../Images/background.jpg":"Images/background.jpg","../../../../Images/background2.jpg":"Images/background2.jpg","../../../../Images/menu-4-256.png":"Images/menu-4-256.png"}],"Component/Navbar/NavbarItem/About/About.jsx":[function(require,module,exports) {
+=======
+},{"react":"../node_modules/react/index.js","../../../css/Style.css":"Component/css/Style.css","../../../css/bootstrap.min.css":"Component/css/bootstrap.min.css","../../../js/bootstrap.min":"Component/js/bootstrap.min.js","../../../Corasoule/Corasoule":"Component/Corasoule/Corasoule.jsx","../../../../Images/home.jpg":"Images/home.jpg","../../../../Images/menu-4-256.png":"Images/menu-4-256.png"}],"Component/Navbar/NavbarItem/About/About.jsx":[function(require,module,exports) {
+>>>>>>> 522e283401e830ca51b4d75cdc1ee34c92a45837
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -79136,13 +79172,6 @@ var reloadCSS = require('_css_loader');
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
 },{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"Component/Register/validation/validation.jsx":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.isMatch = exports.isPassword = exports.isEmail = exports.isEmpty = void 0;
-
 var isEmpty = function isEmpty(value) {
   if (!value) {
     return true;
@@ -79151,21 +79180,15 @@ var isEmpty = function isEmpty(value) {
   }
 };
 
-exports.isEmpty = isEmpty;
-
 var isEmail = function isEmail(user_email) {
   var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   return re.test(user_email);
 };
 
-exports.isEmail = isEmail;
-
 var isPassword = function isPassword(password) {
   var re = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
   return re.test(password);
 };
-
-exports.isPassword = isPassword;
 
 var isMatch = function isMatch(password, cf_password) {
   if (password === cf_password) {
@@ -79175,7 +79198,10 @@ var isMatch = function isMatch(password, cf_password) {
   }
 };
 
-exports.isMatch = isMatch;
+module.exports = isEmpty;
+module.exports = isEmail;
+module.exports = isPassword;
+module.exports = isMatch;
 },{}],"Component/Register/Register.jsx":[function(require,module,exports) {
 "use strict";
 
@@ -81043,7 +81069,7 @@ var WorkShopPresenterDetails = /*#__PURE__*/function (_Component) {
 
 var _default = WorkShopPresenterDetails;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","axios":"../node_modules/axios/index.js","react-toastify":"../node_modules/react-toastify/esm/react-toastify.js","../../../../css/dashboard.css":"css/dashboard.css","../../../../css/form.css":"css/form.css","../../../common/config":"Component/common/config.js","../../../../Images/user.png":"Images/user.png"}],"Component/Dashboard/Admin/Admin.jsx":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","axios":"../node_modules/axios/index.js","react-toastify":"../node_modules/react-toastify/esm/react-toastify.js","../../../../css/dashboard.css":"css/dashboard.css","../../../../css/form.css":"css/form.css","../../../common/config":"Component/common/config.js","../../../../Images/user.png":"Images/user.png"}],"Component/Dashboard/Admin/Admin_GetUserDetails.jsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -81113,6 +81139,9 @@ var AdminDash = /*#__PURE__*/function (_Component) {
 
     _defineProperty(_assertThisInitialized(_this), "state", {});
 
+    _this.state = {
+      users: []
+    };
     return _this;
   }
 
@@ -81121,21 +81150,15 @@ var AdminDash = /*#__PURE__*/function (_Component) {
     value: function componentDidMount() {
       var _this2 = this;
 
-      var user = {};
-
-      _axios.default.get("http://localhost:8000/users/get-user-details", {
+      _axios.default.get('http://localhost:8000/users/get-all-user-details', {
         headers: {
           Authorization: localStorage.getItem("token")
         }
-      }).then(function (res) {
-        _this2.setState(res.data.data);
-
-        console.log(res.data.data);
-      }).catch(function (err) {
-        console.log(err);
+      }).then(function (response) {
+        _this2.setState({
+          users: response.data.data
+        });
       });
-
-      return user;
     }
   }, {
     key: "render",
@@ -81151,18 +81174,18 @@ var AdminDash = /*#__PURE__*/function (_Component) {
       }, /*#__PURE__*/_react.default.createElement("li", {
         className: "active"
       }, /*#__PURE__*/_react.default.createElement("a", {
-        href: "/research-dash"
-      }, /*#__PURE__*/_react.default.createElement("i", {
-        className: "fa fa-home"
-      }), "Home")), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("a", {
-        href: "/research-dash-paper"
-      }, /*#__PURE__*/_react.default.createElement("i", {
-        className: "fa fa-plus"
-      }), "Reseach Papers")), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("a", {
-        href: "/research-dash-profile"
+        href: "/admin-dash"
       }, /*#__PURE__*/_react.default.createElement("i", {
         className: "fa fa-user"
-      }), "Profile")))), /*#__PURE__*/_react.default.createElement("div", {
+      }), "User Details")), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("a", {
+        href: "/admin-dash-conference"
+      }, /*#__PURE__*/_react.default.createElement("i", {
+        className: "fa fa-television"
+      }), "Conference Details")), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("a", {
+        href: "/admin-dash-workshop"
+      }, /*#__PURE__*/_react.default.createElement("i", {
+        className: "fa fa-users"
+      }), "Workshop Details")))), /*#__PURE__*/_react.default.createElement("div", {
         id: "navbar-wrapper"
       }, /*#__PURE__*/_react.default.createElement("nav", {
         className: "navbar navbar-inverse"
@@ -81174,15 +81197,16 @@ var AdminDash = /*#__PURE__*/function (_Component) {
         className: "profile-img",
         src: _user.default,
         alt: ""
-      })))))), /*#__PURE__*/_react.default.createElement("section", {
-        id: "content-wrapper"
-      }, /*#__PURE__*/_react.default.createElement("div", {
-        className: "row"
-      }, /*#__PURE__*/_react.default.createElement("div", {
-        className: "col-lg-12"
-      }, /*#__PURE__*/_react.default.createElement("h2", {
-        className: "content-title"
-      }, "WorkShopPresenter"), /*#__PURE__*/_react.default.createElement("p", null, "Lorem ipsum...")))));
+      })))))), /*#__PURE__*/_react.default.createElement("h1", null, "User Details"), /*#__PURE__*/_react.default.createElement("div", {
+        className: "container"
+      }, this.state.users.length > 0 && this.state.users.map(function (item, index) {
+        return /*#__PURE__*/_react.default.createElement("div", {
+          key: index,
+          className: "card mb-3"
+        }, /*#__PURE__*/_react.default.createElement("div", {
+          className: "p-3"
+        }, /*#__PURE__*/_react.default.createElement("h5", null, "User Role: ", item.role), /*#__PURE__*/_react.default.createElement("h5", null, "User Name: ", item.user_name), /*#__PURE__*/_react.default.createElement("h5", null, "User Email: ", item.user_email), /*#__PURE__*/_react.default.createElement("h5", null, "Account Created Date: ", item.createdAt)));
+      })));
     }
   }]);
 
@@ -81190,6 +81214,566 @@ var AdminDash = /*#__PURE__*/function (_Component) {
 }(_react.Component);
 
 var _default = AdminDash;
+exports.default = _default;
+},{"react":"../node_modules/react/index.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","axios":"../node_modules/axios/index.js","react-toastify":"../node_modules/react-toastify/esm/react-toastify.js","../../../css/dashboard.css":"css/dashboard.css","../../common/config":"Component/common/config.js","../../../Images/user.png":"Images/user.png"}],"Component/Dashboard/Admin/Admin_GetWorkshopDetails.jsx":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _reactRouterDom = require("react-router-dom");
+
+var _axios = _interopRequireDefault(require("axios"));
+
+var _reactToastify = require("react-toastify");
+
+require("../../../css/dashboard.css");
+
+var _config = require("../../common/config");
+
+var _user = _interopRequireDefault(require("../../../Images/user.png"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var initialState = {
+  user: []
+};
+
+var AdminDash = /*#__PURE__*/function (_Component) {
+  _inherits(AdminDash, _Component);
+
+  var _super = _createSuper(AdminDash);
+
+  function AdminDash(props) {
+    var _this;
+
+    _classCallCheck(this, AdminDash);
+
+    _this = _super.call(this, props);
+
+    _defineProperty(_assertThisInitialized(_this), "state", {});
+
+    _this.state = {
+      users: []
+    };
+    return _this;
+  }
+
+  _createClass(AdminDash, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      _axios.default.get('http://localhost:8000/worshop-presenter/get/workshop-details').then(function (response) {
+        _this2.setState({
+          users: response.data.data
+        });
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return /*#__PURE__*/_react.default.createElement("div", {
+        id: "wrapper"
+      }, /*#__PURE__*/_react.default.createElement("aside", {
+        id: "sidebar-wrapper"
+      }, /*#__PURE__*/_react.default.createElement("div", {
+        className: "sidebar-brand"
+      }, /*#__PURE__*/_react.default.createElement("h2", null, this.state.user_name), /*#__PURE__*/_react.default.createElement("h4", null, this.state.role)), /*#__PURE__*/_react.default.createElement("ul", {
+        className: "sidebar-nav mt-5"
+      }, /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("a", {
+        href: "/admin-dash"
+      }, /*#__PURE__*/_react.default.createElement("i", {
+        className: "fa fa-user"
+      }), "User Details")), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("a", {
+        href: "/admin-dash-conference"
+      }, /*#__PURE__*/_react.default.createElement("i", {
+        className: "fa fa-television"
+      }), "Conference Details")), /*#__PURE__*/_react.default.createElement("li", {
+        className: "active"
+      }, /*#__PURE__*/_react.default.createElement("a", {
+        href: "/admin-dash-workshop"
+      }, /*#__PURE__*/_react.default.createElement("i", {
+        className: "fa fa-users"
+      }), "Workshop Details")))), /*#__PURE__*/_react.default.createElement("div", {
+        id: "navbar-wrapper"
+      }, /*#__PURE__*/_react.default.createElement("nav", {
+        className: "navbar navbar-inverse"
+      }, /*#__PURE__*/_react.default.createElement("div", {
+        className: "container-fluid"
+      }, /*#__PURE__*/_react.default.createElement("div", {
+        className: "navbar-header"
+      }, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("img", {
+        className: "profile-img",
+        src: _user.default,
+        alt: ""
+      })))))), /*#__PURE__*/_react.default.createElement("h1", null, "Workshop Details"), /*#__PURE__*/_react.default.createElement("div", {
+        className: "container"
+      }, this.state.users.length > 0 && this.state.users.map(function (item, index) {
+        return /*#__PURE__*/_react.default.createElement("div", {
+          key: index,
+          className: "card mb-3"
+        }, /*#__PURE__*/_react.default.createElement("div", {
+          className: "p-3"
+        }, /*#__PURE__*/_react.default.createElement("h4", null, "Title: ", item.title), /*#__PURE__*/_react.default.createElement("h5", null, "Conductor Name: ", item.conductorName), /*#__PURE__*/_react.default.createElement("h5", null, "File Type: ", item.file_type), /*#__PURE__*/_react.default.createElement("h5", null, "Created Date: ", item.createdAt), /*#__PURE__*/_react.default.createElement("h5", null, "Updated Date: ", item.updatedAt)));
+      })));
+    }
+  }]);
+
+  return AdminDash;
+}(_react.Component);
+
+var _default = AdminDash;
+exports.default = _default;
+},{"react":"../node_modules/react/index.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","axios":"../node_modules/axios/index.js","react-toastify":"../node_modules/react-toastify/esm/react-toastify.js","../../../css/dashboard.css":"css/dashboard.css","../../common/config":"Component/common/config.js","../../../Images/user.png":"Images/user.png"}],"Component/Dashboard/Admin/Admin_GetConferenceDetails.jsx":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _reactRouterDom = require("react-router-dom");
+
+var _axios = _interopRequireDefault(require("axios"));
+
+var _reactToastify = require("react-toastify");
+
+require("../../../css/dashboard.css");
+
+var _config = require("../../common/config");
+
+var _user = _interopRequireDefault(require("../../../Images/user.png"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var initialState = {
+  user: []
+};
+
+var AdminDash = /*#__PURE__*/function (_Component) {
+  _inherits(AdminDash, _Component);
+
+  var _super = _createSuper(AdminDash);
+
+  function AdminDash(props) {
+    var _this;
+
+    _classCallCheck(this, AdminDash);
+
+    _this = _super.call(this, props);
+
+    _defineProperty(_assertThisInitialized(_this), "state", {});
+
+    _this.state = {
+      users: []
+    };
+    return _this;
+  }
+
+  _createClass(AdminDash, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      _axios.default.get('http://localhost:8000/editor/get/all-conferance-details').then(function (response) {
+        _this2.setState({
+          users: response.data.data
+        });
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return /*#__PURE__*/_react.default.createElement("div", {
+        id: "wrapper"
+      }, /*#__PURE__*/_react.default.createElement("aside", {
+        id: "sidebar-wrapper"
+      }, /*#__PURE__*/_react.default.createElement("div", {
+        className: "sidebar-brand"
+      }, /*#__PURE__*/_react.default.createElement("h2", null, this.state.user_name), /*#__PURE__*/_react.default.createElement("h4", null, this.state.role)), /*#__PURE__*/_react.default.createElement("ul", {
+        className: "sidebar-nav mt-5"
+      }, /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("a", {
+        href: "/admin-dash"
+      }, /*#__PURE__*/_react.default.createElement("i", {
+        className: "fa fa-user"
+      }), "User Details")), /*#__PURE__*/_react.default.createElement("li", {
+        className: "active"
+      }, /*#__PURE__*/_react.default.createElement("a", {
+        href: "/admin-dash-conference"
+      }, /*#__PURE__*/_react.default.createElement("i", {
+        className: "fa fa-television"
+      }), "Conference Details")), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("a", {
+        href: "/admin-dash-workshop"
+      }, /*#__PURE__*/_react.default.createElement("i", {
+        className: "fa fa-users"
+      }), "Workshop Details")))), /*#__PURE__*/_react.default.createElement("div", {
+        id: "navbar-wrapper"
+      }, /*#__PURE__*/_react.default.createElement("nav", {
+        className: "navbar navbar-inverse"
+      }, /*#__PURE__*/_react.default.createElement("div", {
+        className: "container-fluid"
+      }, /*#__PURE__*/_react.default.createElement("div", {
+        className: "navbar-header"
+      }, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("img", {
+        className: "profile-img",
+        src: _user.default,
+        alt: ""
+      })))))), /*#__PURE__*/_react.default.createElement("h1", null, "Conference Details"), /*#__PURE__*/_react.default.createElement("div", {
+        className: "container"
+      }, this.state.users.length > 0 && this.state.users.map(function (item, index) {
+        return /*#__PURE__*/_react.default.createElement("div", {
+          key: index,
+          className: "card mb-3"
+        }, /*#__PURE__*/_react.default.createElement("div", {
+          className: "p-3"
+        }, /*#__PURE__*/_react.default.createElement("h4", null, "Title: ", item.title), /*#__PURE__*/_react.default.createElement("h5", null, "Conductor Name: ", item.conductorName), /*#__PURE__*/_react.default.createElement("h5", null, "Place: ", item.place), /*#__PURE__*/_react.default.createElement("h5", null, "Date: ", item.date)));
+      })));
+    }
+  }]);
+
+  return AdminDash;
+}(_react.Component);
+
+var _default = AdminDash;
+exports.default = _default;
+},{"react":"../node_modules/react/index.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","axios":"../node_modules/axios/index.js","react-toastify":"../node_modules/react-toastify/esm/react-toastify.js","../../../css/dashboard.css":"css/dashboard.css","../../common/config":"Component/common/config.js","../../../Images/user.png":"Images/user.png"}],"Component/Dashboard/Reviewer/ReviewerGetConference.jsx":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _reactRouterDom = require("react-router-dom");
+
+var _axios = _interopRequireDefault(require("axios"));
+
+var _reactToastify = require("react-toastify");
+
+require("../../../css/dashboard.css");
+
+var _config = require("../../common/config");
+
+var _user = _interopRequireDefault(require("../../../Images/user.png"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var initialState = {
+  user: []
+};
+
+var Reviewer = /*#__PURE__*/function (_Component) {
+  _inherits(Reviewer, _Component);
+
+  var _super = _createSuper(Reviewer);
+
+  function Reviewer(props) {
+    var _this;
+
+    _classCallCheck(this, Reviewer);
+
+    _this = _super.call(this, props);
+
+    _defineProperty(_assertThisInitialized(_this), "state", {});
+
+    _this.state = {
+      users: []
+    };
+    return _this;
+  }
+
+  _createClass(Reviewer, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      _axios.default.get('http://localhost:8000/editor/get/all-conferance-details').then(function (response) {
+        _this2.setState({
+          users: response.data.data
+        });
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return /*#__PURE__*/_react.default.createElement("div", {
+        id: "wrapper"
+      }, /*#__PURE__*/_react.default.createElement("aside", {
+        id: "sidebar-wrapper"
+      }, /*#__PURE__*/_react.default.createElement("div", {
+        className: "sidebar-brand"
+      }, /*#__PURE__*/_react.default.createElement("h2", null, this.state.user_name), /*#__PURE__*/_react.default.createElement("h4", null, this.state.role)), /*#__PURE__*/_react.default.createElement("ul", {
+        className: "sidebar-nav mt-5"
+      }, /*#__PURE__*/_react.default.createElement("li", {
+        className: "active"
+      }, /*#__PURE__*/_react.default.createElement("a", {
+        href: "/reviewer-conference"
+      }, /*#__PURE__*/_react.default.createElement("i", {
+        className: "fa fa-television"
+      }), "Conference Details")), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("a", {
+        href: "/reviewer-workshop"
+      }, /*#__PURE__*/_react.default.createElement("i", {
+        className: "fa fa-users"
+      }), "Workshop Details")))), /*#__PURE__*/_react.default.createElement("div", {
+        id: "navbar-wrapper"
+      }, /*#__PURE__*/_react.default.createElement("nav", {
+        className: "navbar navbar-inverse"
+      }, /*#__PURE__*/_react.default.createElement("div", {
+        className: "container-fluid"
+      }, /*#__PURE__*/_react.default.createElement("div", {
+        className: "navbar-header"
+      }, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("img", {
+        className: "profile-img",
+        src: _user.default,
+        alt: ""
+      })))))), /*#__PURE__*/_react.default.createElement("h1", null, "Conference Details"), /*#__PURE__*/_react.default.createElement("div", {
+        className: "container"
+      }, this.state.users.length > 0 && this.state.users.map(function (item, index) {
+        return /*#__PURE__*/_react.default.createElement("div", {
+          key: index,
+          className: "card mb-3"
+        }, /*#__PURE__*/_react.default.createElement("div", {
+          className: "p-3"
+        }, /*#__PURE__*/_react.default.createElement("h4", null, "Title: ", item.title), /*#__PURE__*/_react.default.createElement("h5", null, "Conductor Name: ", item.conductorName), /*#__PURE__*/_react.default.createElement("h5", null, "Place: ", item.place), /*#__PURE__*/_react.default.createElement("h5", null, "Date: ", item.date)));
+      })));
+    }
+  }]);
+
+  return Reviewer;
+}(_react.Component);
+
+var _default = Reviewer;
+exports.default = _default;
+},{"react":"../node_modules/react/index.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","axios":"../node_modules/axios/index.js","react-toastify":"../node_modules/react-toastify/esm/react-toastify.js","../../../css/dashboard.css":"css/dashboard.css","../../common/config":"Component/common/config.js","../../../Images/user.png":"Images/user.png"}],"Component/Dashboard/Reviewer/ReviewerGetWorkshop.jsx":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _reactRouterDom = require("react-router-dom");
+
+var _axios = _interopRequireDefault(require("axios"));
+
+var _reactToastify = require("react-toastify");
+
+require("../../../css/dashboard.css");
+
+var _config = require("../../common/config");
+
+var _user = _interopRequireDefault(require("../../../Images/user.png"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var initialState = {
+  user: []
+};
+
+var ReviewerWorkshop = /*#__PURE__*/function (_Component) {
+  _inherits(ReviewerWorkshop, _Component);
+
+  var _super = _createSuper(ReviewerWorkshop);
+
+  function ReviewerWorkshop(props) {
+    var _this;
+
+    _classCallCheck(this, ReviewerWorkshop);
+
+    _this = _super.call(this, props);
+
+    _defineProperty(_assertThisInitialized(_this), "state", {});
+
+    _this.state = {
+      users: []
+    };
+    return _this;
+  }
+
+  _createClass(ReviewerWorkshop, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      _axios.default.get('http://localhost:8000/worshop-presenter/get/workshop-details').then(function (response) {
+        _this2.setState({
+          users: response.data.data
+        });
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return /*#__PURE__*/_react.default.createElement("div", {
+        id: "wrapper"
+      }, /*#__PURE__*/_react.default.createElement("aside", {
+        id: "sidebar-wrapper"
+      }, /*#__PURE__*/_react.default.createElement("div", {
+        className: "sidebar-brand"
+      }, /*#__PURE__*/_react.default.createElement("h2", null, this.state.user_name), /*#__PURE__*/_react.default.createElement("h4", null, this.state.role)), /*#__PURE__*/_react.default.createElement("ul", {
+        className: "sidebar-nav mt-5"
+      }, /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("a", {
+        href: "/reviewer-conference"
+      }, /*#__PURE__*/_react.default.createElement("i", {
+        className: "fa fa-television"
+      }), "Conference Details")), /*#__PURE__*/_react.default.createElement("li", {
+        className: "active"
+      }, /*#__PURE__*/_react.default.createElement("a", {
+        href: "/reviewer-workshop"
+      }, /*#__PURE__*/_react.default.createElement("i", {
+        className: "fa fa-users"
+      }), "Workshop Details")))), /*#__PURE__*/_react.default.createElement("div", {
+        id: "navbar-wrapper"
+      }, /*#__PURE__*/_react.default.createElement("nav", {
+        className: "navbar navbar-inverse"
+      }, /*#__PURE__*/_react.default.createElement("div", {
+        className: "container-fluid"
+      }, /*#__PURE__*/_react.default.createElement("div", {
+        className: "navbar-header"
+      }, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("img", {
+        className: "profile-img",
+        src: _user.default,
+        alt: ""
+      })))))), /*#__PURE__*/_react.default.createElement("h1", null, "Workshop Details"), /*#__PURE__*/_react.default.createElement("div", {
+        className: "container"
+      }, this.state.users.length > 0 && this.state.users.map(function (item, index) {
+        return /*#__PURE__*/_react.default.createElement("div", {
+          key: index,
+          className: "card mb-3"
+        }, /*#__PURE__*/_react.default.createElement("div", {
+          className: "p-3"
+        }, /*#__PURE__*/_react.default.createElement("h4", null, "Title: ", item.title), /*#__PURE__*/_react.default.createElement("h5", null, "Conductor Name: ", item.conductorName), /*#__PURE__*/_react.default.createElement("h5", null, "File Type: ", item.file_type), /*#__PURE__*/_react.default.createElement("h5", null, "Created Date: ", item.createdAt), /*#__PURE__*/_react.default.createElement("h5", null, "Updated Date: ", item.updatedAt)));
+      })));
+    }
+  }]);
+
+  return ReviewerWorkshop;
+}(_react.Component);
+
+var _default = ReviewerWorkshop;
 exports.default = _default;
 },{"react":"../node_modules/react/index.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","axios":"../node_modules/axios/index.js","react-toastify":"../node_modules/react-toastify/esm/react-toastify.js","../../../css/dashboard.css":"css/dashboard.css","../../common/config":"Component/common/config.js","../../../Images/user.png":"Images/user.png"}],"App.jsx":[function(require,module,exports) {
 "use strict";
@@ -81249,7 +81833,15 @@ var _EditorProfile = _interopRequireDefault(require("./Component/Dashboard/Edito
 
 var _WorkShopPresenterDetails = _interopRequireDefault(require("./Component/Dashboard/User/Workshop/WorkShopPresenterDetails"));
 
-var _Admin = _interopRequireDefault(require("./Component/Dashboard/Admin/Admin"));
+var _Admin_GetUserDetails = _interopRequireDefault(require("./Component/Dashboard/Admin/Admin_GetUserDetails"));
+
+var _Admin_GetWorkshopDetails = _interopRequireDefault(require("./Component/Dashboard/Admin/Admin_GetWorkshopDetails"));
+
+var _Admin_GetConferenceDetails = _interopRequireDefault(require("./Component/Dashboard/Admin/Admin_GetConferenceDetails"));
+
+var _ReviewerGetConference = _interopRequireDefault(require("./Component/Dashboard/Reviewer/ReviewerGetConference"));
+
+var _ReviewerGetWorkshop = _interopRequireDefault(require("./Component/Dashboard/Reviewer/ReviewerGetWorkshop"));
 
 var _config = require("./Component/common/config");
 
@@ -81381,7 +81973,31 @@ function App() {
     exact: true
   }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
     path: "/admin-dash",
-    component: _Admin.default,
+    component: _Admin_GetUserDetails.default,
+    exact: true
+  }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+    path: "/admin-dash",
+    component: _Admin_GetUserDetails.default,
+    exact: true
+  }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+    path: "/admin-dash-workshop",
+    component: _Admin_GetWorkshopDetails.default,
+    exact: true
+  }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+    path: "/admin-dash-conference",
+    component: _Admin_GetConferenceDetails.default,
+    exact: true
+  }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+    path: "/Conference",
+    component: _Admin_GetConferenceDetails.default,
+    exact: true
+  }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+    path: "/reviewer-conference",
+    component: _ReviewerGetConference.default,
+    exact: true
+  }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+    path: "/reviewer-workshop",
+    component: _ReviewerGetWorkshop.default,
     exact: true
   }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
     path: "/user/activate/:activate_token",
@@ -81402,7 +82018,7 @@ function App() {
 
 var _default = App;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","@emotion/react":"../node_modules/@emotion/react/dist/emotion-react.browser.esm.js","react-spinners/RiseLoader":"../node_modules/react-spinners/RiseLoader.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","react-toastify":"../node_modules/react-toastify/esm/react-toastify.js","react-toastify/dist/ReactToastify.css":"../node_modules/react-toastify/dist/ReactToastify.css","axios":"../node_modules/axios/index.js","./Component/Navbar/Navbar":"Component/Navbar/Navbar.jsx","./Component/Navbar/NavbarItem/Home/Home":"Component/Navbar/NavbarItem/Home/Home.jsx","./Component/Navbar/NavbarItem/About/About":"Component/Navbar/NavbarItem/About/About.jsx","./Component/Navbar/NavbarItem/Conference/Conferance":"Component/Navbar/NavbarItem/Conference/Conferance.jsx","./Component/Navbar/NavbarItem/Contact/Contact":"Component/Navbar/NavbarItem/Contact/Contact.jsx","./Component/Login/Login":"Component/Login/Login.jsx","./Component/Register/Register":"Component/Register/Register.jsx","./Component/Dashboard/User/Researcher/Researcher":"Component/Dashboard/User/Researcher/Researcher.jsx","./Component/Register/ActivationEmail":"Component/Register/ActivationEmail.jsx","./Component/Dashboard/User/Researcher/AddResearchPapaer":"Component/Dashboard/User/Researcher/AddResearchPapaer.jsx","./Component/Dashboard/User/Researcher/ResearcherProfile":"Component/Dashboard/User/Researcher/ResearcherProfile.jsx","./Component/Dashboard/User/Workshop/WorkShopPresenter":"Component/Dashboard/User/Workshop/WorkShopPresenter.jsx","./Component/Dashboard/User/Attendee/Attendee":"Component/Dashboard/User/Attendee/Attendee.jsx","./Component/Register/OtherRegisters":"Component/Register/OtherRegisters.jsx","./Component/Dashboard/Editor/Editor":"Component/Dashboard/Editor/Editor.jsx","./Component/Dashboard/Editor/EditorConferance":"Component/Dashboard/Editor/EditorConferance.jsx","./Component/Dashboard/Editor/EditorProfile":"Component/Dashboard/Editor/EditorProfile.jsx","./Component/Dashboard/User/Workshop/WorkShopPresenterDetails":"Component/Dashboard/User/Workshop/WorkShopPresenterDetails.jsx","./Component/Dashboard/Admin/Admin":"Component/Dashboard/Admin/Admin.jsx","./Component/common/config":"Component/common/config.js","react-redux":"../node_modules/react-redux/es/index.js"}],"../node_modules/@babel/runtime/helpers/esm/objectSpread2.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","@emotion/react":"../node_modules/@emotion/react/dist/emotion-react.browser.esm.js","react-spinners/RiseLoader":"../node_modules/react-spinners/RiseLoader.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","react-toastify":"../node_modules/react-toastify/esm/react-toastify.js","react-toastify/dist/ReactToastify.css":"../node_modules/react-toastify/dist/ReactToastify.css","axios":"../node_modules/axios/index.js","./Component/Navbar/Navbar":"Component/Navbar/Navbar.jsx","./Component/Navbar/NavbarItem/Home/Home":"Component/Navbar/NavbarItem/Home/Home.jsx","./Component/Navbar/NavbarItem/About/About":"Component/Navbar/NavbarItem/About/About.jsx","./Component/Navbar/NavbarItem/Conference/Conferance":"Component/Navbar/NavbarItem/Conference/Conferance.jsx","./Component/Navbar/NavbarItem/Contact/Contact":"Component/Navbar/NavbarItem/Contact/Contact.jsx","./Component/Login/Login":"Component/Login/Login.jsx","./Component/Register/Register":"Component/Register/Register.jsx","./Component/Dashboard/User/Researcher/Researcher":"Component/Dashboard/User/Researcher/Researcher.jsx","./Component/Register/ActivationEmail":"Component/Register/ActivationEmail.jsx","./Component/Dashboard/User/Researcher/AddResearchPapaer":"Component/Dashboard/User/Researcher/AddResearchPapaer.jsx","./Component/Dashboard/User/Researcher/ResearcherProfile":"Component/Dashboard/User/Researcher/ResearcherProfile.jsx","./Component/Dashboard/User/Workshop/WorkShopPresenter":"Component/Dashboard/User/Workshop/WorkShopPresenter.jsx","./Component/Dashboard/User/Attendee/Attendee":"Component/Dashboard/User/Attendee/Attendee.jsx","./Component/Register/OtherRegisters":"Component/Register/OtherRegisters.jsx","./Component/Dashboard/Editor/Editor":"Component/Dashboard/Editor/Editor.jsx","./Component/Dashboard/Editor/EditorConferance":"Component/Dashboard/Editor/EditorConferance.jsx","./Component/Dashboard/Editor/EditorProfile":"Component/Dashboard/Editor/EditorProfile.jsx","./Component/Dashboard/User/Workshop/WorkShopPresenterDetails":"Component/Dashboard/User/Workshop/WorkShopPresenterDetails.jsx","./Component/Dashboard/Admin/Admin_GetUserDetails":"Component/Dashboard/Admin/Admin_GetUserDetails.jsx","./Component/Dashboard/Admin/Admin_GetWorkshopDetails":"Component/Dashboard/Admin/Admin_GetWorkshopDetails.jsx","./Component/Dashboard/Admin/Admin_GetConferenceDetails":"Component/Dashboard/Admin/Admin_GetConferenceDetails.jsx","./Component/Dashboard/Reviewer/ReviewerGetConference":"Component/Dashboard/Reviewer/ReviewerGetConference.jsx","./Component/Dashboard/Reviewer/ReviewerGetWorkshop":"Component/Dashboard/Reviewer/ReviewerGetWorkshop.jsx","./Component/common/config":"Component/common/config.js","react-redux":"../node_modules/react-redux/es/index.js"}],"../node_modules/@babel/runtime/helpers/esm/objectSpread2.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -82317,7 +82933,11 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
+<<<<<<< HEAD
   var ws = new WebSocket(protocol + '://' + hostname + ':' + "51224" + '/');
+=======
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58360" + '/');
+>>>>>>> 522e283401e830ca51b4d75cdc1ee34c92a45837
 
   ws.onmessage = function (event) {
     checkedAssets = {};
