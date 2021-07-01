@@ -47,19 +47,73 @@ const Login = () => {
           console.log(res);
           if (res.data.code == 200) {
             const { role } = res.data.data;
+            const { user_role } = res.data.data;
 
             if (role == "Researcher") {
-              let i = JSON.stringify(res.data.token)
+              let i = JSON.stringify(res.data.token);
               let result = i.slice(1, -1);
 
               localStorage.setItem("user", JSON.stringify(res.data.data));
               localStorage.setItem("token", result);
-              console.log("tok", result)
+              console.log("tok", result);
               history.push("/research-dash");
               toast.success(
                 res.data.data.user_name + " is logged as " + res.data.data.role
               );
             }
+
+            if (role == "Workshop Presenter") {
+              let i = JSON.stringify(res.data.token);
+              let result = i.slice(1, -1);
+
+              localStorage.setItem("user", JSON.stringify(res.data.data));
+              localStorage.setItem("token", result);
+              console.log("tok", result);
+              history.push("/workshop-dash");
+              toast.success(
+                res.data.data.user_name + " is logged as " + res.data.data.role
+              );
+            }
+
+            if (role == "Attendee") {
+              let i = JSON.stringify(res.data.token);
+              let result = i.slice(1, -1);
+
+              localStorage.setItem("user", JSON.stringify(res.data.data));
+              localStorage.setItem("token", result);
+              console.log("tok", result);
+              history.push("/attendee-dash");
+              toast.success(
+                res.data.data.user_name + " is logged as " + res.data.data.role
+              );
+            }
+
+            if (role == "Editor") {
+              let i = JSON.stringify(res.data.token);
+              let result = i.slice(1, -1);
+
+              localStorage.setItem("user", JSON.stringify(res.data.data));
+              localStorage.setItem("token", result);
+              console.log("tok", result);
+              history.push("/editor-dash");
+              toast.success(
+                res.data.data.user_name + " is logged as " + res.data.data.role
+              );
+            }
+
+            if (user_role == 1) {
+              let i = JSON.stringify(res.data.token);
+              let result = i.slice(1, -1);
+
+              localStorage.setItem("user", JSON.stringify(res.data.data));
+              localStorage.setItem("token", result);
+              console.log("tok", result);
+              history.push("/admin-dash");
+              toast.success(
+                res.data.data.user_name + " is logged as " + res.data.data.role
+              );
+            }
+
             localStorage.setItem("firstLogin", true);
             dispatch(dispatchLogin());
           } else {

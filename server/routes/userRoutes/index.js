@@ -6,11 +6,11 @@ const auth_admin_middleware = require("../../middleware/auth.admin");
 
 router.post("/register-user", userControl.register);
 
+router.post("/other-register-user", userControl.otherUserRegister);
+
 router.post("/activate-email", userControl.activateEmail);
 
 router.post("/login-user", userControl.login);
-
-//  router.post("/refresh_token", userControl.getAccessToken);
 
 router.post("/forgot-password", userControl.forgotPassword);
 
@@ -21,7 +21,6 @@ router.get("/get-user-details", auth_middleware, userControl.getUserDetails);
 router.get(
   "/get-all-user-details",
   auth_middleware,
-  auth_admin_middleware,
   userControl.getAllUserDetails
 );
 
@@ -31,6 +30,11 @@ router.patch("/update-user", auth_middleware, userControl.updateUser);
 
 router.delete("/delete-user/:id", auth_middleware, userControl.deleteUser);
 
-//router.post("/refresh_token", userCtrl.getAccessToken);
+router.delete(
+  "/delete-user/:id",
+  auth_middleware,
+  auth_admin_middleware,
+  userControl.deleteUser
+);
 
 module.exports = router;
