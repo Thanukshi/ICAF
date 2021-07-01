@@ -21,7 +21,6 @@ router.get("/get-user-details", auth_middleware, userControl.getUserDetails);
 router.get(
   "/get-all-user-details",
   auth_middleware,
-  auth_admin_middleware,
   userControl.getAllUserDetails
 );
 

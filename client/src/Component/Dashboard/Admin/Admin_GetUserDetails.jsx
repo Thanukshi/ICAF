@@ -20,7 +20,12 @@ class AdminDash extends Component {
   }
   state = {};
   componentDidMount() {
-    axios.get('http://localhost:8000/users/get-all-user-details')
+    axios.get('http://localhost:8000/users/get-all-user-details', {
+      headers: {
+        Authorization: localStorage.getItem("token"),
+      },
+    })
+
       .then(response => {
         this.setState({ users: response.data.data });
       })
@@ -76,7 +81,11 @@ class AdminDash extends Component {
           {this.state.users.length > 0 && this.state.users.map((item, index) => (
             <div key={index} className="card mb-3" >
               <div className="p-3">
-                <h5>user_name: {item.user_name}</h5>
+                <h5>User Role: {item.role}</h5>
+                <h5>User Name: {item.user_name}</h5>
+                <h5>User Email: {item.user_email}</h5>
+                <h5>Account Created Date: {item.createdAt}</h5>
+
 
               </div>
             </div>

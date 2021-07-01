@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
@@ -9,17 +9,17 @@ import profileIcon from "../../../Images/user.png";
 
 const initialState = {
   id: "",
-  data: {},
+  user: [],
 };
 
 class Editor extends Component {
   constructor(props) {
     super(props);
-    this.state = initialState;
+    this.state = {
+      id: "",
+      user: [],
+    };
   }
-
-  state = {};
-
 
   componentDidMount() {
     axios
@@ -29,7 +29,7 @@ class Editor extends Component {
         },
       })
       .then((res) => {
-        this.setState(res.data.data);
+        this.setState({ user: res.data.data });
         console.log(res.data.data);
       })
       .catch((err) => {
@@ -46,7 +46,7 @@ class Editor extends Component {
         }
       )
       .then((res) => {
-        this.setState(res.data.data);
+        this.setState({ user: res.data.data });
         console.log("new", res.data.data);
       })
       .catch((err) => {
@@ -61,8 +61,8 @@ class Editor extends Component {
       <div id="wrapper">
         <aside id="sidebar-wrapper">
           <div className="sidebar-brand">
-            <h2>{this.state.user_name}</h2>
-            <h4>{this.state.role}</h4>
+            <h2>{this.state.user.user_name}</h2>
+            <h4>{this.state.user.role}</h4>
           </div>
           <ul className="sidebar-nav mt-5">
             <li className="active">
@@ -101,9 +101,9 @@ class Editor extends Component {
         <section id="content-wrapper">
           <div className="row">
             <div className="col-lg-12">
-              {this.state.length > 0 &&
-                this.state.map((item) => (
-                  <div className="card mb-3 text-white">
+              {this.state.user.length > 0 &&
+                this.state.user.map((item, index) => (
+                  <div key={index} className="card mb-3 bg-primary text-white">
                     <h5>Title: {item.title}</h5>
                     <h5>Conductor Name: {item.conductorName}</h5>
                     <h5>Place: {item.place}</h5>
