@@ -22,7 +22,6 @@ class EditorConferance extends Component {
     this.state = initialState;
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
-    
   }
 
   state = {};
@@ -68,13 +67,7 @@ class EditorConferance extends Component {
           headers: {
             Authorization: localStorage.getItem("token"),
           },
-        },
-        <Link
-          to={{
-            pathname: "/attendee-dash",
-            data: data,
-          }}
-        ></Link>
+        }
       )
       .then((res) => {
         console.log(res);
@@ -105,14 +98,14 @@ class EditorConferance extends Component {
             <h4>{this.state.role}</h4>
           </div>
           <ul className="sidebar-nav mt-5">
+            <li>
+              <a href="/editor-dash">
+                <i className="fa fa-home"></i>Home
+              </a>
+            </li>
             <li className="active">
               <a href="/editor-dash-conferance">
                 <i className="fa fa-plus"></i>Arrange Conferance
-              </a>
-            </li>
-            <li>
-              <a href="/editor-dash-details">
-                <i className="fa fa-list"></i>Check Conferance
               </a>
             </li>
             <li>

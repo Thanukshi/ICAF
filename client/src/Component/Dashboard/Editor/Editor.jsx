@@ -7,12 +7,19 @@ import "../../../css/dashboard.css";
 import { authDetail } from "../../common/config";
 import profileIcon from "../../../Images/user.png";
 
+const initialState = {
+  id: "",
+  data: {},
+};
+
 class Editor extends Component {
   constructor(props) {
     super(props);
+    this.state = initialState;
   }
 
   state = {};
+
 
   componentDidMount() {
     axios
@@ -28,10 +35,10 @@ class Editor extends Component {
       .catch((err) => {
         console.log(err);
       });
-    console.log("new", this.state._id);
+
     axios
       .get(
-        `http://localhost:8000/editor/get/all-conferance-details/${this.state._id}`,
+        `http://localhost:8000/editor/get/all-conferance-details/${this.state.id}`,
         {
           headers: {
             Authorization: localStorage.getItem("token"),
@@ -39,8 +46,8 @@ class Editor extends Component {
         }
       )
       .then((res) => {
-        this.setState(res);
-        console.log(res);
+        this.setState(res.data.data);
+        console.log("new", res.data.data);
       })
       .catch((err) => {
         console.log(err);
@@ -48,6 +55,8 @@ class Editor extends Component {
   }
 
   render() {
+    // const { data } = this.state;
+    // console.log("data", data);
     return (
       <div id="wrapper">
         <aside id="sidebar-wrapper">
@@ -56,18 +65,18 @@ class Editor extends Component {
             <h4>{this.state.role}</h4>
           </div>
           <ul className="sidebar-nav mt-5">
+            <li className="active">
+              <a href="/research-dash">
+                <i className="fa fa-home"></i>Home
+              </a>
+            </li>
             <li>
-              <a href="/editor-dash">
+              <a href="/editor-dash-conferance">
                 <i className="fa fa-plus"></i>Arrange Conferance
               </a>
             </li>
-            <li className="active">
-              <a href="/editor-dash-details">
-                <i className="fa fa-list"></i>Check Conferance
-              </a>
-            </li>
             <li>
-              <a href="/editor-dash-profile">
+              <a href="/research-dash-profile">
                 <i className="fa fa-user"></i>Profile
               </a>
             </li>
@@ -92,8 +101,15 @@ class Editor extends Component {
         <section id="content-wrapper">
           <div className="row">
             <div className="col-lg-12">
-              <h2 className="content-title">Editor</h2>
-              <p>Lorem ipsum...</p>
+              {this.state.length > 0 &&
+                this.state.map((item) => (
+                  <div className="card mb-3 text-white">
+                    <h5>Title: {item.title}</h5>
+                    <h5>Conductor Name: {item.conductorName}</h5>
+                    <h5>Place: {item.place}</h5>
+                    <h5>Date: {item.date}</h5>
+                  </div>
+                ))}
             </div>
           </div>
         </section>
