@@ -1,65 +1,39 @@
 import React from "react";
-import "../../../css/Style.css";
+import "../../../../css/Home.css";
 import "../../../css/bootstrap.min.css";
 import "../../../js/bootstrap.min";
 import Corasoule from "../../../Corasoule/Corasoule";
-import image from "../../../../Images/image2.jpg";
+import image from "../../../../Images/background.jpg";
+import image2 from "../../../../Images/background2.jpg";
 import image1 from "../../../../Images/menu-4-256.png";
 
 const Home = () => {
   return (
     <div>
-      <Corasoule />
-      {/* <div className="container text-center mt-5 ">
-        <h1>Our Features</h1>
-      </div>
-      <p className="pt-2">Some Features</p>
-
-      <div className="container">
-        <div className="card">
-          <div className="imgBX">
-            <img src={image} />
+      <div className="table" >
+      <div className=".container-fluid">
+        <div className="row">
+          <div className="col-sm-5 col-md-6">
+            <div className="card bg-dark text-white">
+              <img className="backimage1" src={image} alt=""/>
+            <div className="card-img-overlay">
+              <h2 className="card-title">UPCOMING EVENTS</h2><br/><br/>
+              <h4 className="card-title">CLOUD Workshop</h4>
+              <h5>10.07.2021</h5><br/>
+              <h4 className="card-title">BLOCKCHAIN Workshop</h4>
+              <h5>15.07.2021</h5><br/>
+              <h4 className="card-title">IOT Workshop</h4>
+              <h5>20.07.2021</h5><br/>
+            </div>
+            </div>
           </div>
-          <div className="content">
-            <h2>Card One</h2>
-            <p>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-            </p>
-          </div>
-        </div>
-
-        <div className="card">
-          <div className="imgBX">
-            <img src={image1} />
-          </div>
-          <div className="content">
-            <h2>Card Two</h2>
-            <p>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-            </p>
+          <div className="col-sm-5 offset-sm-1 col-md-6 offset-md-0">
+             <img className="backimage" src={image2} alt=""/> 
           </div>
         </div>
-
-        <div className="card">
-          <div className="imgBX">
-            <img src={image1} />
-          </div>
-          <div className="content">
-            <h2>Card Three</h2>
-            <p>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-            </p>
-          </div>
-        </div> */}
-
-        
+      </div> 
       </div>
+    </div>
 
   );
 };

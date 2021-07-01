@@ -52538,7 +52538,7 @@ var Navbar = function Navbar() {
 
 var _default = Navbar;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","../../css/Navbar.css":"css/Navbar.css","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","jquery":"../node_modules/jquery/dist/jquery.js","../../Images/logo.png":"Images/logo.png"}],"Component/css/Style.css":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","../../css/Navbar.css":"css/Navbar.css","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","jquery":"../node_modules/jquery/dist/jquery.js","../../Images/logo.png":"Images/logo.png"}],"css/Home.css":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
@@ -56941,7 +56941,11 @@ var Corasoule = function Corasoule() {
 
 var _default = Corasoule;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","../../Images/image1.jpg":"Images/image1.jpg","../../Images/image2.jpg":"Images/image2.jpg"}],"Images/menu-4-256.png":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","../../Images/image1.jpg":"Images/image1.jpg","../../Images/image2.jpg":"Images/image2.jpg"}],"Images/background.jpg":[function(require,module,exports) {
+module.exports = "/background.8513044a.jpg";
+},{}],"Images/background2.jpg":[function(require,module,exports) {
+module.exports = "/background2.b9a6e9e3.jpg";
+},{}],"Images/menu-4-256.png":[function(require,module,exports) {
 module.exports = "/menu-4-256.f07b20ad.png";
 },{}],"Component/Navbar/NavbarItem/Home/Home.jsx":[function(require,module,exports) {
 "use strict";
@@ -56953,7 +56957,7 @@ exports.default = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
-require("../../../css/Style.css");
+require("../../../../css/Home.css");
 
 require("../../../css/bootstrap.min.css");
 
@@ -56961,19 +56965,51 @@ require("../../../js/bootstrap.min");
 
 var _Corasoule = _interopRequireDefault(require("../../../Corasoule/Corasoule"));
 
-var _image = _interopRequireDefault(require("../../../../Images/image2.jpg"));
+var _background = _interopRequireDefault(require("../../../../Images/background.jpg"));
+
+var _background2 = _interopRequireDefault(require("../../../../Images/background2.jpg"));
 
 var _menu = _interopRequireDefault(require("../../../../Images/menu-4-256.png"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Home = function Home() {
-  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_Corasoule.default, null));
+  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", {
+    className: "table"
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    className: ".container-fluid"
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    className: "row"
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    className: "col-sm-5 col-md-6"
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    className: "card bg-dark text-white"
+  }, /*#__PURE__*/_react.default.createElement("img", {
+    className: "backimage1",
+    src: _background.default,
+    alt: ""
+  }), /*#__PURE__*/_react.default.createElement("div", {
+    className: "card-img-overlay"
+  }, /*#__PURE__*/_react.default.createElement("h2", {
+    className: "card-title"
+  }, "UPCOMING EVENTS"), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("h4", {
+    className: "card-title"
+  }, "CLOUD Workshop"), /*#__PURE__*/_react.default.createElement("h5", null, "10.07.2021"), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("h4", {
+    className: "card-title"
+  }, "BLOCKCHAIN Workshop"), /*#__PURE__*/_react.default.createElement("h5", null, "15.07.2021"), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("h4", {
+    className: "card-title"
+  }, "IOT Workshop"), /*#__PURE__*/_react.default.createElement("h5", null, "20.07.2021"), /*#__PURE__*/_react.default.createElement("br", null)))), /*#__PURE__*/_react.default.createElement("div", {
+    className: "col-sm-5 offset-sm-1 col-md-6 offset-md-0"
+  }, /*#__PURE__*/_react.default.createElement("img", {
+    className: "backimage",
+    src: _background2.default,
+    alt: ""
+  }))))));
 };
 
 var _default = Home;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","../../../css/Style.css":"Component/css/Style.css","../../../css/bootstrap.min.css":"Component/css/bootstrap.min.css","../../../js/bootstrap.min":"Component/js/bootstrap.min.js","../../../Corasoule/Corasoule":"Component/Corasoule/Corasoule.jsx","../../../../Images/image2.jpg":"Images/image2.jpg","../../../../Images/menu-4-256.png":"Images/menu-4-256.png"}],"Component/Navbar/NavbarItem/About/About.jsx":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","../../../../css/Home.css":"css/Home.css","../../../css/bootstrap.min.css":"Component/css/bootstrap.min.css","../../../js/bootstrap.min":"Component/js/bootstrap.min.js","../../../Corasoule/Corasoule":"Component/Corasoule/Corasoule.jsx","../../../../Images/background.jpg":"Images/background.jpg","../../../../Images/background2.jpg":"Images/background2.jpg","../../../../Images/menu-4-256.png":"Images/menu-4-256.png"}],"Component/Navbar/NavbarItem/About/About.jsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -81611,7 +81647,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62087" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51224" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
