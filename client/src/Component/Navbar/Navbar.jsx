@@ -87,7 +87,7 @@ const Navbar = () => {
           </li>
 
           <li className="nav-item">
-            <NavLink className="nav-link" to="/Conference" exact>
+            <NavLink className="nav-link" to="/conference" exact>
               <i className="fa fa-clone"></i>Conference
             </NavLink>
           </li>
