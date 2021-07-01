@@ -81097,7 +81097,7 @@ var AdminDash = /*#__PURE__*/function (_Component) {
     value: function componentDidMount() {
       var _this2 = this;
 
-      _axios.default.get('http://localhost:8000/users/get-user-detail').then(function (response) {
+      _axios.default.get('http://localhost:8000/users/get-all-user-details').then(function (response) {
         _this2.setState({
           users: response.data.data
         });
@@ -81119,15 +81119,15 @@ var AdminDash = /*#__PURE__*/function (_Component) {
       }, /*#__PURE__*/_react.default.createElement("a", {
         href: "/admin-dash"
       }, /*#__PURE__*/_react.default.createElement("i", {
-        className: "fa fa-home"
+        className: "fa fa-user"
       }), "User Details")), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("a", {
         href: "/admin-dash-conference"
       }, /*#__PURE__*/_react.default.createElement("i", {
-        className: "fa fa-plus"
+        className: "fa fa-television"
       }), "Conference Details")), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("a", {
         href: "/admin-dash-workshop"
       }, /*#__PURE__*/_react.default.createElement("i", {
-        className: "fa fa-user"
+        className: "fa fa-users"
       }), "Workshop Details")))), /*#__PURE__*/_react.default.createElement("div", {
         id: "navbar-wrapper"
       }, /*#__PURE__*/_react.default.createElement("nav", {
@@ -81256,20 +81256,20 @@ var AdminDash = /*#__PURE__*/function (_Component) {
         className: "sidebar-brand"
       }, /*#__PURE__*/_react.default.createElement("h2", null, this.state.user_name), /*#__PURE__*/_react.default.createElement("h4", null, this.state.role)), /*#__PURE__*/_react.default.createElement("ul", {
         className: "sidebar-nav mt-5"
-      }, /*#__PURE__*/_react.default.createElement("li", {
-        className: "active"
-      }, /*#__PURE__*/_react.default.createElement("a", {
+      }, /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("a", {
         href: "/admin-dash"
       }, /*#__PURE__*/_react.default.createElement("i", {
-        className: "fa fa-home"
+        className: "fa fa-user"
       }), "User Details")), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("a", {
         href: "/admin-dash-conference"
       }, /*#__PURE__*/_react.default.createElement("i", {
-        className: "fa fa-plus"
-      }), "Conference Details")), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("a", {
+        className: "fa fa-television"
+      }), "Conference Details")), /*#__PURE__*/_react.default.createElement("li", {
+        className: "active"
+      }, /*#__PURE__*/_react.default.createElement("a", {
         href: "/admin-dash-workshop"
       }, /*#__PURE__*/_react.default.createElement("i", {
-        className: "fa fa-user"
+        className: "fa fa-users"
       }), "Workshop Details")))), /*#__PURE__*/_react.default.createElement("div", {
         id: "navbar-wrapper"
       }, /*#__PURE__*/_react.default.createElement("nav", {
@@ -81290,7 +81290,7 @@ var AdminDash = /*#__PURE__*/function (_Component) {
           className: "card mb-3"
         }, /*#__PURE__*/_react.default.createElement("div", {
           className: "p-3"
-        }, /*#__PURE__*/_react.default.createElement("h5", null, "title: ", item.title), /*#__PURE__*/_react.default.createElement("h5", null, "conductorName: ", item.conductorName)));
+        }, /*#__PURE__*/_react.default.createElement("h4", null, "Title: ", item.title), /*#__PURE__*/_react.default.createElement("h5", null, "Conductor Name: ", item.conductorName), /*#__PURE__*/_react.default.createElement("h5", null, "File Type: ", item.file_type), /*#__PURE__*/_react.default.createElement("h5", null, "Created Date: ", item.createdAt), /*#__PURE__*/_react.default.createElement("h5", null, "Updated Date: ", item.updatedAt)));
       })));
     }
   }]);
@@ -81398,20 +81398,20 @@ var AdminDash = /*#__PURE__*/function (_Component) {
         className: "sidebar-brand"
       }, /*#__PURE__*/_react.default.createElement("h2", null, this.state.user_name), /*#__PURE__*/_react.default.createElement("h4", null, this.state.role)), /*#__PURE__*/_react.default.createElement("ul", {
         className: "sidebar-nav mt-5"
-      }, /*#__PURE__*/_react.default.createElement("li", {
-        className: "active"
-      }, /*#__PURE__*/_react.default.createElement("a", {
+      }, /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("a", {
         href: "/admin-dash"
       }, /*#__PURE__*/_react.default.createElement("i", {
-        className: "fa fa-home"
-      }), "User Details")), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("a", {
+        className: "fa fa-user"
+      }), "User Details")), /*#__PURE__*/_react.default.createElement("li", {
+        className: "active"
+      }, /*#__PURE__*/_react.default.createElement("a", {
         href: "/admin-dash-conference"
       }, /*#__PURE__*/_react.default.createElement("i", {
-        className: "fa fa-plus"
+        className: "fa fa-television"
       }), "Conference Details")), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("a", {
         href: "/admin-dash-workshop"
       }, /*#__PURE__*/_react.default.createElement("i", {
-        className: "fa fa-user"
+        className: "fa fa-users"
       }), "Workshop Details")))), /*#__PURE__*/_react.default.createElement("div", {
         id: "navbar-wrapper"
       }, /*#__PURE__*/_react.default.createElement("nav", {
@@ -81432,7 +81432,7 @@ var AdminDash = /*#__PURE__*/function (_Component) {
           className: "card mb-3"
         }, /*#__PURE__*/_react.default.createElement("div", {
           className: "p-3"
-        }, /*#__PURE__*/_react.default.createElement("h5", null, "title: ", item.title), /*#__PURE__*/_react.default.createElement("h5", null, "conductorName: ", item.conductorName)));
+        }, /*#__PURE__*/_react.default.createElement("h4", null, "Title: ", item.title), /*#__PURE__*/_react.default.createElement("h5", null, "Conductor Name: ", item.conductorName), /*#__PURE__*/_react.default.createElement("h5", null, "Place: ", item.place), /*#__PURE__*/_react.default.createElement("h5", null, "Date: ", item.date)));
       })));
     }
   }]);

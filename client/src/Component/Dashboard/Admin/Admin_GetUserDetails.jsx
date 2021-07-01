@@ -20,7 +20,7 @@ class AdminDash extends Component {
   }
   state = {};
   componentDidMount() {
-    axios.get('http://localhost:8000/users/get-user-detail')
+    axios.get('http://localhost:8000/users/get-all-user-details')
       .then(response => {
         this.setState({ users: response.data.data });
       })
@@ -38,17 +38,17 @@ class AdminDash extends Component {
           <ul className="sidebar-nav mt-5">
             <li className="active">
               <a href="/admin-dash">
-                <i className="fa fa-home"></i>User Details
+                <i className="fa fa-user"></i>User Details
               </a>
             </li>
             <li>
               <a href="/admin-dash-conference">
-                <i className="fa fa-plus"></i>Conference Details
+                <i className="fa fa-television"></i>Conference Details
               </a>
             </li>
             <li>
               <a href="/admin-dash-workshop">
-                <i className="fa fa-user"></i>Workshop Details
+                <i className="fa fa-users"></i>Workshop Details
               </a>
             </li>
           </ul>

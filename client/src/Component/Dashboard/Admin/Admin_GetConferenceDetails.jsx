@@ -36,19 +36,19 @@ class AdminDash extends Component {
                         <h4>{this.state.role}</h4>
                     </div>
                     <ul className="sidebar-nav mt-5">
-                        <li className="active">
+                        <li>
                             <a href="/admin-dash">
-                                <i className="fa fa-home"></i>User Details
+                                <i className="fa fa-user"></i>User Details
                             </a>
                         </li>
-                        <li>
+                        <li className="active">
                             <a href="/admin-dash-conference">
-                                <i className="fa fa-plus"></i>Conference Details
+                                <i className="fa fa-television"></i>Conference Details
                             </a>
                         </li>
                         <li>
                             <a href="/admin-dash-workshop">
-                                <i className="fa fa-user"></i>Workshop Details
+                                <i className="fa fa-users"></i>Workshop Details
                             </a>
                         </li>
                     </ul>
@@ -76,8 +76,11 @@ class AdminDash extends Component {
                     {this.state.users.length > 0 && this.state.users.map((item, index) => (
                         <div key={index} className="card mb-3" >
                             <div className="p-3">
-                                <h5>title: {item.title}</h5>
-                                <h5>conductorName: {item.conductorName}</h5>
+                                <h4>Title: {item.title}</h4>
+                                <h5>Conductor Name: {item.conductorName}</h5>
+                                <h5>Place: {item.place}</h5>
+                                <h5>Date: {item.date}</h5>
+
                             </div>
                         </div>
                     ))}
