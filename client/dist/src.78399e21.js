@@ -56941,15 +56941,10 @@ var Corasoule = function Corasoule() {
 
 var _default = Corasoule;
 exports.default = _default;
-<<<<<<< HEAD
 },{"react":"../node_modules/react/index.js","../../Images/image1.jpg":"Images/image1.jpg","../../Images/image2.jpg":"Images/image2.jpg"}],"Images/background.jpg":[function(require,module,exports) {
 module.exports = "/background.8513044a.jpg";
 },{}],"Images/background2.jpg":[function(require,module,exports) {
 module.exports = "/background2.b9a6e9e3.jpg";
-=======
-},{"react":"../node_modules/react/index.js","../../Images/image1.jpg":"Images/image1.jpg","../../Images/image2.jpg":"Images/image2.jpg"}],"Images/home.jpg":[function(require,module,exports) {
-module.exports = "/home.9369fdba.jpg";
->>>>>>> 522e283401e830ca51b4d75cdc1ee34c92a45837
 },{}],"Images/menu-4-256.png":[function(require,module,exports) {
 module.exports = "/menu-4-256.f07b20ad.png";
 },{}],"Component/Navbar/NavbarItem/Home/Home.jsx":[function(require,module,exports) {
@@ -56970,13 +56965,9 @@ require("../../../js/bootstrap.min");
 
 var _Corasoule = _interopRequireDefault(require("../../../Corasoule/Corasoule"));
 
-<<<<<<< HEAD
 var _background = _interopRequireDefault(require("../../../../Images/background.jpg"));
 
 var _background2 = _interopRequireDefault(require("../../../../Images/background2.jpg"));
-=======
-var _home = _interopRequireDefault(require("../../../../Images/home.jpg"));
->>>>>>> 522e283401e830ca51b4d75cdc1ee34c92a45837
 
 var _menu = _interopRequireDefault(require("../../../../Images/menu-4-256.png"));
 
@@ -56984,7 +56975,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var Home = function Home() {
   return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", {
-<<<<<<< HEAD
     className: "table"
   }, /*#__PURE__*/_react.default.createElement("div", {
     className: ".container-fluid"
@@ -57015,37 +57005,11 @@ var Home = function Home() {
     src: _background2.default,
     alt: ""
   }))))));
-=======
-    class: "container-fluid"
-  }, /*#__PURE__*/_react.default.createElement("img", {
-    className: "back",
-    src: _home.default,
-    alt: ""
-  }), /*#__PURE__*/_react.default.createElement("div", {
-    class: "row"
-  }, /*#__PURE__*/_react.default.createElement("div", {
-    class: "col-sm-8"
-  }, /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
-    style: {
-      backgroundColor: "lightblue"
-    }
-  }, /*#__PURE__*/_react.default.createElement("p", null, "This text is important."), /*#__PURE__*/_react.default.createElement("p", null, "This text is important."), /*#__PURE__*/_react.default.createElement("p", null, "This text is important."), /*#__PURE__*/_react.default.createElement("p", null, "This text is important."), /*#__PURE__*/_react.default.createElement("p", null, "This text is important."), /*#__PURE__*/_react.default.createElement("p", null, "This text is important."), /*#__PURE__*/_react.default.createElement("p", null, "This text is important."), /*#__PURE__*/_react.default.createElement("p", null, "This text is important."), /*#__PURE__*/_react.default.createElement("p", null, "This text is important."), /*#__PURE__*/_react.default.createElement("p", null, "This text is important."))), /*#__PURE__*/_react.default.createElement("div", {
-    class: "col-sm-4"
-  }, /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
-    style: {
-      backgroundColor: "lightblue"
-    }
-  }, /*#__PURE__*/_react.default.createElement("p", null, "This text is important."), /*#__PURE__*/_react.default.createElement("p", null, "This text is important."), /*#__PURE__*/_react.default.createElement("p", null, "This text is important."), /*#__PURE__*/_react.default.createElement("p", null, "This text is important."), /*#__PURE__*/_react.default.createElement("p", null, "This text is important."), /*#__PURE__*/_react.default.createElement("p", null, "This text is important."), /*#__PURE__*/_react.default.createElement("p", null, "This text is important."), /*#__PURE__*/_react.default.createElement("p", null, "This text is important."), /*#__PURE__*/_react.default.createElement("p", null, "This text is important."), /*#__PURE__*/_react.default.createElement("p", null, "This text is important."))))));
->>>>>>> 522e283401e830ca51b4d75cdc1ee34c92a45837
 };
 
 var _default = Home;
 exports.default = _default;
-<<<<<<< HEAD
 },{"react":"../node_modules/react/index.js","../../../../css/Home.css":"css/Home.css","../../../css/bootstrap.min.css":"Component/css/bootstrap.min.css","../../../js/bootstrap.min":"Component/js/bootstrap.min.js","../../../Corasoule/Corasoule":"Component/Corasoule/Corasoule.jsx","../../../../Images/background.jpg":"Images/background.jpg","../../../../Images/background2.jpg":"Images/background2.jpg","../../../../Images/menu-4-256.png":"Images/menu-4-256.png"}],"Component/Navbar/NavbarItem/About/About.jsx":[function(require,module,exports) {
-=======
-},{"react":"../node_modules/react/index.js","../../../css/Style.css":"Component/css/Style.css","../../../css/bootstrap.min.css":"Component/css/bootstrap.min.css","../../../js/bootstrap.min":"Component/js/bootstrap.min.js","../../../Corasoule/Corasoule":"Component/Corasoule/Corasoule.jsx","../../../../Images/home.jpg":"Images/home.jpg","../../../../Images/menu-4-256.png":"Images/menu-4-256.png"}],"Component/Navbar/NavbarItem/About/About.jsx":[function(require,module,exports) {
->>>>>>> 522e283401e830ca51b4d75cdc1ee34c92a45837
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -82933,11 +82897,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-<<<<<<< HEAD
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51224" + '/');
-=======
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58360" + '/');
->>>>>>> 522e283401e830ca51b4d75cdc1ee34c92a45837
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57786" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
