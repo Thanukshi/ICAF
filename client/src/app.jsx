@@ -29,8 +29,10 @@ import Editor from "./Component/Dashboard/Editor/Editor";
 import EditorConferance from "./Component/Dashboard/Editor/EditorConferance";
 import EditorProfile from "./Component/Dashboard/Editor/EditorProfile";
 import WorkShopPresenterDetails from "./Component/Dashboard/User/Workshop/WorkShopPresenterDetails";
-import AdminDash from "./Component/Dashboard/Admin/Admin";
-
+import AdminDash from "./Component/Dashboard/Admin/Admin_GetUserDetails";
+import AdminWorkshop from "./Component/Dashboard/Admin/Admin_GetWorkshopDetails";
+import AdminConference from "./Component/Dashboard/Admin/Admin_GetConferenceDetails";
+import AttendeeWorkshop from "./Component/Dashboard/User/Attendee/AttendeeWorkshop";
 
 import { authDetail } from "./Component/common/config";
 import { useDispatch, useSelector } from "react-redux";
@@ -54,19 +56,19 @@ function App() {
   //   }, 5000);
   // }, []);
 
-  const {
-    avatar,
-    createdAt,
-    password,
-    role,
-    updatedAt,
-    user_email,
-    user_name,
-    user_role,
-    _id,
-    token,
-  } = authDetail();
-  //console.log("user token : ", token);
+  // const {
+  //   avatar,
+  //   createdAt,
+  //   password,
+  //   role,
+  //   updatedAt,
+  //   user_email,
+  //   user_name,
+  //   user_role,
+  //   _id,
+  //   token,
+  // } = authDetail();
+  // //console.log("user token : ", token);
 
   return (
     <div>
@@ -88,21 +90,68 @@ function App() {
               <Route path="/conferance" component={Conferance} exact />
               <Route path="/login" component={Login} exact />
               <Route path="/contact" component={Contact} exact />
+
               <Route path="/register" component={Register} exact />
               <Route path="/other-register" component={OtherRegisters} exact />
-              <Route path="/research-dash-details" component={Researcher} exact />
-              <Route path="/research-dash" component={AddResearchPapaer} exact />
-              <Route path="/research-dash-profile" component={ResearcherProfile} exact />
-              <Route path="/workshop-dash" component={WorkShopPresenterDetails} exact />
-              <Route path="/workshop-dash-details" component={WorkShopPresenter} exact />
-              <Route path="/attendee-dash" component={Attendee} exact />
-              <Route path="/editor-dash" component={Editor} exact />
-              <Route path="/editor-dash-conferance" component={EditorConferance} exact />
-              <Route path="/editor-dash-profile" component={EditorProfile} exact />
-              <Route path="/admin-dash" component={AdminDash} exact />
-             
 
-              
+              <Route
+                path="/research-dash-details"
+                component={Researcher}
+                exact
+              />
+              <Route
+                path="/research-dash"
+                component={AddResearchPapaer}
+                exact
+              />
+              <Route
+                path="/research-dash-profile"
+                component={ResearcherProfile}
+                exact
+              />
+
+              <Route
+                path="/workshop-dash"
+                component={WorkShopPresenterDetails}
+                exact
+              />
+              <Route
+                path="/workshop-dash-details"
+                component={WorkShopPresenter}
+                exact
+              />
+
+              <Route path="/attendee-dash" component={Attendee} exact />
+              <Route
+                path="/attendee-dash-workshop"
+                component={AttendeeWorkshop}
+                exact
+              />
+
+              <Route path="/editor-dash" component={Editor} exact />
+              <Route
+                path="/editor-dash-conferance"
+                component={EditorConferance}
+                exact
+              />
+              <Route
+                path="/editor-dash-profile"
+                component={EditorProfile}
+                exact
+              />
+
+              <Route path="/admin-dash" component={AdminDash} exact />
+              <Route
+                path="/admin-dash-workshop"
+                component={AdminWorkshop}
+                exact
+              />
+              <Route
+                path="/admin-dash-conference"
+                component={AdminConference}
+                exact
+              />
+
               <Route
                 path="/user/activate/:activate_token"
                 component={ActivationEmail}
