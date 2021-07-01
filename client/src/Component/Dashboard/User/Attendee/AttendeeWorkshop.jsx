@@ -37,7 +37,7 @@ class AttendeeWorkshop extends Component {
           </div>
           <ul className="sidebar-nav mt-5">
             <li>
-              <a href="/admin-dash-conference">
+              <a href="/attendee-dash">
                 <i className="fa fa-television"></i>Conference Details
               </a>
             </li>

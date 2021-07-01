@@ -81558,7 +81558,7 @@ var AttendeeWorkshop = /*#__PURE__*/function (_Component) {
       }, /*#__PURE__*/_react.default.createElement("h2", null, this.state.user_name), /*#__PURE__*/_react.default.createElement("h4", null, this.state.role)), /*#__PURE__*/_react.default.createElement("ul", {
         className: "sidebar-nav mt-5"
       }, /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("a", {
-        href: "/admin-dash-conference"
+        href: "/attendee-dash"
       }, /*#__PURE__*/_react.default.createElement("i", {
         className: "fa fa-television"
       }), "Conference Details")), /*#__PURE__*/_react.default.createElement("li", {
