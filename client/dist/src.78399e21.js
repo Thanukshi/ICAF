@@ -81950,6 +81950,9 @@ function App() {
     component: _ReviewerGetWorkshop.default,
     exact: true
   }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+    path: "/:id",
+    component: _Admin_GetUserDetails.default
+  }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
     path: "/user/activate/:activate_token",
     component: _ActivationEmail.default,
     exact: true

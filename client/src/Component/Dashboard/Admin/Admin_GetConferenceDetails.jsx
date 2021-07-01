@@ -75,7 +75,7 @@ class AdminDash extends Component {
 
                     {this.state.users.length > 0 && this.state.users.map((item, index) => (
                         <div key={index} className="card mb-3" >
-                            <div className="p-3">
+                            <div className="p-3" >
                                 <h4>Title: {item.title}</h4>
                                 <h5>Conductor Name: {item.conductorName}</h5>
                                 <h5>Place: {item.place}</h5>
