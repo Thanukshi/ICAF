@@ -32,6 +32,8 @@ import WorkShopPresenterDetails from "./Component/Dashboard/User/Workshop/WorkSh
 import AdminDash from "./Component/Dashboard/Admin/Admin_GetUserDetails";
 import AdminWorkshop from "./Component/Dashboard/Admin/Admin_GetWorkshopDetails";
 import AdminConference from "./Component/Dashboard/Admin/Admin_GetConferenceDetails";
+import ReviewerConference from "./Component/Dashboard/Reviewer/ReviewerGetConference";
+import ReviewerWorkshop from "./Component/Dashboard/Reviewer/ReviewerGetWorkshop";
 
 import { authDetail } from "./Component/common/config";
 import { useDispatch, useSelector } from "react-redux";
@@ -105,6 +107,8 @@ function App() {
               <Route path="/admin-dash-workshop" component={AdminWorkshop} exact />
               <Route path="/admin-dash-conference" component={AdminConference} exact />
               <Route path="/Conference" component={AdminConference} exact />
+              <Route path="/reviewer-conference" component={ReviewerConference} exact />
+              <Route path="/reviewer-workshop" component={ReviewerWorkshop} exact />
 
 
 
