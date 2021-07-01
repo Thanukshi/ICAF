@@ -52513,11 +52513,11 @@ var Navbar = function Navbar() {
     className: "nav-item"
   }, /*#__PURE__*/_react.default.createElement(_reactRouterDom.NavLink, {
     className: "nav-link",
-    to: "/service",
+    to: "/Conference",
     exact: true
   }, /*#__PURE__*/_react.default.createElement("i", {
     className: "fa fa-clone"
-  }), "Services")), /*#__PURE__*/_react.default.createElement("li", {
+  }), "Conference")), /*#__PURE__*/_react.default.createElement("li", {
     className: "nav-item"
   }, /*#__PURE__*/_react.default.createElement(_reactRouterDom.NavLink, {
     className: "nav-link",
@@ -81655,6 +81655,10 @@ function App() {
     exact: true
   }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
     path: "/admin-dash-conference",
+    component: _Admin_GetConferenceDetails.default,
+    exact: true
+  }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+    path: "/Conference",
     component: _Admin_GetConferenceDetails.default,
     exact: true
   }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {

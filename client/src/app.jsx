@@ -104,6 +104,7 @@ function App() {
               <Route path="/admin-dash" component={AdminDash} exact />
               <Route path="/admin-dash-workshop" component={AdminWorkshop} exact />
               <Route path="/admin-dash-conference" component={AdminConference} exact />
+              <Route path="/Conference" component={AdminConference} exact />
 
 
 
