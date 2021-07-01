@@ -80530,10 +80530,10 @@ var Editor = /*#__PURE__*/function (_Component) {
       }, /*#__PURE__*/_react.default.createElement("li", {
         className: "active"
       }, /*#__PURE__*/_react.default.createElement("a", {
-        href: "/research-dash"
+        href: "/editor-dash"
       }, /*#__PURE__*/_react.default.createElement("i", {
-        className: "fa fa-home"
-      }), "Home")), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("a", {
+        className: "fa fa-list"
+      }), "Conferance Details")), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("a", {
         href: "/editor-dash-conferance"
       }, /*#__PURE__*/_react.default.createElement("i", {
         className: "fa fa-plus"
@@ -80730,8 +80730,8 @@ var EditorConferance = /*#__PURE__*/function (_Component) {
       }, /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("a", {
         href: "/editor-dash"
       }, /*#__PURE__*/_react.default.createElement("i", {
-        className: "fa fa-home"
-      }), "Home")), /*#__PURE__*/_react.default.createElement("li", {
+        className: "fa fa-list"
+      }), "Conferance Details")), /*#__PURE__*/_react.default.createElement("li", {
         className: "active"
       }, /*#__PURE__*/_react.default.createElement("a", {
         href: "/editor-dash-conferance"

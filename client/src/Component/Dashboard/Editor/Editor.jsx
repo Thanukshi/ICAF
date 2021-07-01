@@ -66,8 +66,8 @@ class Editor extends Component {
           </div>
           <ul className="sidebar-nav mt-5">
             <li className="active">
-              <a href="/research-dash">
-                <i className="fa fa-home"></i>Home
+              <a href="/editor-dash">
+                <i className="fa fa-list"></i>Conferance Details
               </a>
             </li>
             <li>

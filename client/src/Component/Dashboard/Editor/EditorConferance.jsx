@@ -100,7 +100,7 @@ class EditorConferance extends Component {
           <ul className="sidebar-nav mt-5">
             <li>
               <a href="/editor-dash">
-                <i className="fa fa-home"></i>Home
+                <i className="fa fa-list"></i>Conferance Details
               </a>
             </li>
             <li className="active">
