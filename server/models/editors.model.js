@@ -18,6 +18,11 @@ const EditorsWorkSchema = new mongoose.Schema(
       required: [true, "Please enter your place!"],
     },
     date: { type: Date, default: Date.now },
+
+    editor_id: {
+      type: String,
+      required: false,
+    },
   },
   {
     timestamps: true,

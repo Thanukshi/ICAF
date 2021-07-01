@@ -12,8 +12,6 @@ router.post("/activate-email", userControl.activateEmail);
 
 router.post("/login-user", userControl.login);
 
-//  router.post("/refresh_token", userControl.getAccessToken);
-
 router.post("/forgot-password", userControl.forgotPassword);
 
 router.post("/reset-password", auth_middleware, userControl.resetPassword);
@@ -23,7 +21,6 @@ router.get("/get-user-details", auth_middleware, userControl.getUserDetails);
 router.get(
   "/get-all-user-details",
   auth_middleware,
-  auth_admin_middleware,
   userControl.getAllUserDetails
 );
 
@@ -33,6 +30,11 @@ router.patch("/update-user", auth_middleware, userControl.updateUser);
 
 router.delete("/delete-user/:id", auth_middleware, userControl.deleteUser);
 
-//router.post("/refresh_token", userCtrl.getAccessToken);
+router.delete(
+  "/delete-user/:id",
+  auth_middleware,
+  auth_admin_middleware,
+  userControl.deleteUser
+);
 
 module.exports = router;

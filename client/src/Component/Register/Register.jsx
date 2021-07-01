@@ -92,7 +92,7 @@ const Register = () => {
       <div className="container mt-0">
         <div className="row">
           <Col lg={4} md={6} sm={12} className="text-center mt-2 p-3">
-            <h2 className="title">Register Here... (Users)</h2>
+            <h2 className="title">Register Here... (USER)</h2>
             <img className="icon-img" src={logo} alt="icon" />
 
             <form onSubmit={handleSubmit}>
@@ -148,8 +148,9 @@ const Register = () => {
                   <option value="Select" disabled>
                     Select
                   </option>
-                  <option value="1">Workshop Presenter</option>
-                  <option value="2">Researcher</option>
+                  <option value="Workshop Presenter">Workshop Presenter</option>
+                  <option value="Researcher">Researcher</option>
+                  <option value="Attendee">Attendee</option>
                 </select>
               </div>
 
