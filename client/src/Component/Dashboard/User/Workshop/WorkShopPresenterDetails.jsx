@@ -97,14 +97,14 @@ class WorkShopPresenterDetails extends Component {
             <h4>{this.state.role}</h4>
           </div>
           <ul className="sidebar-nav mt-5">
-            <li>
+            <li className="active">
               <a href="/workshop-dash">
                 <i className="fa fa-plus"></i>Arrange Workshop
               </a>
             </li>
-            <li className="active">
-              <a href="/editor-dash">
-                <i className="fa fa-plus"></i>Workshop Details
+            <li >
+              <a href="/workshop-dash-details">
+                <i className="fa fa-list"></i>Workshop Details
               </a>
             </li>
             <li>

@@ -14,12 +14,12 @@ const initialState = {
 class WorkShopPresenter extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      users: [],
+    };
   }
-
-  // state = {};
-
+  state = {};
   componentDidMount() {
-    let user = {};
     axios
       .get("http://localhost:8000/users/get-user-details", {
         headers: {
@@ -27,12 +27,17 @@ class WorkShopPresenter extends Component {
         },
       })
       .then((res) => {
+        this.setState(res.data.data);
         console.log(res.data.data);
       })
       .catch((err) => {
         console.log(err);
       });
-    return user;
+    axios
+      .get("http://localhost:8000/worshop-presenter/get/workshop-details")
+      .then((response) => {
+        this.setState({ users: response.data.data });
+      });
   }
 
   render() {
@@ -40,22 +45,18 @@ class WorkShopPresenter extends Component {
       <div id="wrapper">
         <aside id="sidebar-wrapper">
           <div className="sidebar-brand">
-            <h2></h2>
+            <h2>{this.state.user_name}</h2>
+            <h4>{this.state.role}</h4>
           </div>
-          <ul className="sidebar-nav">
+          <ul className="sidebar-nav mt-5">
+            <li>
+              <a href="/workshop-dash">
+                <i className="fa fa-plus"></i>Arrange Workshop
+              </a>
+            </li>
             <li className="active">
-              <a href="/research-dash">
-                <i className="fa fa-home"></i>Home
-              </a>
-            </li>
-            <li>
-              <a href="/research-dash-paper">
-                <i className="fa fa-plus"></i>Reseach Papers
-              </a>
-            </li>
-            <li>
-              <a href="/research-dash-profile">
-                <i className="fa fa-user"></i>Profile
+              <a href="/workshop-dash-details">
+                <i className="fa fa-users"></i>Workshop Details
               </a>
             </li>
           </ul>
@@ -75,15 +76,19 @@ class WorkShopPresenter extends Component {
             </div>
           </nav>
         </div>
-
-        <section id="content-wrapper">
-          <div className="row">
-            <div className="col-lg-12">
-              <h2 className="content-title">WorkShopPresenter</h2>
-              <p>Lorem ipsum...</p>
-            </div>
-          </div>
-        </section>
+        <h1>Workshop Details</h1>
+        <div className="container">
+          {this.state.users.length > 0 &&
+            this.state.users.map((item, index) => (
+              <div key={index} className="card mb-3">
+                <div className="p-3">
+                  <h4>Title: {item.title}</h4>
+                  <h5>Conductor Name: {item.conductorName}</h5>
+                  <h5>File Type: {item.file_type}</h5>
+                </div>
+              </div>
+            ))}
+        </div>
       </div>
     );
   }

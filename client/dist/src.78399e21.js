@@ -79951,6 +79951,8 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 var initialState = {
   user: []
 };
@@ -79961,28 +79963,42 @@ var WorkShopPresenter = /*#__PURE__*/function (_Component) {
   var _super = _createSuper(WorkShopPresenter);
 
   function WorkShopPresenter(props) {
+    var _this;
+
     _classCallCheck(this, WorkShopPresenter);
 
-    return _super.call(this, props);
-  } // state = {};
+    _this = _super.call(this, props);
 
+    _defineProperty(_assertThisInitialized(_this), "state", {});
+
+    _this.state = {
+      users: []
+    };
+    return _this;
+  }
 
   _createClass(WorkShopPresenter, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      var user = {};
+      var _this2 = this;
 
       _axios.default.get("http://localhost:8000/users/get-user-details", {
         headers: {
           Authorization: localStorage.getItem("token")
         }
       }).then(function (res) {
+        _this2.setState(res.data.data);
+
         console.log(res.data.data);
       }).catch(function (err) {
         console.log(err);
       });
 
-      return user;
+      _axios.default.get("http://localhost:8000/worshop-presenter/get/workshop-details").then(function (response) {
+        _this2.setState({
+          users: response.data.data
+        });
+      });
     }
   }, {
     key: "render",
@@ -79993,23 +80009,19 @@ var WorkShopPresenter = /*#__PURE__*/function (_Component) {
         id: "sidebar-wrapper"
       }, /*#__PURE__*/_react.default.createElement("div", {
         className: "sidebar-brand"
-      }, /*#__PURE__*/_react.default.createElement("h2", null)), /*#__PURE__*/_react.default.createElement("ul", {
-        className: "sidebar-nav"
-      }, /*#__PURE__*/_react.default.createElement("li", {
-        className: "active"
-      }, /*#__PURE__*/_react.default.createElement("a", {
-        href: "/research-dash"
-      }, /*#__PURE__*/_react.default.createElement("i", {
-        className: "fa fa-home"
-      }), "Home")), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("a", {
-        href: "/research-dash-paper"
+      }, /*#__PURE__*/_react.default.createElement("h2", null, this.state.user_name), /*#__PURE__*/_react.default.createElement("h4", null, this.state.role)), /*#__PURE__*/_react.default.createElement("ul", {
+        className: "sidebar-nav mt-5"
+      }, /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("a", {
+        href: "/workshop-dash"
       }, /*#__PURE__*/_react.default.createElement("i", {
         className: "fa fa-plus"
-      }), "Reseach Papers")), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("a", {
-        href: "/research-dash-profile"
+      }), "Arrange Workshop")), /*#__PURE__*/_react.default.createElement("li", {
+        className: "active"
+      }, /*#__PURE__*/_react.default.createElement("a", {
+        href: "/workshop-dash-details"
       }, /*#__PURE__*/_react.default.createElement("i", {
-        className: "fa fa-user"
-      }), "Profile")))), /*#__PURE__*/_react.default.createElement("div", {
+        className: "fa fa-users"
+      }), "Workshop Details")))), /*#__PURE__*/_react.default.createElement("div", {
         id: "navbar-wrapper"
       }, /*#__PURE__*/_react.default.createElement("nav", {
         className: "navbar navbar-inverse"
@@ -80021,15 +80033,16 @@ var WorkShopPresenter = /*#__PURE__*/function (_Component) {
         className: "profile-img",
         src: _user.default,
         alt: ""
-      })))))), /*#__PURE__*/_react.default.createElement("section", {
-        id: "content-wrapper"
-      }, /*#__PURE__*/_react.default.createElement("div", {
-        className: "row"
-      }, /*#__PURE__*/_react.default.createElement("div", {
-        className: "col-lg-12"
-      }, /*#__PURE__*/_react.default.createElement("h2", {
-        className: "content-title"
-      }, "WorkShopPresenter"), /*#__PURE__*/_react.default.createElement("p", null, "Lorem ipsum...")))));
+      })))))), /*#__PURE__*/_react.default.createElement("h1", null, "Workshop Details"), /*#__PURE__*/_react.default.createElement("div", {
+        className: "container"
+      }, this.state.users.length > 0 && this.state.users.map(function (item, index) {
+        return /*#__PURE__*/_react.default.createElement("div", {
+          key: index,
+          className: "card mb-3"
+        }, /*#__PURE__*/_react.default.createElement("div", {
+          className: "p-3"
+        }, /*#__PURE__*/_react.default.createElement("h4", null, "Title: ", item.title), /*#__PURE__*/_react.default.createElement("h5", null, "Conductor Name: ", item.conductorName), /*#__PURE__*/_react.default.createElement("h5", null, "File Type: ", item.file_type)));
+      })));
     }
   }]);
 
@@ -80088,6 +80101,8 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 var initialState = {
   user: []
 };
@@ -80098,28 +80113,30 @@ var Attendee = /*#__PURE__*/function (_Component) {
   var _super = _createSuper(Attendee);
 
   function Attendee(props) {
+    var _this;
+
     _classCallCheck(this, Attendee);
 
-    return _super.call(this, props);
-  } // state = {};
+    _this = _super.call(this, props);
 
+    _defineProperty(_assertThisInitialized(_this), "state", {});
+
+    _this.state = {
+      users: []
+    };
+    return _this;
+  }
 
   _createClass(Attendee, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      var user = {};
+      var _this2 = this;
 
-      _axios.default.get("http://localhost:8000/users/get-user-details", {
-        headers: {
-          Authorization: localStorage.getItem("token")
-        }
-      }).then(function (res) {
-        user: res.data.data;
-      }).catch(function (err) {
-        console.log(err);
+      _axios.default.get("http://localhost:8000/editor/get/all-conferance-details").then(function (response) {
+        _this2.setState({
+          users: response.data.data
+        });
       });
-
-      return user;
     }
   }, {
     key: "render",
@@ -80130,23 +80147,19 @@ var Attendee = /*#__PURE__*/function (_Component) {
         id: "sidebar-wrapper"
       }, /*#__PURE__*/_react.default.createElement("div", {
         className: "sidebar-brand"
-      }, /*#__PURE__*/_react.default.createElement("h2", null)), /*#__PURE__*/_react.default.createElement("ul", {
-        className: "sidebar-nav"
+      }, /*#__PURE__*/_react.default.createElement("h2", null, this.state.user_name), /*#__PURE__*/_react.default.createElement("h4", null, this.state.role)), /*#__PURE__*/_react.default.createElement("ul", {
+        className: "sidebar-nav mt-5"
       }, /*#__PURE__*/_react.default.createElement("li", {
         className: "active"
       }, /*#__PURE__*/_react.default.createElement("a", {
-        href: "/research-dash"
+        href: "/attendee-dash"
       }, /*#__PURE__*/_react.default.createElement("i", {
-        className: "fa fa-home"
-      }), "Home")), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("a", {
-        href: "/research-dash-paper"
+        className: "fa fa-television"
+      }), "Conference Details")), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("a", {
+        href: "/attendee-dash-workshop"
       }, /*#__PURE__*/_react.default.createElement("i", {
-        className: "fa fa-plus"
-      }), "Reseach Papers")), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("a", {
-        href: "/research-dash-profile"
-      }, /*#__PURE__*/_react.default.createElement("i", {
-        className: "fa fa-user"
-      }), "Profile")))), /*#__PURE__*/_react.default.createElement("div", {
+        className: "fa fa-users"
+      }), "Workshop Details")))), /*#__PURE__*/_react.default.createElement("div", {
         id: "navbar-wrapper"
       }, /*#__PURE__*/_react.default.createElement("nav", {
         className: "navbar navbar-inverse"
@@ -80158,15 +80171,16 @@ var Attendee = /*#__PURE__*/function (_Component) {
         className: "profile-img",
         src: _user.default,
         alt: ""
-      })))))), /*#__PURE__*/_react.default.createElement("section", {
-        id: "content-wrapper"
-      }, /*#__PURE__*/_react.default.createElement("div", {
-        className: "row"
-      }, /*#__PURE__*/_react.default.createElement("div", {
-        className: "col-lg-12"
-      }, /*#__PURE__*/_react.default.createElement("h2", {
-        className: "content-title"
-      }, "Attendee"), /*#__PURE__*/_react.default.createElement("p", null, "Lorem ipsum...")))));
+      })))))), /*#__PURE__*/_react.default.createElement("h1", null, "Conference Details"), /*#__PURE__*/_react.default.createElement("div", {
+        className: "container"
+      }, this.state.users.length > 0 && this.state.users.map(function (item, index) {
+        return /*#__PURE__*/_react.default.createElement("div", {
+          key: index,
+          className: "card mb-3"
+        }, /*#__PURE__*/_react.default.createElement("div", {
+          className: "p-3"
+        }, /*#__PURE__*/_react.default.createElement("h4", null, "Title: ", item.title), /*#__PURE__*/_react.default.createElement("h5", null, "Conductor Name: ", item.conductorName), /*#__PURE__*/_react.default.createElement("h5", null, "Place: ", item.place), /*#__PURE__*/_react.default.createElement("h5", null, "Date: ", item.date)));
+      })));
     }
   }]);
 
@@ -80530,10 +80544,10 @@ var Editor = /*#__PURE__*/function (_Component) {
       }, /*#__PURE__*/_react.default.createElement("li", {
         className: "active"
       }, /*#__PURE__*/_react.default.createElement("a", {
-        href: "/research-dash"
+        href: "/editor-dash"
       }, /*#__PURE__*/_react.default.createElement("i", {
-        className: "fa fa-home"
-      }), "Home")), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("a", {
+        className: "fa fa-list"
+      }), "Conferance Details")), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("a", {
         href: "/editor-dash-conferance"
       }, /*#__PURE__*/_react.default.createElement("i", {
         className: "fa fa-plus"
@@ -80730,8 +80744,8 @@ var EditorConferance = /*#__PURE__*/function (_Component) {
       }, /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("a", {
         href: "/editor-dash"
       }, /*#__PURE__*/_react.default.createElement("i", {
-        className: "fa fa-home"
-      }), "Home")), /*#__PURE__*/_react.default.createElement("li", {
+        className: "fa fa-list"
+      }), "Conferance Details")), /*#__PURE__*/_react.default.createElement("li", {
         className: "active"
       }, /*#__PURE__*/_react.default.createElement("a", {
         href: "/editor-dash-conferance"
@@ -80960,16 +80974,16 @@ var WorkShopPresenterDetails = /*#__PURE__*/function (_Component) {
         className: "sidebar-brand"
       }, /*#__PURE__*/_react.default.createElement("h2", null, this.state.user_name), /*#__PURE__*/_react.default.createElement("h4", null, this.state.role)), /*#__PURE__*/_react.default.createElement("ul", {
         className: "sidebar-nav mt-5"
-      }, /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("a", {
+      }, /*#__PURE__*/_react.default.createElement("li", {
+        className: "active"
+      }, /*#__PURE__*/_react.default.createElement("a", {
         href: "/workshop-dash"
       }, /*#__PURE__*/_react.default.createElement("i", {
         className: "fa fa-plus"
-      }), "Arrange Workshop")), /*#__PURE__*/_react.default.createElement("li", {
-        className: "active"
-      }, /*#__PURE__*/_react.default.createElement("a", {
-        href: "/editor-dash"
+      }), "Arrange Workshop")), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("a", {
+        href: "/workshop-dash-details"
       }, /*#__PURE__*/_react.default.createElement("i", {
-        className: "fa fa-plus"
+        className: "fa fa-list"
       }), "Workshop Details")), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("a", {
         href: "/editor-dash-profile"
       }, /*#__PURE__*/_react.default.createElement("i", {
@@ -81463,7 +81477,11 @@ var AdminDash = /*#__PURE__*/function (_Component) {
 
 var _default = AdminDash;
 exports.default = _default;
+<<<<<<< HEAD
 },{"react":"../node_modules/react/index.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","axios":"../node_modules/axios/index.js","react-toastify":"../node_modules/react-toastify/esm/react-toastify.js","../../../css/dashboard.css":"css/dashboard.css","../../common/config":"Component/common/config.js","../../../Images/user.png":"Images/user.png"}],"Component/Dashboard/Reviewer/ReviewerGetConference.jsx":[function(require,module,exports) {
+=======
+},{"react":"../node_modules/react/index.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","axios":"../node_modules/axios/index.js","react-toastify":"../node_modules/react-toastify/esm/react-toastify.js","../../../css/dashboard.css":"css/dashboard.css","../../common/config":"Component/common/config.js","../../../Images/user.png":"Images/user.png"}],"Component/Dashboard/User/Attendee/AttendeeWorkshop.jsx":[function(require,module,exports) {
+>>>>>>> ce7986f7b120cd0d7d5ba1e61af584cda9d15c65
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -81479,11 +81497,19 @@ var _axios = _interopRequireDefault(require("axios"));
 
 var _reactToastify = require("react-toastify");
 
+<<<<<<< HEAD
 require("../../../css/dashboard.css");
 
 var _config = require("../../common/config");
 
 var _user = _interopRequireDefault(require("../../../Images/user.png"));
+=======
+require("../../../../css/dashboard.css");
+
+var _config = require("../../../common/config");
+
+var _user = _interopRequireDefault(require("../../../../Images/user.png"));
+>>>>>>> ce7986f7b120cd0d7d5ba1e61af584cda9d15c65
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -81519,6 +81545,7 @@ var initialState = {
   user: []
 };
 
+<<<<<<< HEAD
 var Reviewer = /*#__PURE__*/function (_Component) {
   _inherits(Reviewer, _Component);
 
@@ -81528,6 +81555,17 @@ var Reviewer = /*#__PURE__*/function (_Component) {
     var _this;
 
     _classCallCheck(this, Reviewer);
+=======
+var AttendeeWorkshop = /*#__PURE__*/function (_Component) {
+  _inherits(AttendeeWorkshop, _Component);
+
+  var _super = _createSuper(AttendeeWorkshop);
+
+  function AttendeeWorkshop(props) {
+    var _this;
+
+    _classCallCheck(this, AttendeeWorkshop);
+>>>>>>> ce7986f7b120cd0d7d5ba1e61af584cda9d15c65
 
     _this = _super.call(this, props);
 
@@ -81539,11 +81577,16 @@ var Reviewer = /*#__PURE__*/function (_Component) {
     return _this;
   }
 
+<<<<<<< HEAD
   _createClass(Reviewer, [{
+=======
+  _createClass(AttendeeWorkshop, [{
+>>>>>>> ce7986f7b120cd0d7d5ba1e61af584cda9d15c65
     key: "componentDidMount",
     value: function componentDidMount() {
       var _this2 = this;
 
+<<<<<<< HEAD
       _axios.default.get('http://localhost:8000/editor/get/all-conferance-details').then(function (response) {
         _this2.setState({
           users: response.data.data
@@ -81683,6 +81726,9 @@ var ReviewerWorkshop = /*#__PURE__*/function (_Component) {
       var _this2 = this;
 
       _axios.default.get('http://localhost:8000/worshop-presenter/get/workshop-details').then(function (response) {
+=======
+      _axios.default.get("http://localhost:8000/worshop-presenter/get/workshop-details").then(function (response) {
+>>>>>>> ce7986f7b120cd0d7d5ba1e61af584cda9d15c65
         _this2.setState({
           users: response.data.data
         });
@@ -81700,13 +81746,21 @@ var ReviewerWorkshop = /*#__PURE__*/function (_Component) {
       }, /*#__PURE__*/_react.default.createElement("h2", null, this.state.user_name), /*#__PURE__*/_react.default.createElement("h4", null, this.state.role)), /*#__PURE__*/_react.default.createElement("ul", {
         className: "sidebar-nav mt-5"
       }, /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("a", {
+<<<<<<< HEAD
         href: "/reviewer-conference"
+=======
+        href: "/attendee-dash"
+>>>>>>> ce7986f7b120cd0d7d5ba1e61af584cda9d15c65
       }, /*#__PURE__*/_react.default.createElement("i", {
         className: "fa fa-television"
       }), "Conference Details")), /*#__PURE__*/_react.default.createElement("li", {
         className: "active"
       }, /*#__PURE__*/_react.default.createElement("a", {
+<<<<<<< HEAD
         href: "/reviewer-workshop"
+=======
+        href: "/attendee-dash-workshop"
+>>>>>>> ce7986f7b120cd0d7d5ba1e61af584cda9d15c65
       }, /*#__PURE__*/_react.default.createElement("i", {
         className: "fa fa-users"
       }), "Workshop Details")))), /*#__PURE__*/_react.default.createElement("div", {
@@ -81729,6 +81783,7 @@ var ReviewerWorkshop = /*#__PURE__*/function (_Component) {
           className: "card mb-3"
         }, /*#__PURE__*/_react.default.createElement("div", {
           className: "p-3"
+<<<<<<< HEAD
         }, /*#__PURE__*/_react.default.createElement("h4", null, "Title: ", item.title), /*#__PURE__*/_react.default.createElement("h5", null, "Conductor Name: ", item.conductorName), /*#__PURE__*/_react.default.createElement("h5", null, "File Type: ", item.file_type), /*#__PURE__*/_react.default.createElement("h5", null, "Created Date: ", item.createdAt), /*#__PURE__*/_react.default.createElement("h5", null, "Updated Date: ", item.updatedAt)));
       })));
     }
@@ -81852,16 +81907,28 @@ var conference = /*#__PURE__*/function (_Component) {
         }, /*#__PURE__*/_react.default.createElement("div", {
           className: "p-3"
         }, /*#__PURE__*/_react.default.createElement("h4", null, "Title: ", item.title), /*#__PURE__*/_react.default.createElement("h5", null, "Conductor Name: ", item.conductorName), /*#__PURE__*/_react.default.createElement("h5", null, "Place: ", item.place), /*#__PURE__*/_react.default.createElement("h5", null, "Date: ", item.date)));
+=======
+        }, /*#__PURE__*/_react.default.createElement("h4", null, "Title: ", item.title), /*#__PURE__*/_react.default.createElement("h5", null, "Conductor Name: ", item.conductorName), /*#__PURE__*/_react.default.createElement("h5", null, "File Type: ", item.file_type)));
+>>>>>>> ce7986f7b120cd0d7d5ba1e61af584cda9d15c65
       })));
     }
   }]);
 
+<<<<<<< HEAD
   return conference;
 }(_react.Component);
 
 var _default = conference;
 exports.default = _default;
 },{"react":"../node_modules/react/index.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","axios":"../node_modules/axios/index.js"}],"App.jsx":[function(require,module,exports) {
+=======
+  return AttendeeWorkshop;
+}(_react.Component);
+
+var _default = AttendeeWorkshop;
+exports.default = _default;
+},{"react":"../node_modules/react/index.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","axios":"../node_modules/axios/index.js","react-toastify":"../node_modules/react-toastify/esm/react-toastify.js","../../../../css/dashboard.css":"css/dashboard.css","../../../common/config":"Component/common/config.js","../../../../Images/user.png":"Images/user.png"}],"App.jsx":[function(require,module,exports) {
+>>>>>>> ce7986f7b120cd0d7d5ba1e61af584cda9d15c65
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -81925,11 +81992,15 @@ var _Admin_GetWorkshopDetails = _interopRequireDefault(require("./Component/Dash
 
 var _Admin_GetConferenceDetails = _interopRequireDefault(require("./Component/Dashboard/Admin/Admin_GetConferenceDetails"));
 
+<<<<<<< HEAD
 var _ReviewerGetConference = _interopRequireDefault(require("./Component/Dashboard/Reviewer/ReviewerGetConference"));
 
 var _ReviewerGetWorkshop = _interopRequireDefault(require("./Component/Dashboard/Reviewer/ReviewerGetWorkshop"));
 
 var _Conference = _interopRequireDefault(require("./Component/Dashboard/Conference"));
+=======
+var _AttendeeWorkshop = _interopRequireDefault(require("./Component/Dashboard/User/Attendee/AttendeeWorkshop"));
+>>>>>>> ce7986f7b120cd0d7d5ba1e61af584cda9d15c65
 
 var _config = require("./Component/common/config");
 
@@ -81974,19 +82045,19 @@ function App() {
   //     setLoading(false);
   //   }, 5000);
   // }, []);
-
-
-  var _authDetail = (0, _config.authDetail)(),
-      avatar = _authDetail.avatar,
-      createdAt = _authDetail.createdAt,
-      password = _authDetail.password,
-      role = _authDetail.role,
-      updatedAt = _authDetail.updatedAt,
-      user_email = _authDetail.user_email,
-      user_name = _authDetail.user_name,
-      user_role = _authDetail.user_role,
-      _id = _authDetail._id,
-      token = _authDetail.token; //console.log("user token : ", token);
+  // const {
+  //   avatar,
+  //   createdAt,
+  //   password,
+  //   role,
+  //   updatedAt,
+  //   user_email,
+  //   user_name,
+  //   user_role,
+  //   _id,
+  //   token,
+  // } = authDetail();
+  // //console.log("user token : ", token);
 
 
   return /*#__PURE__*/_react.default.createElement("div", null, loading ? /*#__PURE__*/_react.default.createElement(_RiseLoader.default, {
@@ -82048,6 +82119,10 @@ function App() {
     component: _Attendee.default,
     exact: true
   }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+    path: "/attendee-dash-workshop",
+    component: _AttendeeWorkshop.default,
+    exact: true
+  }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
     path: "/editor-dash",
     component: _Editor.default,
     exact: true
@@ -82058,10 +82133,6 @@ function App() {
   }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
     path: "/editor-dash-profile",
     component: _EditorProfile.default,
-    exact: true
-  }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
-    path: "/admin-dash",
-    component: _Admin_GetUserDetails.default,
     exact: true
   }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
     path: "/admin-dash",
@@ -82106,7 +82177,11 @@ function App() {
 
 var _default = App;
 exports.default = _default;
+<<<<<<< HEAD
 },{"react":"../node_modules/react/index.js","@emotion/react":"../node_modules/@emotion/react/dist/emotion-react.browser.esm.js","react-spinners/RiseLoader":"../node_modules/react-spinners/RiseLoader.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","react-toastify":"../node_modules/react-toastify/esm/react-toastify.js","react-toastify/dist/ReactToastify.css":"../node_modules/react-toastify/dist/ReactToastify.css","axios":"../node_modules/axios/index.js","./Component/Navbar/Navbar":"Component/Navbar/Navbar.jsx","./Component/Navbar/NavbarItem/Home/Home":"Component/Navbar/NavbarItem/Home/Home.jsx","./Component/Navbar/NavbarItem/About/About":"Component/Navbar/NavbarItem/About/About.jsx","./Component/Navbar/NavbarItem/Conference/Conferance":"Component/Navbar/NavbarItem/Conference/Conferance.jsx","./Component/Navbar/NavbarItem/Contact/Contact":"Component/Navbar/NavbarItem/Contact/Contact.jsx","./Component/Login/Login":"Component/Login/Login.jsx","./Component/Register/Register":"Component/Register/Register.jsx","./Component/Dashboard/User/Researcher/Researcher":"Component/Dashboard/User/Researcher/Researcher.jsx","./Component/Register/ActivationEmail":"Component/Register/ActivationEmail.jsx","./Component/Dashboard/User/Researcher/AddResearchPapaer":"Component/Dashboard/User/Researcher/AddResearchPapaer.jsx","./Component/Dashboard/User/Researcher/ResearcherProfile":"Component/Dashboard/User/Researcher/ResearcherProfile.jsx","./Component/Dashboard/User/Workshop/WorkShopPresenter":"Component/Dashboard/User/Workshop/WorkShopPresenter.jsx","./Component/Dashboard/User/Attendee/Attendee":"Component/Dashboard/User/Attendee/Attendee.jsx","./Component/Register/OtherRegisters":"Component/Register/OtherRegisters.jsx","./Component/Dashboard/Editor/Editor":"Component/Dashboard/Editor/Editor.jsx","./Component/Dashboard/Editor/EditorConferance":"Component/Dashboard/Editor/EditorConferance.jsx","./Component/Dashboard/Editor/EditorProfile":"Component/Dashboard/Editor/EditorProfile.jsx","./Component/Dashboard/User/Workshop/WorkShopPresenterDetails":"Component/Dashboard/User/Workshop/WorkShopPresenterDetails.jsx","./Component/Dashboard/Admin/Admin_GetUserDetails":"Component/Dashboard/Admin/Admin_GetUserDetails.jsx","./Component/Dashboard/Admin/Admin_GetWorkshopDetails":"Component/Dashboard/Admin/Admin_GetWorkshopDetails.jsx","./Component/Dashboard/Admin/Admin_GetConferenceDetails":"Component/Dashboard/Admin/Admin_GetConferenceDetails.jsx","./Component/Dashboard/Reviewer/ReviewerGetConference":"Component/Dashboard/Reviewer/ReviewerGetConference.jsx","./Component/Dashboard/Reviewer/ReviewerGetWorkshop":"Component/Dashboard/Reviewer/ReviewerGetWorkshop.jsx","./Component/Dashboard/Conference":"Component/Dashboard/Conference.jsx","./Component/common/config":"Component/common/config.js","react-redux":"../node_modules/react-redux/es/index.js"}],"../node_modules/@babel/runtime/helpers/esm/objectSpread2.js":[function(require,module,exports) {
+=======
+},{"react":"../node_modules/react/index.js","@emotion/react":"../node_modules/@emotion/react/dist/emotion-react.browser.esm.js","react-spinners/RiseLoader":"../node_modules/react-spinners/RiseLoader.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","react-toastify":"../node_modules/react-toastify/esm/react-toastify.js","react-toastify/dist/ReactToastify.css":"../node_modules/react-toastify/dist/ReactToastify.css","axios":"../node_modules/axios/index.js","./Component/Navbar/Navbar":"Component/Navbar/Navbar.jsx","./Component/Navbar/NavbarItem/Home/Home":"Component/Navbar/NavbarItem/Home/Home.jsx","./Component/Navbar/NavbarItem/About/About":"Component/Navbar/NavbarItem/About/About.jsx","./Component/Navbar/NavbarItem/Conference/Conferance":"Component/Navbar/NavbarItem/Conference/Conferance.jsx","./Component/Navbar/NavbarItem/Contact/Contact":"Component/Navbar/NavbarItem/Contact/Contact.jsx","./Component/Login/Login":"Component/Login/Login.jsx","./Component/Register/Register":"Component/Register/Register.jsx","./Component/Dashboard/User/Researcher/Researcher":"Component/Dashboard/User/Researcher/Researcher.jsx","./Component/Register/ActivationEmail":"Component/Register/ActivationEmail.jsx","./Component/Dashboard/User/Researcher/AddResearchPapaer":"Component/Dashboard/User/Researcher/AddResearchPapaer.jsx","./Component/Dashboard/User/Researcher/ResearcherProfile":"Component/Dashboard/User/Researcher/ResearcherProfile.jsx","./Component/Dashboard/User/Workshop/WorkShopPresenter":"Component/Dashboard/User/Workshop/WorkShopPresenter.jsx","./Component/Dashboard/User/Attendee/Attendee":"Component/Dashboard/User/Attendee/Attendee.jsx","./Component/Register/OtherRegisters":"Component/Register/OtherRegisters.jsx","./Component/Dashboard/Editor/Editor":"Component/Dashboard/Editor/Editor.jsx","./Component/Dashboard/Editor/EditorConferance":"Component/Dashboard/Editor/EditorConferance.jsx","./Component/Dashboard/Editor/EditorProfile":"Component/Dashboard/Editor/EditorProfile.jsx","./Component/Dashboard/User/Workshop/WorkShopPresenterDetails":"Component/Dashboard/User/Workshop/WorkShopPresenterDetails.jsx","./Component/Dashboard/Admin/Admin_GetUserDetails":"Component/Dashboard/Admin/Admin_GetUserDetails.jsx","./Component/Dashboard/Admin/Admin_GetWorkshopDetails":"Component/Dashboard/Admin/Admin_GetWorkshopDetails.jsx","./Component/Dashboard/Admin/Admin_GetConferenceDetails":"Component/Dashboard/Admin/Admin_GetConferenceDetails.jsx","./Component/Dashboard/User/Attendee/AttendeeWorkshop":"Component/Dashboard/User/Attendee/AttendeeWorkshop.jsx","./Component/common/config":"Component/common/config.js","react-redux":"../node_modules/react-redux/es/index.js"}],"../node_modules/@babel/runtime/helpers/esm/objectSpread2.js":[function(require,module,exports) {
+>>>>>>> ce7986f7b120cd0d7d5ba1e61af584cda9d15c65
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -83021,7 +83096,11 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
+<<<<<<< HEAD
   var ws = new WebSocket(protocol + '://' + hostname + ':' + "50534" + '/');
+=======
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58390" + '/');
+>>>>>>> ce7986f7b120cd0d7d5ba1e61af584cda9d15c65
 
   ws.onmessage = function (event) {
     checkedAssets = {};
