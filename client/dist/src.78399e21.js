@@ -80432,11 +80432,9 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 var initialState = {
   id: "",
-  data: {}
+  user: []
 };
 
 var Editor = /*#__PURE__*/function (_Component) {
@@ -80450,10 +80448,10 @@ var Editor = /*#__PURE__*/function (_Component) {
     _classCallCheck(this, Editor);
 
     _this = _super.call(this, props);
-
-    _defineProperty(_assertThisInitialized(_this), "state", {});
-
-    _this.state = initialState;
+    _this.state = {
+      id: "",
+      user: []
+    };
     return _this;
   }
 
@@ -80467,7 +80465,9 @@ var Editor = /*#__PURE__*/function (_Component) {
           Authorization: localStorage.getItem("token")
         }
       }).then(function (res) {
-        _this2.setState(res.data.data);
+        _this2.setState({
+          user: res.data.data
+        });
 
         console.log(res.data.data);
       }).catch(function (err) {
@@ -80479,7 +80479,9 @@ var Editor = /*#__PURE__*/function (_Component) {
           Authorization: localStorage.getItem("token")
         }
       }).then(function (res) {
-        _this2.setState(res.data.data);
+        _this2.setState({
+          user: res.data.data
+        });
 
         console.log("new", res.data.data);
       }).catch(function (err) {
@@ -80497,7 +80499,7 @@ var Editor = /*#__PURE__*/function (_Component) {
         id: "sidebar-wrapper"
       }, /*#__PURE__*/_react.default.createElement("div", {
         className: "sidebar-brand"
-      }, /*#__PURE__*/_react.default.createElement("h2", null, this.state.user_name), /*#__PURE__*/_react.default.createElement("h4", null, this.state.role)), /*#__PURE__*/_react.default.createElement("ul", {
+      }, /*#__PURE__*/_react.default.createElement("h2", null, this.state.user.user_name), /*#__PURE__*/_react.default.createElement("h4", null, this.state.user.role)), /*#__PURE__*/_react.default.createElement("ul", {
         className: "sidebar-nav mt-5"
       }, /*#__PURE__*/_react.default.createElement("li", {
         className: "active"
@@ -80531,9 +80533,10 @@ var Editor = /*#__PURE__*/function (_Component) {
         className: "row"
       }, /*#__PURE__*/_react.default.createElement("div", {
         className: "col-lg-12"
-      }, this.state.length > 0 && this.state.map(function (item) {
+      }, this.state.user.length > 0 && this.state.user.map(function (item, index) {
         return /*#__PURE__*/_react.default.createElement("div", {
-          className: "card mb-3 text-white"
+          key: index,
+          className: "card mb-3 bg-primary text-white"
         }, /*#__PURE__*/_react.default.createElement("h5", null, "Title: ", item.title), /*#__PURE__*/_react.default.createElement("h5", null, "Conductor Name: ", item.conductorName), /*#__PURE__*/_react.default.createElement("h5", null, "Place: ", item.place), /*#__PURE__*/_react.default.createElement("h5", null, "Date: ", item.date));
       })))));
     }
@@ -82278,7 +82281,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62780" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56127" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
